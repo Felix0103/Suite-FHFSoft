@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+
+
 namespace Suite_FHFSoft
 {
 
@@ -27,7 +29,7 @@ namespace Suite_FHFSoft
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+       
         }
 
         private void radButton2_Click(object sender, EventArgs e)
@@ -43,10 +45,64 @@ namespace Suite_FHFSoft
 
         private void bLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainMenu vMenu = new MainMenu();
-            vMenu.Show(this);
+            DataTable dtLogin = C.SQL("[LOGIN_L] '" + Username.Text + C.QSS + Password.Text + C.QS);
+            DataRow vRow = dtLogin.Rows[0];
+            if (vRow["RESULT"].ToString() == "0")
+            {
+                Username.Text = "";
+                Password.Text = "";
+                C.vPerfilID = C.Cint(vRow["UserProfileID"].ToString());
+                C.vUserName = vRow["Nombre"].ToString() + " " + vRow["Apellido"].ToString();
+                C.vUserID = C.Cint(vRow["UsuarioID"].ToString());
+                C.vSucursalID= C.Cint(vRow["SucursalID"].ToString());
+                C.vProfileName = vRow["PerfilName"].ToString();
+                C.vSucursalName = vRow["SucursalName"].ToString(); 
+                MainMenu vMenu = new MainMenu();
+                vMenu.SetRibbon(dtLogin);
+                vMenu.setStatus();
+                vMenu.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show(dtLogin.Rows[0]["MSGBOX"].ToString(),Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+
             
+        }
+
+        private void Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+         
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 112)
+            {
+                Username.Text = Properties.Settings.Default.USER1;
+                Password.Text = Properties.Settings.Default.PASS1;
+
+                bLogin_Click(null, null);
+            }
+        }
+
+        private void Login_Shown(object sender, EventArgs e)
+        {
+            DateTime Licencia = C.Cdate(Seguridad.DesEncriptar(C.SQL("ini_L").Rows[0][0].ToString()));
+            if (Licencia < DateTime.Today)
+            {
+                MessageBox.Show("Su Lcencia esta Vencida, Favor contactar a su Representante de Suite FHFSoft.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Username.ReadOnly = true;
+                Password.ReadOnly = true;
+            }
+            else if ((Licencia - DateTime.Today).TotalDays < 31)
+            {
+                var dias = (Licencia - DateTime.Today).TotalDays;
+                MessageBox.Show("Solo le quedan " + dias.ToString() + " Dias de vigencia de su Licencia, Favor contactar a un Representante de Suite FHFSoft.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
         }
     }
 }

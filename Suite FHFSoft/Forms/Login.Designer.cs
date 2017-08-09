@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.bExit = new Telerik.WinControls.UI.RadButton();
-            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
-            this.radTextBox2 = new Telerik.WinControls.UI.RadTextBox();
+            this.Password = new Telerik.WinControls.UI.RadTextBox();
+            this.Username = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.bLogin = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.bExit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Password)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Username)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -48,12 +48,13 @@
             // bExit
             // 
             this.bExit.BackColor = System.Drawing.Color.Transparent;
+            this.bExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bExit.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.bExit.Location = new System.Drawing.Point(254, 254);
             this.bExit.Name = "bExit";
             this.bExit.Size = new System.Drawing.Size(110, 24);
-            this.bExit.TabIndex = 1;
+            this.bExit.TabIndex = 4;
             this.bExit.Text = "Quit";
             this.bExit.Click += new System.EventHandler(this.radButton2_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.bExit.GetChildAt(0))).Text = "Quit";
@@ -61,23 +62,24 @@
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bExit.GetChildAt(0).GetChildAt(2))).GradientAngle = 788F;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bExit.GetChildAt(0).GetChildAt(2))).BackColor = System.Drawing.Color.Aqua;
             // 
-            // radTextBox1
+            // Password
             // 
-            this.radTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.radTextBox1.Font = new System.Drawing.Font("Segoe UI Black", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox1.Location = new System.Drawing.Point(125, 210);
-            this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.Size = new System.Drawing.Size(239, 27);
-            this.radTextBox1.TabIndex = 2;
+            this.Password.BackColor = System.Drawing.Color.Transparent;
+            this.Password.Font = new System.Drawing.Font("Segoe UI Black", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password.Location = new System.Drawing.Point(125, 210);
+            this.Password.Name = "Password";
+            this.Password.PasswordChar = '*';
+            this.Password.Size = new System.Drawing.Size(239, 27);
+            this.Password.TabIndex = 2;
             // 
-            // radTextBox2
+            // Username
             // 
-            this.radTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.radTextBox2.Font = new System.Drawing.Font("Segoe UI Black", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTextBox2.Location = new System.Drawing.Point(125, 174);
-            this.radTextBox2.Name = "radTextBox2";
-            this.radTextBox2.Size = new System.Drawing.Size(239, 27);
-            this.radTextBox2.TabIndex = 2;
+            this.Username.BackColor = System.Drawing.Color.Transparent;
+            this.Username.Font = new System.Drawing.Font("Segoe UI Black", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Username.Location = new System.Drawing.Point(125, 174);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(239, 27);
+            this.Username.TabIndex = 1;
             // 
             // radLabel1
             // 
@@ -124,38 +126,46 @@
             this.bLogin.Location = new System.Drawing.Point(125, 254);
             this.bLogin.Name = "bLogin";
             this.bLogin.Size = new System.Drawing.Size(110, 24);
-            this.bLogin.TabIndex = 1;
+            this.bLogin.TabIndex = 3;
             this.bLogin.Text = "&Login";
             this.bLogin.Click += new System.EventHandler(this.bLogin_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.bLogin.GetChildAt(0))).Text = "&Login";
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bLogin.GetChildAt(0).GetChildAt(2))).BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bLogin.GetChildAt(0).GetChildAt(2))).GradientAngle = 788F;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bLogin.GetChildAt(0).GetChildAt(2))).InnerColor = System.Drawing.Color.Transparent;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bLogin.GetChildAt(0).GetChildAt(2))).BackColor = System.Drawing.Color.Aqua;
             // 
             // Login
             // 
+            this.AcceptButton = this.bLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Suite_FHFSoft.Properties.Resources.Marketing;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CancelButton = this.bExit;
             this.ClientSize = new System.Drawing.Size(1010, 576);
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radLabel1);
-            this.Controls.Add(this.radTextBox2);
-            this.Controls.Add(this.radTextBox1);
+            this.Controls.Add(this.Username);
+            this.Controls.Add(this.Password);
             this.Controls.Add(this.bLogin);
             this.Controls.Add(this.bExit);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
+            this.Shown += new System.EventHandler(this.Login_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Login_KeyPress);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.bExit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Password)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Username)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
@@ -167,8 +177,8 @@
 
         #endregion
         private Telerik.WinControls.UI.RadButton bExit;
-        private Telerik.WinControls.UI.RadTextBox radTextBox1;
-        private Telerik.WinControls.UI.RadTextBox radTextBox2;
+        private Telerik.WinControls.UI.RadTextBox Password;
+        private Telerik.WinControls.UI.RadTextBox Username;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadLabel radLabel3;

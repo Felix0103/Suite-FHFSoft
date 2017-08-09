@@ -117,26 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="sakura-japon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sakura-japon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="casas-hermosas-del-color-en-el-lago-68912945" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\casas-hermosas-del-color-en-el-lago-68912945.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ILogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ILogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="integracover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\integracover.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MundoTeclado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MundoTeclado.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Marketing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Marketing.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="if_Creative_Suite_63827" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_Creative_Suite_63827.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

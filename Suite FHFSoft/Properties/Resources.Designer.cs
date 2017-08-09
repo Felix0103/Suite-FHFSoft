@@ -73,6 +73,16 @@ namespace Suite_FHFSoft.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_Creative_Suite_63827 {
+            get {
+                object obj = ResourceManager.GetObject("if_Creative_Suite_63827", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ILogin {
             get {
                 object obj = ResourceManager.GetObject("ILogin", resourceCulture);
