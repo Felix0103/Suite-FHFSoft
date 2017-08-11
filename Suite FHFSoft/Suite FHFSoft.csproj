@@ -97,6 +97,18 @@
   <ItemGroup>
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Seguridad.cs" />
+    <Compile Include="Forms\Articulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Articulos.Designer.cs">
+      <DependentUpon>Articulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Configuraciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +139,12 @@
     <Compile Include="Forms\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Proveedor.Designer.cs">
+      <DependentUpon>Proveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +153,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Articulos.resx">
+      <DependentUpon>Articulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Configuraciones.resx">
       <DependentUpon>Configuraciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Proveedor.resx">
+      <DependentUpon>Proveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>

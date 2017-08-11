@@ -17,10 +17,6 @@ namespace Suite_FHFSoft
             InitializeComponent();
         }
 
-        private void radGroupBox4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Usuario_Load(object sender, EventArgs e)
         {
@@ -41,10 +37,6 @@ namespace Suite_FHFSoft
             this.Close();
         }
 
-        private void GRD_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void bNuevo_Click(object sender, EventArgs e)
         {
@@ -60,5 +52,8 @@ namespace Suite_FHFSoft
         {
             lblStatus.Text = "Editable";
         }
+
+        
+
     }
 }
