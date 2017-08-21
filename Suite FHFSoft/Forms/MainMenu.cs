@@ -82,15 +82,52 @@ namespace Suite_FHFSoft
             RadButtonElement[] radButtonElement = new RadButtonElement[50];
 
             radRibbonBar1.ImageList = imageList1;
-            
+
+            //My favorite
+
+            item1++;
+            tabItem[item1] = new RibbonTab();
+            tabItem[item1].Text = "Mis Favoritos";
+            tabItem[item1].ImageIndex = 8;
+            radRibbonBar1.CommandTabs.Add(tabItem[item1]);
+
+
+            item2++;
+            radRibbonBarGroup[item2] = new RadRibbonBarGroup();
+            radRibbonBarGroup[item2].Text = "Mis Items Favoritos";
+            radRibbonBarGroup[item2].MinSize = new Size(300, 300);
+            ((RibbonTab)radRibbonBar1.CommandTabs[item1]).Items.Add(radRibbonBarGroup[item2]);
+
+            item3++;
+            radButtonElement[item3] = new RadButtonElement();
+            radButtonElement[item3].Text = "Favoritos";
+            radButtonElement[item3].TextAlignment = ContentAlignment.BottomCenter;
+            radButtonElement[item3].TextWrap = true;
+            radButtonElement[item3].Tag = "Favoritos";
+            radButtonElement[item3].ImageIndex = 11;
+            radButtonElement[item3].ImageAlignment = ContentAlignment.MiddleCenter;
+            radButtonElement[item3].Size = new Size(100, 80);
+            radButtonElement[item3].AutoSize = false;
+            radButtonElement[item3].Click += ClickRibbonbar;
+            radRibbonBarGroup[item2].Items.Add(radButtonElement[item3]);
+
+            //Aqui un for de los favoritos
+           // tabItem[item1].Items.Remove(radRibbonBarGroup[0]);
+
 
             foreach (DataRow vRow in Datos.Rows)
             {
-                if(vRow["ItemOrder2"].ToString()=="0")
+
+           
+
+
+
+                if (vRow["ItemOrder2"].ToString()=="0")
                 {
                     item1++;
                     tabItem[item1] = new RibbonTab();
                     tabItem[item1].Text = vRow["Descripcion"].ToString();
+                    tabItem[item1].ImageIndex = ((int)vRow["ImageID"]);
                     radRibbonBar1.CommandTabs.Add(tabItem[item1]);
                 }
                 else if(vRow["ItemOrder3"].ToString() == "0")

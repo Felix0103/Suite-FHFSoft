@@ -405,6 +405,7 @@
             // 
             // radTitleBar1
             // 
+            this.radTitleBar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.radTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.radTitleBar1.Name = "radTitleBar1";

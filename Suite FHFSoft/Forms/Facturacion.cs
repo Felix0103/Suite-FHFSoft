@@ -10,16 +10,18 @@ using System.Windows.Forms;
 
 namespace Suite_FHFSoft
 {
-    public partial class Articulos : Form
+    public partial class Facturacion : Form
     {
-        public Articulos()
+        public Facturacion()
         {
             InitializeComponent();
         }
 
-        private void Articulos_Load(object sender, EventArgs e)
+  
+
+        private void Facturacion_Load(object sender, EventArgs e)
         {
-            radTitleBar1.ImageIcon = this.Icon;
+
         }
     }
 }

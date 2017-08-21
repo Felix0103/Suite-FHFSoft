@@ -48,6 +48,12 @@
             this.imageList1.Images.SetKeyName(3, "if_testimonials_45013.png");
             this.imageList1.Images.SetKeyName(4, "if_gear-user_532766.png");
             this.imageList1.Images.SetKeyName(5, "if_network_close_41768.png");
+            this.imageList1.Images.SetKeyName(6, "if_47_973988.png");
+            this.imageList1.Images.SetKeyName(7, "if_List_2290853.png");
+            this.imageList1.Images.SetKeyName(8, "if_favorites_37406.png");
+            this.imageList1.Images.SetKeyName(9, "1481542733_Cash_register.png");
+            this.imageList1.Images.SetKeyName(10, "if_Sales-by-Payment-Method-rep_49616.png");
+            this.imageList1.Images.SetKeyName(11, "if_bookmarks_list_add_18556.png");
             // 
             // radRibbonBar1
             // 

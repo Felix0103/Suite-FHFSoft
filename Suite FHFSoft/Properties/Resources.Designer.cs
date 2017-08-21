@@ -63,9 +63,89 @@ namespace Suite_FHFSoft.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1481444391_search {
+            get {
+                object obj = ResourceManager.GetObject("1481444391_search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1481449260_calculator {
+            get {
+                object obj = ResourceManager.GetObject("1481449260_calculator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1481449538_chat {
+            get {
+                object obj = ResourceManager.GetObject("1481449538_chat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1481449625_printer {
+            get {
+                object obj = ResourceManager.GetObject("1481449625_printer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1481449700_configuration_1 {
+            get {
+                object obj = ResourceManager.GetObject("1481449700_configuration 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1481449800_search {
+            get {
+                object obj = ResourceManager.GetObject("1481449800_search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1481974794_shopcartadd_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("1481974794_shopcartadd_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap casas_hermosas_del_color_en_el_lago_68912945 {
             get {
                 object obj = ResourceManager.GetObject("casas-hermosas-del-color-en-el-lago-68912945", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_Cancel {
+            get {
+                object obj = ResourceManager.GetObject("delete_Cancel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +206,16 @@ namespace Suite_FHFSoft.Properties {
         internal static System.Drawing.Bitmap sakura_japon {
             get {
                 object obj = ResourceManager.GetObject("sakura-japon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_2 {
+            get {
+                object obj = ResourceManager.GetObject("save_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

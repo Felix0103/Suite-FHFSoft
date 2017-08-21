@@ -121,6 +121,12 @@
     <Compile Include="Forms\EncriDescri.Designer.cs">
       <DependentUpon>EncriDescri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Facturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Facturacion.Designer.cs">
+      <DependentUpon>Facturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FBackup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EncriDescri.resx">
       <DependentUpon>EncriDescri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Facturacion.resx">
+      <DependentUpon>Facturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FBackup.resx">
       <DependentUpon>FBackup.cs</DependentUpon>
@@ -222,6 +231,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="if_Creative_Suite_63827.ico" />
+    <None Include="Resources\1481974794_shopcartadd_32x32.png" />
+    <None Include="Resources\1481444391_search.png" />
+    <None Include="Resources\1481449260_calculator.png" />
+    <None Include="Resources\1481449538_chat.png" />
+    <None Include="Resources\1481449625_printer.png" />
+    <None Include="Resources\1481449700_configuration 1.png" />
+    <None Include="Resources\save_2.png" />
+    <None Include="Resources\1481449800_search.png" />
+    <None Include="Resources\delete_Cancel.png" />
     <None Include="Resources\if_Creative_Suite_63827.ico" />
     <None Include="Resources\casas-hermosas-del-color-en-el-lago-68912945.jpg" />
     <None Include="Resources\sakura-japon.jpg" />
