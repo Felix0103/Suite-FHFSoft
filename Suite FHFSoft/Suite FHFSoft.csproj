@@ -109,6 +109,12 @@
     <Compile Include="Forms\Cliente.Designer.cs">
       <DependentUpon>Cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ComprobatesFiscales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ComprobatesFiscales.Designer.cs">
+      <DependentUpon>ComprobatesFiscales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Configuraciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,12 @@
     </Compile>
     <Compile Include="Forms\FBackup.Designer.cs">
       <DependentUpon>FBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
@@ -165,6 +177,9 @@
     <EmbeddedResource Include="Forms\Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ComprobatesFiscales.resx">
+      <DependentUpon>ComprobatesFiscales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Configuraciones.resx">
       <DependentUpon>Configuraciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FBackup.resx">
       <DependentUpon>FBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
