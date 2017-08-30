@@ -127,6 +127,12 @@
     <Compile Include="Forms\EncriDescri.Designer.cs">
       <DependentUpon>EncriDescri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EntradaPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EntradaPedidos.Designer.cs">
+      <DependentUpon>EntradaPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EncriDescri.resx">
       <DependentUpon>EncriDescri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EntradaPedidos.resx">
+      <DependentUpon>EntradaPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
@@ -249,6 +258,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="if_Creative_Suite_63827.ico" />
+    <None Include="Resources\if_forward_36503.png" />
     <None Include="Resources\1481974794_shopcartadd_32x32.png" />
     <None Include="Resources\1481444391_search.png" />
     <None Include="Resources\1481449260_calculator.png" />

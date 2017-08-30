@@ -26,5 +26,11 @@ namespace Suite_FHFSoft
         {
 
         }
+
+        private void bIngresoMercancia_Click(object sender, EventArgs e)
+        {
+            EntradaPedidos frm = new EntradaPedidos();
+            frm.Show(this);
+        }
     }
 }
