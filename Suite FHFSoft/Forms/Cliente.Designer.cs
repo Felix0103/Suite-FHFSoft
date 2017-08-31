@@ -44,7 +44,7 @@
             this.LimiteCredito = new Telerik.WinControls.UI.RadMaskedEditBox();
             this.Telefono = new Telerik.WinControls.UI.RadMaskedEditBox();
             this.Email = new Telerik.WinControls.UI.RadMaskedEditBox();
-            this.Activo = new Telerik.WinControls.UI.RadCheckBox();
+            this.Estatus = new Telerik.WinControls.UI.RadCheckBox();
             this.Fecha = new Telerik.WinControls.UI.RadDateTimePicker();
             this.CiudadID = new Telerik.WinControls.UI.RadDropDownList();
             this.bDeshacer = new Telerik.WinControls.UI.RadButton();
@@ -85,7 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LimiteCredito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Telefono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Email)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Activo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Estatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fecha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CiudadID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDeshacer)).BeginInit();
@@ -123,7 +123,7 @@
             // 
             // bGuardar
             // 
-            this.bGuardar.Location = new System.Drawing.Point(391, 619);
+            this.bGuardar.Location = new System.Drawing.Point(375, 619);
             this.bGuardar.Name = "bGuardar";
             this.bGuardar.Size = new System.Drawing.Size(110, 24);
             this.bGuardar.TabIndex = 27;
@@ -197,7 +197,7 @@
             this.GRD.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.GRD.Name = "GRD";
             this.GRD.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.GRD.Size = new System.Drawing.Size(894, 295);
+            this.GRD.Size = new System.Drawing.Size(849, 295);
             this.GRD.TabIndex = 32;
             // 
             // Celular
@@ -266,13 +266,13 @@
             this.Email.TabIndex = 14;
             this.Email.TabStop = false;
             // 
-            // Activo
+            // Estatus
             // 
-            this.Activo.Location = new System.Drawing.Point(367, 154);
-            this.Activo.Name = "Activo";
-            this.Activo.Size = new System.Drawing.Size(51, 18);
-            this.Activo.TabIndex = 7;
-            this.Activo.Text = "Activo";
+            this.Estatus.Location = new System.Drawing.Point(367, 154);
+            this.Estatus.Name = "Estatus";
+            this.Estatus.Size = new System.Drawing.Size(51, 18);
+            this.Estatus.TabIndex = 7;
+            this.Estatus.Text = "Activo";
             // 
             // Fecha
             // 
@@ -293,7 +293,7 @@
             // 
             // bDeshacer
             // 
-            this.bDeshacer.Location = new System.Drawing.Point(507, 619);
+            this.bDeshacer.Location = new System.Drawing.Point(491, 619);
             this.bDeshacer.Name = "bDeshacer";
             this.bDeshacer.Size = new System.Drawing.Size(110, 24);
             this.bDeshacer.TabIndex = 30;
@@ -301,7 +301,7 @@
             // 
             // bSalir
             // 
-            this.bSalir.Location = new System.Drawing.Point(623, 619);
+            this.bSalir.Location = new System.Drawing.Point(607, 619);
             this.bSalir.Name = "bSalir";
             this.bSalir.Size = new System.Drawing.Size(110, 24);
             this.bSalir.TabIndex = 29;
@@ -331,7 +331,7 @@
             // Codigo
             // 
             this.Codigo.Enabled = false;
-            this.Codigo.Location = new System.Drawing.Point(783, 19);
+            this.Codigo.Location = new System.Drawing.Point(710, 19);
             this.Codigo.Name = "Codigo";
             this.Codigo.Size = new System.Drawing.Size(100, 20);
             this.Codigo.TabIndex = 1;
@@ -366,19 +366,21 @@
             // 
             // bNuevo
             // 
-            this.bNuevo.Location = new System.Drawing.Point(159, 619);
+            this.bNuevo.Location = new System.Drawing.Point(143, 619);
             this.bNuevo.Name = "bNuevo";
             this.bNuevo.Size = new System.Drawing.Size(110, 24);
             this.bNuevo.TabIndex = 28;
             this.bNuevo.Text = "&Nuevo";
+            this.bNuevo.Click += new System.EventHandler(this.bNuevo_Click);
             // 
             // bEditar
             // 
-            this.bEditar.Location = new System.Drawing.Point(275, 619);
+            this.bEditar.Location = new System.Drawing.Point(259, 619);
             this.bEditar.Name = "bEditar";
             this.bEditar.Size = new System.Drawing.Size(110, 24);
             this.bEditar.TabIndex = 31;
             this.bEditar.Text = "&Editar";
+            this.bEditar.Click += new System.EventHandler(this.bEditar_Click);
             // 
             // Direccion
             // 
@@ -490,7 +492,7 @@
             // radLabel15
             // 
             this.radLabel15.AutoSize = false;
-            this.radLabel15.Location = new System.Drawing.Point(701, 20);
+            this.radLabel15.Location = new System.Drawing.Point(628, 20);
             this.radLabel15.Name = "radLabel15";
             this.radLabel15.Size = new System.Drawing.Size(76, 18);
             this.radLabel15.TabIndex = 0;
@@ -523,7 +525,7 @@
             this.radGroupBox4.Controls.Add(this.lblStatus);
             this.radGroupBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radGroupBox4.HeaderText = "Estatus de Edicion";
-            this.radGroupBox4.Location = new System.Drawing.Point(702, 40);
+            this.radGroupBox4.Location = new System.Drawing.Point(657, 40);
             this.radGroupBox4.Name = "radGroupBox4";
             this.radGroupBox4.Size = new System.Drawing.Size(200, 46);
             this.radGroupBox4.TabIndex = 33;
@@ -538,7 +540,7 @@
             this.radGroupBox1.Controls.Add(this.LimiteCredito);
             this.radGroupBox1.Controls.Add(this.Telefono);
             this.radGroupBox1.Controls.Add(this.Email);
-            this.radGroupBox1.Controls.Add(this.Activo);
+            this.radGroupBox1.Controls.Add(this.Estatus);
             this.radGroupBox1.Controls.Add(this.Fecha);
             this.radGroupBox1.Controls.Add(this.CiudadID);
             this.radGroupBox1.Controls.Add(this.PaisID);
@@ -565,7 +567,7 @@
             this.radGroupBox1.HeaderText = "Registro de Cliente";
             this.radGroupBox1.Location = new System.Drawing.Point(8, 90);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(894, 215);
+            this.radGroupBox1.Size = new System.Drawing.Size(849, 215);
             this.radGroupBox1.TabIndex = 26;
             this.radGroupBox1.Text = "Registro de Cliente";
             // 
@@ -584,7 +586,7 @@
             this.radTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.radTitleBar1.Name = "radTitleBar1";
-            this.radTitleBar1.Size = new System.Drawing.Size(916, 34);
+            this.radTitleBar1.Size = new System.Drawing.Size(870, 34);
             this.radTitleBar1.TabIndex = 25;
             this.radTitleBar1.TabStop = false;
             this.radTitleBar1.Text = "Cliente";
@@ -594,7 +596,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(916, 651);
+            this.ClientSize = new System.Drawing.Size(870, 651);
             this.Controls.Add(this.bGuardar);
             this.Controls.Add(this.GRD);
             this.Controls.Add(this.bDeshacer);
@@ -617,7 +619,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LimiteCredito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Telefono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Email)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Activo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Estatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fecha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CiudadID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDeshacer)).EndInit();
@@ -666,7 +668,7 @@
         private Telerik.WinControls.UI.RadMaskedEditBox LimiteCredito;
         private Telerik.WinControls.UI.RadMaskedEditBox Telefono;
         private Telerik.WinControls.UI.RadMaskedEditBox Email;
-        private Telerik.WinControls.UI.RadCheckBox Activo;
+        private Telerik.WinControls.UI.RadCheckBox Estatus;
         private Telerik.WinControls.UI.RadDateTimePicker Fecha;
         private Telerik.WinControls.UI.RadDropDownList CiudadID;
         private Telerik.WinControls.UI.RadButton bDeshacer;
