@@ -46,6 +46,7 @@ namespace Suite_FHFSoft
             Direccion.Text = "";
             PaisID.Text = "";
             ProvinciaID.Text = "";
+            TipodeComprobanteID.Text = "";
             CiudadID.Text = "";
             Telefono.Value = "";
             Celular.Value= "";
@@ -77,6 +78,7 @@ namespace Suite_FHFSoft
             Estatus.ReadOnly = false;
             Fecha.ReadOnly = false;
             Email.ReadOnly = false;
+            TipodeComprobanteID.ReadOnly = false;
 
             bNuevo.Enabled = true;
             bEditar.Enabled = false;
@@ -111,6 +113,7 @@ namespace Suite_FHFSoft
                 Estatus.Checked = (vRow["Estatus"].ToString() == "1" ? true : false);
                 Fecha.Value = C.Cdate(vRow["FechaCreacion"].ToString());
                 Email.Text = vRow["Email"].ToString();
+                TipodeComprobanteID.SelectedValue= C.Cint(vRow["TipoComprobanteID"].ToString());
                 noEditar();
                 bEditar.Enabled = true;
                 bGuardar.Enabled = false;
@@ -143,6 +146,7 @@ namespace Suite_FHFSoft
             Estatus.ReadOnly = true;
             Fecha.ReadOnly = true;
             Email.ReadOnly = true;
+            TipodeComprobanteID.ReadOnly = true;
             bNuevo.Enabled = true;
             bEditar.Enabled = true;
             bGuardar.Enabled = false;
@@ -154,7 +158,11 @@ namespace Suite_FHFSoft
             PaisID.DisplayMember = "Descripcion";
             PaisID.ValueMember = "PaisID";
             PaisID.DataSource = C.SQL("Pais_L");
-            
+
+            TipodeComprobanteID.DisplayMember = "Descripcion";
+            TipodeComprobanteID.ValueMember = "TipoComprobanteFiscalID";
+            TipodeComprobanteID.DataSource = C.SQL("TIPOCOMPROBANTEFISCAL_L");
+
         }
 
 
@@ -226,7 +234,8 @@ namespace Suite_FHFSoft
                 dtClientes = C.SQL("Cliente_M " + vOpt + C.QII + vClienteID + C.QIS + Nombre.Text + C.QSS + Apellido.Text + C.QSS + Cedula.Value + C.QSI + Descuento.Value +
                 C.QII + LimiteCredito.Value + C.QIS + Email.Value + C.QSS + Telefono.Value + C.QSS + Celular.Value + C.QSS + Direccion.Text + C.QSI +
                 (ProvinciaID.SelectedValue == null ? "NULL" : ProvinciaID.SelectedValue) + C.QII + (PaisID.SelectedValue == null ? "NULL" : PaisID.SelectedValue) + C.QII +
-                (CiudadID.SelectedValue == null ? "NULL" : CiudadID.SelectedValue) + C.QII + C.vUserID + C.QII + (Estatus.Checked == true ? 1 : 0));
+                (CiudadID.SelectedValue == null ? "NULL" : CiudadID.SelectedValue) + C.QII + C.vUserID + C.QII + (Estatus.Checked == true ? 1 : 0) + C.QII +
+                (TipodeComprobanteID.SelectedValue == null ? "NULL" : TipodeComprobanteID.SelectedValue));
 
                 if  (dtClientes.Rows[0][0].ToString()=="0")
                 {

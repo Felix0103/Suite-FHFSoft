@@ -34,6 +34,11 @@ namespace Suite_FHFSoft
                         ((EntradaPedidos)Application.OpenForms[i]).vArticulo = int.Parse(GRD.CurrentRow.Cells[0].Value.ToString());
                         this.Close();
                     }
+                    else if(vForm == "Facturacion")
+                    {
+                        ((Facturacion)Application.OpenForms[i]).vArticuloID = int.Parse(GRD.CurrentRow.Cells[0].Value.ToString());
+                        this.Close();
+                    }
                 }
             }
         }

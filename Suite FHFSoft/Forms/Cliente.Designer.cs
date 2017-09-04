@@ -76,6 +76,8 @@
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.radTitleBar1 = new Telerik.WinControls.UI.RadTitleBar();
+            this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
+            this.TipodeComprobanteID = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.bGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRD.MasterTemplate)).BeginInit();
@@ -119,11 +121,13 @@
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TipodeComprobanteID)).BeginInit();
             this.SuspendLayout();
             // 
             // bGuardar
             // 
-            this.bGuardar.Location = new System.Drawing.Point(375, 619);
+            this.bGuardar.Location = new System.Drawing.Point(375, 643);
             this.bGuardar.Name = "bGuardar";
             this.bGuardar.Size = new System.Drawing.Size(110, 24);
             this.bGuardar.TabIndex = 27;
@@ -137,7 +141,7 @@
             this.GRD.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.GRD.ForeColor = System.Drawing.SystemColors.ControlText;
             this.GRD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.GRD.Location = new System.Drawing.Point(8, 316);
+            this.GRD.Location = new System.Drawing.Point(8, 340);
             // 
             // 
             // 
@@ -223,7 +227,7 @@
             this.Descuento.Size = new System.Drawing.Size(56, 20);
             this.Descuento.TabIndex = 4;
             this.Descuento.TabStop = false;
-            this.Descuento.Text = "0.00%";
+            this.Descuento.Text = "0.00 %";
             this.Descuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Cedula
@@ -262,7 +266,7 @@
             // 
             // Email
             // 
-            this.Email.Location = new System.Drawing.Point(153, 180);
+            this.Email.Location = new System.Drawing.Point(153, 202);
             this.Email.MaskType = Telerik.WinControls.UI.MaskType.EMail;
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(657, 20);
@@ -284,7 +288,7 @@
             this.Fecha.Size = new System.Drawing.Size(198, 20);
             this.Fecha.TabIndex = 6;
             this.Fecha.TabStop = false;
-            this.Fecha.Text = "lunes, 28 de noviembre de 2016";
+            this.Fecha.Text = "Monday, November 28, 2016";
             this.Fecha.Value = new System.DateTime(2016, 11, 28, 22, 8, 37, 961);
             // 
             // CiudadID
@@ -296,7 +300,7 @@
             // 
             // bDeshacer
             // 
-            this.bDeshacer.Location = new System.Drawing.Point(491, 619);
+            this.bDeshacer.Location = new System.Drawing.Point(491, 643);
             this.bDeshacer.Name = "bDeshacer";
             this.bDeshacer.Size = new System.Drawing.Size(110, 24);
             this.bDeshacer.TabIndex = 30;
@@ -305,7 +309,7 @@
             // 
             // bSalir
             // 
-            this.bSalir.Location = new System.Drawing.Point(607, 619);
+            this.bSalir.Location = new System.Drawing.Point(607, 643);
             this.bSalir.Name = "bSalir";
             this.bSalir.Size = new System.Drawing.Size(110, 24);
             this.bSalir.TabIndex = 29;
@@ -373,7 +377,7 @@
             // 
             // bNuevo
             // 
-            this.bNuevo.Location = new System.Drawing.Point(143, 619);
+            this.bNuevo.Location = new System.Drawing.Point(143, 643);
             this.bNuevo.Name = "bNuevo";
             this.bNuevo.Size = new System.Drawing.Size(110, 24);
             this.bNuevo.TabIndex = 28;
@@ -382,7 +386,7 @@
             // 
             // bEditar
             // 
-            this.bEditar.Location = new System.Drawing.Point(259, 619);
+            this.bEditar.Location = new System.Drawing.Point(259, 643);
             this.bEditar.Name = "bEditar";
             this.bEditar.Size = new System.Drawing.Size(110, 24);
             this.bEditar.TabIndex = 31;
@@ -489,7 +493,7 @@
             // radLabel14
             // 
             this.radLabel14.AutoSize = false;
-            this.radLabel14.Location = new System.Drawing.Point(46, 181);
+            this.radLabel14.Location = new System.Drawing.Point(46, 203);
             this.radLabel14.Name = "radLabel14";
             this.radLabel14.Size = new System.Drawing.Size(100, 18);
             this.radLabel14.TabIndex = 0;
@@ -550,6 +554,7 @@
             this.radGroupBox1.Controls.Add(this.Estatus);
             this.radGroupBox1.Controls.Add(this.Fecha);
             this.radGroupBox1.Controls.Add(this.CiudadID);
+            this.radGroupBox1.Controls.Add(this.TipodeComprobanteID);
             this.radGroupBox1.Controls.Add(this.ProvinciaID);
             this.radGroupBox1.Controls.Add(this.PaisID);
             this.radGroupBox1.Controls.Add(this.Direccion);
@@ -559,6 +564,7 @@
             this.radGroupBox1.Controls.Add(this.radLabel10);
             this.radGroupBox1.Controls.Add(this.radLabel13);
             this.radGroupBox1.Controls.Add(this.radLabel5);
+            this.radGroupBox1.Controls.Add(this.radLabel16);
             this.radGroupBox1.Controls.Add(this.radLabel12);
             this.radGroupBox1.Controls.Add(this.radLabel9);
             this.radGroupBox1.Controls.Add(this.radLabel11);
@@ -574,7 +580,7 @@
             this.radGroupBox1.HeaderText = "Registro de Cliente";
             this.radGroupBox1.Location = new System.Drawing.Point(8, 90);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(849, 215);
+            this.radGroupBox1.Size = new System.Drawing.Size(849, 233);
             this.radGroupBox1.TabIndex = 26;
             this.radGroupBox1.Text = "Registro de Cliente";
             // 
@@ -598,12 +604,30 @@
             this.radTitleBar1.TabStop = false;
             this.radTitleBar1.Text = "Cliente";
             // 
+            // radLabel16
+            // 
+            this.radLabel16.AutoSize = false;
+            this.radLabel16.Location = new System.Drawing.Point(13, 180);
+            this.radLabel16.Name = "radLabel16";
+            this.radLabel16.Size = new System.Drawing.Size(132, 18);
+            this.radLabel16.TabIndex = 0;
+            this.radLabel16.Text = "Tipo de Comprobante";
+            this.radLabel16.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TipodeComprobanteID
+            // 
+            this.TipodeComprobanteID.Location = new System.Drawing.Point(152, 179);
+            this.TipodeComprobanteID.Name = "TipodeComprobanteID";
+            this.TipodeComprobanteID.Size = new System.Drawing.Size(265, 20);
+            this.TipodeComprobanteID.TabIndex = 10;
+            this.TipodeComprobanteID.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.ProvinciaID_SelectedIndexChanged);
+            // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(870, 651);
+            this.ClientSize = new System.Drawing.Size(870, 683);
             this.Controls.Add(this.bGuardar);
             this.Controls.Add(this.GRD);
             this.Controls.Add(this.bDeshacer);
@@ -661,6 +685,8 @@
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TipodeComprobanteID)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -707,5 +733,7 @@
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadTitleBar radTitleBar1;
+        private Telerik.WinControls.UI.RadDropDownList TipodeComprobanteID;
+        private Telerik.WinControls.UI.RadLabel radLabel16;
     }
 }

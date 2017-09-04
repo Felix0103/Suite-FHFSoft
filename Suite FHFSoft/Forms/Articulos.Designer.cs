@@ -36,6 +36,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.bSalir = new Telerik.WinControls.UI.RadButton();
@@ -453,7 +454,7 @@
             this.Fecha.Size = new System.Drawing.Size(245, 20);
             this.Fecha.TabIndex = 5;
             this.Fecha.TabStop = false;
-            this.Fecha.Text = "lunes, 28 de noviembre de 2016";
+            this.Fecha.Text = "Monday, November 28, 2016";
             this.Fecha.Value = new System.DateTime(2016, 11, 28, 22, 8, 37, 961);
             // 
             // radMenuItem1
@@ -521,8 +522,6 @@
             this.GRD.MasterTemplate.AllowCellContextMenu = false;
             this.GRD.MasterTemplate.AllowColumnChooser = false;
             this.GRD.MasterTemplate.AllowColumnHeaderContextMenu = false;
-            this.GRD.MasterTemplate.AllowColumnReorder = false;
-            this.GRD.MasterTemplate.AllowColumnResize = false;
             this.GRD.MasterTemplate.AllowDeleteRow = false;
             this.GRD.MasterTemplate.AllowEditRow = false;
             this.GRD.MasterTemplate.AllowRowHeaderContextMenu = false;
@@ -546,33 +545,38 @@
             gridViewTextBoxColumn3.HeaderText = "Articulo";
             gridViewTextBoxColumn3.Name = "column1";
             gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.Width = 250;
+            gridViewTextBoxColumn3.Width = 213;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "Categoria";
             gridViewTextBoxColumn4.HeaderText = "Categoria";
             gridViewTextBoxColumn4.Name = "column2";
             gridViewTextBoxColumn4.ReadOnly = true;
-            gridViewTextBoxColumn4.Width = 133;
+            gridViewTextBoxColumn4.Width = 137;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "UnidadMedida";
             gridViewTextBoxColumn5.HeaderText = "Medida";
             gridViewTextBoxColumn5.Name = "column3";
             gridViewTextBoxColumn5.ReadOnly = true;
-            gridViewTextBoxColumn5.Width = 128;
+            gridViewTextBoxColumn5.Width = 120;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "Marca";
             gridViewTextBoxColumn6.FormatString = "{0:#,###.#0}";
             gridViewTextBoxColumn6.HeaderText = "Marca";
             gridViewTextBoxColumn6.Name = "column4";
             gridViewTextBoxColumn6.ReadOnly = true;
-            gridViewTextBoxColumn6.Width = 113;
+            gridViewTextBoxColumn6.Width = 108;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "Itbis";
             gridViewTextBoxColumn7.FormatString = "{0:#,###.#0}";
             gridViewTextBoxColumn7.HeaderText = "ITBIS";
             gridViewTextBoxColumn7.Name = "column5";
             gridViewTextBoxColumn7.ReadOnly = true;
-            gridViewTextBoxColumn7.Width = 86;
+            gridViewTextBoxColumn7.Width = 73;
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "PrecioActual";
+            gridViewDecimalColumn1.HeaderText = "Precio Actual";
+            gridViewDecimalColumn1.Name = "PrecioActual";
+            gridViewDecimalColumn1.Width = 86;
             gridViewCheckBoxColumn1.EnableExpressionEditor = false;
             gridViewCheckBoxColumn1.FieldName = "Estatus";
             gridViewCheckBoxColumn1.HeaderText = "Activo";
@@ -586,6 +590,7 @@
             gridViewTextBoxColumn5,
             gridViewTextBoxColumn6,
             gridViewTextBoxColumn7,
+            gridViewDecimalColumn1,
             gridViewCheckBoxColumn1});
             this.GRD.MasterTemplate.EnableFiltering = true;
             this.GRD.MasterTemplate.ViewDefinition = tableViewDefinition1;

@@ -30,7 +30,8 @@ namespace Suite_FHFSoft
             {
                 GRD.DataSource = dtPrecios;
             }
-            
+
+            bNuevo_Click(null, null);
 
         }
 
@@ -53,7 +54,12 @@ namespace Suite_FHFSoft
         private void bGuardar_Click(object sender, EventArgs e)
         {
 
-
+            if (Precio.Value.ToString()=="0.00")
+            {
+                MessageBox.Show("El precio no Puede ser Cero", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Precio.Focus();
+                return;
+            }
             string FechaHora = Fecha.Text + " " + Hora.Value.ToString().Substring(Hora.Value.ToString().IndexOf(" "), Hora.Value.ToString().Length - Hora.Value.ToString().IndexOf(" "));
 
 
@@ -63,10 +69,23 @@ namespace Suite_FHFSoft
 
             dtPrecios = C.SQL("ARTICULOSPRECIOS_M " + vOpt + C.QII + PrecioID + C.QII+ vArticuloID + C.QII + Precio.Value + C.QII + 1 + C.QIS +
                                 FechaHora.Replace("p.m.", "PM").Replace("a.m.", "AM") + C.QSI + C.vUserID );
-            GRD.DataSource = dtPrecios;
 
-            bNuevo_Click(null, null);
-            MessageBox.Show("Guardado Con Exito",Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Information);
+            if(dtPrecios.Rows[0]["R"].ToString()=="0")
+            {
+                GRD.DataSource = dtPrecios;
+                bNuevo_Click(null, null);
+                MessageBox.Show("Guardado Con Exito", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+                GRD.DataSource = C.SQL("ARTICULOSPRECIOS_L " + vArticuloID);
+                MessageBox.Show(dtPrecios.Rows[0]["msgbox"].ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+            
+
+          
 
         }
 
@@ -77,7 +96,7 @@ namespace Suite_FHFSoft
 
         private void bNuevo_Click(object sender, EventArgs e)
         {
-            Fecha.Text = "";
+            Fecha.Value = DateTime.Today.Date;
             Hora.Text = "";
             Precio.Value = 0;
 

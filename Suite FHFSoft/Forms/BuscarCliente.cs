@@ -34,9 +34,10 @@ namespace Suite_FHFSoft
             {
                 if (Application.OpenForms[i].Name == vForm)
                 {
-                    if (vForm == "EntradaPedidos")
+                  
+                    if(vForm == "Facturacion")
                     {
-                        ((EntradaPedidos)Application.OpenForms[i]).vProveedorID = int.Parse(GRD.CurrentRow.Cells[0].Value.ToString());
+                        ((Facturacion)Application.OpenForms[i]).vClienteID = int.Parse(GRD.CurrentRow.Cells[0].Value.ToString());
                         this.Close();
                     }
                 }

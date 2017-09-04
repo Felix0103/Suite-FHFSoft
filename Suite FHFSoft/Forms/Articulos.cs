@@ -280,7 +280,7 @@ namespace Suite_FHFSoft
             form.vForm = this.Name;
             form.vArticuloID = Convert.ToInt32(GRD.CurrentRow.Cells[0].Value);
             form.ShowDialog();
-            
+            FillGrid();
 
         }
     }
