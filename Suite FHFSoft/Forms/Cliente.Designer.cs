@@ -49,8 +49,8 @@
             this.CiudadID = new Telerik.WinControls.UI.RadDropDownList();
             this.bDeshacer = new Telerik.WinControls.UI.RadButton();
             this.bSalir = new Telerik.WinControls.UI.RadButton();
-            this.PaisID = new Telerik.WinControls.UI.RadDropDownList();
             this.ProvinciaID = new Telerik.WinControls.UI.RadDropDownList();
+            this.PaisID = new Telerik.WinControls.UI.RadDropDownList();
             this.Apellido = new Telerik.WinControls.UI.RadTextBox();
             this.Codigo = new Telerik.WinControls.UI.RadTextBox();
             this.Nombre = new Telerik.WinControls.UI.RadTextBox();
@@ -90,8 +90,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CiudadID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDeshacer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bSalir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PaisID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProvinciaID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PaisID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apellido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Codigo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nombre)).BeginInit();
@@ -128,6 +128,7 @@
             this.bGuardar.Size = new System.Drawing.Size(110, 24);
             this.bGuardar.TabIndex = 27;
             this.bGuardar.Text = "&Guardar";
+            this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
             // 
             // GRD
             // 
@@ -155,7 +156,7 @@
             gridViewTextBoxColumn2.ReadOnly = true;
             gridViewTextBoxColumn2.Width = 85;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "Nombress";
+            gridViewTextBoxColumn3.FieldName = "NombreCompleto";
             gridViewTextBoxColumn3.HeaderText = "Nombre Completo";
             gridViewTextBoxColumn3.Name = "column1";
             gridViewTextBoxColumn3.ReadOnly = true;
@@ -179,7 +180,7 @@
             gridViewTextBoxColumn6.ReadOnly = true;
             gridViewTextBoxColumn6.Width = 250;
             gridViewCheckBoxColumn1.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn1.FieldName = "Active";
+            gridViewCheckBoxColumn1.FieldName = "Estatus";
             gridViewCheckBoxColumn1.HeaderText = "Estatus";
             gridViewCheckBoxColumn1.MinWidth = 20;
             gridViewCheckBoxColumn1.Name = "column5";
@@ -199,6 +200,8 @@
             this.GRD.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.GRD.Size = new System.Drawing.Size(849, 295);
             this.GRD.TabIndex = 32;
+            this.GRD.SelectionChanged += new System.EventHandler(this.MasterTemplate_SelectionChanged);
+            this.GRD.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.MasterTemplate_CellDoubleClick);
             // 
             // Celular
             // 
@@ -298,6 +301,7 @@
             this.bDeshacer.Size = new System.Drawing.Size(110, 24);
             this.bDeshacer.TabIndex = 30;
             this.bDeshacer.Text = "&Deshacer";
+            this.bDeshacer.Click += new System.EventHandler(this.bDeshacer_Click);
             // 
             // bSalir
             // 
@@ -306,20 +310,23 @@
             this.bSalir.Size = new System.Drawing.Size(110, 24);
             this.bSalir.TabIndex = 29;
             this.bSalir.Text = "&Salir";
-            // 
-            // PaisID
-            // 
-            this.PaisID.Location = new System.Drawing.Point(545, 101);
-            this.PaisID.Name = "PaisID";
-            this.PaisID.Size = new System.Drawing.Size(265, 20);
-            this.PaisID.TabIndex = 10;
+            this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
             // 
             // ProvinciaID
             // 
-            this.ProvinciaID.Location = new System.Drawing.Point(545, 76);
+            this.ProvinciaID.Location = new System.Drawing.Point(545, 101);
             this.ProvinciaID.Name = "ProvinciaID";
             this.ProvinciaID.Size = new System.Drawing.Size(265, 20);
-            this.ProvinciaID.TabIndex = 9;
+            this.ProvinciaID.TabIndex = 10;
+            this.ProvinciaID.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.ProvinciaID_SelectedIndexChanged);
+            // 
+            // PaisID
+            // 
+            this.PaisID.Location = new System.Drawing.Point(545, 76);
+            this.PaisID.Name = "PaisID";
+            this.PaisID.Size = new System.Drawing.Size(265, 20);
+            this.PaisID.TabIndex = 9;
+            this.PaisID.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.PaisID_SelectedIndexChanged);
             // 
             // Apellido
             // 
@@ -426,7 +433,7 @@
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.Size = new System.Drawing.Size(100, 18);
             this.radLabel9.TabIndex = 0;
-            this.radLabel9.Text = "Pais";
+            this.radLabel9.Text = "Provincia";
             this.radLabel9.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // radLabel11
@@ -446,7 +453,7 @@
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(100, 18);
             this.radLabel4.TabIndex = 0;
-            this.radLabel4.Text = "Provincia";
+            this.radLabel4.Text = "Pais";
             this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // radLabel7
@@ -543,8 +550,8 @@
             this.radGroupBox1.Controls.Add(this.Estatus);
             this.radGroupBox1.Controls.Add(this.Fecha);
             this.radGroupBox1.Controls.Add(this.CiudadID);
-            this.radGroupBox1.Controls.Add(this.PaisID);
             this.radGroupBox1.Controls.Add(this.ProvinciaID);
+            this.radGroupBox1.Controls.Add(this.PaisID);
             this.radGroupBox1.Controls.Add(this.Direccion);
             this.radGroupBox1.Controls.Add(this.Apellido);
             this.radGroupBox1.Controls.Add(this.Codigo);
@@ -624,8 +631,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CiudadID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDeshacer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bSalir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PaisID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProvinciaID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PaisID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apellido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Codigo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nombre)).EndInit();
@@ -673,8 +680,8 @@
         private Telerik.WinControls.UI.RadDropDownList CiudadID;
         private Telerik.WinControls.UI.RadButton bDeshacer;
         private Telerik.WinControls.UI.RadButton bSalir;
-        private Telerik.WinControls.UI.RadDropDownList PaisID;
         private Telerik.WinControls.UI.RadDropDownList ProvinciaID;
+        private Telerik.WinControls.UI.RadDropDownList PaisID;
         private Telerik.WinControls.UI.RadTextBox Apellido;
         private Telerik.WinControls.UI.RadTextBox Codigo;
         private Telerik.WinControls.UI.RadTextBox Nombre;

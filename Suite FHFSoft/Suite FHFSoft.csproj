@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publicar\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -99,9 +99,29 @@
     <Compile Include="Clases\Seguridad.cs" />
     <Compile Include="Forms\Articulos.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Forms\Articulos.Designer.cs">
       <DependentUpon>Articulos.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\BuscarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscarArticulo.Designer.cs">
+      <DependentUpon>BuscarArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscarCliente.Designer.cs">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscarProveedor.Designer.cs">
+      <DependentUpon>BuscarProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Cliente.cs">
       <SubType>Form</SubType>
@@ -163,6 +183,12 @@
     <Compile Include="Forms\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PrecioVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrecioVentas.Designer.cs">
+      <DependentUpon>PrecioVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +205,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Articulos.resx">
       <DependentUpon>Articulos.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BuscarArticulo.resx">
+      <DependentUpon>BuscarArticulo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BuscarCliente.resx">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BuscarProveedor.resx">
+      <DependentUpon>BuscarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
@@ -209,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrecioVentas.resx">
+      <DependentUpon>PrecioVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>
@@ -258,6 +300,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="if_Creative_Suite_63827.ico" />
+    <None Include="Resources\if_write 1_36589 %281%29.png" />
+    <None Include="Resources\if_write 1_36589.png" />
     <None Include="Resources\if_forward_36503.png" />
     <None Include="Resources\1481974794_shopcartadd_32x32.png" />
     <None Include="Resources\1481444391_search.png" />

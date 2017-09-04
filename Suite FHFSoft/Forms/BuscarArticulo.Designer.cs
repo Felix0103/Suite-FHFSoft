@@ -1,0 +1,184 @@
+﻿namespace Suite_FHFSoft
+{
+    partial class BuscarArticulo
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor3 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
+            this.GRD = new Telerik.WinControls.UI.RadGridView();
+            this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
+            this.radTitleBar1 = new Telerik.WinControls.UI.RadTitleBar();
+            ((System.ComponentModel.ISupportInitialize)(this.GRD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GRD.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // GRD
+            // 
+            this.GRD.BackColor = System.Drawing.Color.White;
+            this.GRD.Cursor = System.Windows.Forms.Cursors.Default;
+            this.GRD.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.GRD.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.GRD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.GRD.Location = new System.Drawing.Point(4, 87);
+            // 
+            // 
+            // 
+            this.GRD.MasterTemplate.AllowAddNewRow = false;
+            this.GRD.MasterTemplate.AutoGenerateColumns = false;
+            gridViewTextBoxColumn15.EnableExpressionEditor = false;
+            gridViewTextBoxColumn15.FieldName = "ArticuloID";
+            gridViewTextBoxColumn15.HeaderText = "column1";
+            gridViewTextBoxColumn15.IsVisible = false;
+            gridViewTextBoxColumn15.Name = "column1";
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.FieldName = "Codigo";
+            gridViewTextBoxColumn16.HeaderText = "Codigo";
+            gridViewTextBoxColumn16.Name = "Codigo";
+            gridViewTextBoxColumn16.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending;
+            gridViewTextBoxColumn16.Width = 66;
+            gridViewTextBoxColumn17.EnableExpressionEditor = false;
+            gridViewTextBoxColumn17.FieldName = "Descripcion";
+            gridViewTextBoxColumn17.HeaderText = "Articulo";
+            gridViewTextBoxColumn17.Name = "Articulo";
+            gridViewTextBoxColumn17.Width = 209;
+            gridViewTextBoxColumn18.EnableExpressionEditor = false;
+            gridViewTextBoxColumn18.FieldName = "Categoria";
+            gridViewTextBoxColumn18.HeaderText = "Categoria";
+            gridViewTextBoxColumn18.Name = "Categoria";
+            gridViewTextBoxColumn18.Width = 127;
+            gridViewTextBoxColumn19.EnableExpressionEditor = false;
+            gridViewTextBoxColumn19.FieldName = "UnidadMedida";
+            gridViewTextBoxColumn19.HeaderText = "Medida";
+            gridViewTextBoxColumn19.Name = "Medida";
+            gridViewTextBoxColumn19.Width = 119;
+            gridViewTextBoxColumn20.EnableExpressionEditor = false;
+            gridViewTextBoxColumn20.FieldName = "Precio";
+            gridViewTextBoxColumn20.HeaderText = "Precio";
+            gridViewTextBoxColumn20.Name = "Precio";
+            gridViewTextBoxColumn20.Width = 126;
+            gridViewTextBoxColumn21.EnableExpressionEditor = false;
+            gridViewTextBoxColumn21.FieldName = "ITBIS";
+            gridViewTextBoxColumn21.HeaderText = "ITBIS";
+            gridViewTextBoxColumn21.Name = "ITBIS";
+            gridViewTextBoxColumn21.Width = 105;
+            gridViewCheckBoxColumn3.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn3.FieldName = "Estatus";
+            gridViewCheckBoxColumn3.HeaderText = "Estado";
+            gridViewCheckBoxColumn3.MinWidth = 20;
+            gridViewCheckBoxColumn3.Name = "estatus";
+            gridViewCheckBoxColumn3.Width = 58;
+            this.GRD.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16,
+            gridViewTextBoxColumn17,
+            gridViewTextBoxColumn18,
+            gridViewTextBoxColumn19,
+            gridViewTextBoxColumn20,
+            gridViewTextBoxColumn21,
+            gridViewCheckBoxColumn3});
+            this.GRD.MasterTemplate.EnableFiltering = true;
+            this.GRD.MasterTemplate.ShowRowHeaderColumn = false;
+            sortDescriptor3.Direction = System.ComponentModel.ListSortDirection.Descending;
+            sortDescriptor3.PropertyName = "Codigo";
+            this.GRD.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
+            sortDescriptor3});
+            this.GRD.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            this.GRD.Name = "GRD";
+            this.GRD.ReadOnly = true;
+            this.GRD.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.GRD.Size = new System.Drawing.Size(816, 524);
+            this.GRD.TabIndex = 6;
+            this.GRD.Text = "radGridView1";
+            this.GRD.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.GRD_CellDoubleClick);
+            // 
+            // radLabel6
+            // 
+            this.radLabel6.AutoSize = false;
+            this.radLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel6.ForeColor = System.Drawing.Color.Blue;
+            this.radLabel6.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.radLabel6.Location = new System.Drawing.Point(291, 37);
+            this.radLabel6.Name = "radLabel6";
+            this.radLabel6.Size = new System.Drawing.Size(233, 44);
+            this.radLabel6.TabIndex = 5;
+            this.radLabel6.Text = "Articulos";
+            this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // radTitleBar1
+            // 
+            this.radTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radTitleBar1.Location = new System.Drawing.Point(0, 0);
+            this.radTitleBar1.Name = "radTitleBar1";
+            this.radTitleBar1.Size = new System.Drawing.Size(832, 34);
+            this.radTitleBar1.TabIndex = 4;
+            this.radTitleBar1.TabStop = false;
+            this.radTitleBar1.Text = "Buscar Articulo";
+            // 
+            // BuscarArticulo
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(832, 623);
+            this.Controls.Add(this.GRD);
+            this.Controls.Add(this.radLabel6);
+            this.Controls.Add(this.radTitleBar1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "BuscarArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Buscar Articulo";
+            this.Load += new System.EventHandler(this.BuscarArticulo_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BuscarArticulo_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.GRD.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GRD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private Telerik.WinControls.UI.RadGridView GRD;
+        private Telerik.WinControls.UI.RadLabel radLabel6;
+        private Telerik.WinControls.UI.RadTitleBar radTitleBar1;
+    }
+}

@@ -139,6 +139,9 @@
   <data name="1481449260_calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1481449260_calculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_write 1_36589" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_write 1_36589.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1481449800_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1481449800_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,6 +157,9 @@
   <data name="Marketing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Marketing.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_forward_36503" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_forward_36503.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="delete_Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_Cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,7 +172,7 @@
   <data name="integracover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\integracover.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_forward_36503" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_forward_36503.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_write 1_36589 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_write 1_36589 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

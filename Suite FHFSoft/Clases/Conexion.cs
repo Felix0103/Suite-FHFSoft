@@ -89,6 +89,10 @@ namespace Suite_FHFSoft
         {
             try
             {
+                if (dato.Length==0)
+                {
+                    return 0;
+                }
                 int date = Convert.ToInt32(dato);
                 return date;
             }
