@@ -10,9 +10,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using System.Data.SqlClient;
-using System.Data;
 using Telerik.WinControls.Themes;
-using Telerik.WinControls;
 using System.Reflection;
 
 namespace Suite_FHFSoft
@@ -157,7 +155,7 @@ namespace Suite_FHFSoft
 
             return;
 
-
+            /*
             tabItem[0] = new RibbonTab();
             tabItem[0].Text = "Manage";
             radRibbonBar1.CommandTabs.Add(tabItem[0]);
@@ -206,7 +204,7 @@ namespace Suite_FHFSoft
 
 
             radRibbonBarButtonGroup1.Items.AddRange(new RadItem[] { radButtonElement[1], radButtonElement[2] });
-            radRibbonBarGroup[1].Items.Add(radRibbonBarButtonGroup1);
+            radRibbonBarGroup[1].Items.Add(radRibbonBarButtonGroup1);*/
 
         }
 

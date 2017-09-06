@@ -44,10 +44,14 @@ namespace Suite_FHFSoft
                 TipodeComprobanteID.Focus();
                 return false;
             }
-
-            if (FormadePagoID.SelectedItems.Count ==0)
+            int ii = 0;
+            for (int i = 0; i < FormadePagoID.Items.Count; i++)
             {
-                MessageBox.Show("No puede Procesar una Orden de Compras si un tipo de Comprobante ", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if(FormadePagoID.Items[i].Checked) { ii = 1;break; }
+            }
+            if (ii ==0)
+            {
+                MessageBox.Show("No puede Procesar una Orden de Compras si una Forma de Pago ", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 TipodeComprobanteID.Focus();
                 return false;
             }
@@ -250,7 +254,6 @@ namespace Suite_FHFSoft
         {
             decimal Subtotal = 0;
             decimal itbis = 0;
-            decimal total = 0;
             foreach (DataRow vRows in dtOrdenCompras.Rows)
             {
                 Subtotal += Convert.ToDecimal(vRows["Importe"].ToString())-( Convert.ToDecimal(vRows["ItbisPorciento"].ToString()) * Convert.ToDecimal(vRows["Importe"].ToString()));
@@ -274,11 +277,23 @@ namespace Suite_FHFSoft
 
 
         }
+
+        private void Bloquear()
+        {
+            radGroupBox1.Enabled = false;
+            radGroupBox2.Enabled = false;
+            bAddArticulo.Enabled = false;
+
+        }
         #endregion FINAL DE LOS METODOS
 
         public void CargarOrden()
         {
-            dtOrdenCompras = C.SQL("ORDENCOMPRAS_L " + vOrdenCompras);
+            Limpiar();
+            
+
+
+
             DataRow vRow = dtOrdenCompras.Rows[0];
             vProveedorID = int.Parse(vRow["ProveedorID"].ToString());
             if (vProveedorID > 0)
@@ -286,9 +301,33 @@ namespace Suite_FHFSoft
                 BuscarProveedores(vProveedorID);
             }
 
+            vOrdenCompras = int.Parse(vRow["OrdenCompraId"].ToString());
             Fecha.Value = C.Cdate(vRow["Fecha"].ToString());
             TipodeComprobanteID.SelectedValue = C.Cint(vRow["TipoComprobanteID"].ToString());
             NoComprobantes.Text = vRow["NoComprobante"].ToString();
+            OrdenNumber.Text= vRow["OrdenCompraID"].ToString();
+            Vendedor.Text= vRow["Usuario"].ToString();
+
+            //formas de pago
+            string Formasdepagos = vRow["Formasdepago"].ToString();
+            int vv = 0;
+            int indexof = 0;
+
+            while (Formasdepagos.Length>0)
+            {
+                indexof = (Formasdepagos.IndexOf(",") == -1 ? Formasdepagos.Length : Formasdepagos.IndexOf(","));
+                vv =int.Parse(Formasdepagos.Substring(0, indexof));
+                for (int i = 0; i < FormadePagoID.Items.Count; i++)
+                {
+                    if(FormadePagoID.Items[i].Value.ToString()==vv.ToString())
+                    {
+                        FormadePagoID.Items[i].Checked = true;
+                    }
+                }
+                if (indexof == Formasdepagos.Length) { break; }
+                Formasdepagos = Formasdepagos.Substring(indexof+1, Formasdepagos.Length- (indexof+1));
+            }
+
 
             Calcular();
             GRD.DataSource = dtOrdenCompras;
@@ -301,8 +340,8 @@ namespace Suite_FHFSoft
             Limpiar();
             dtOrdenCompras = C.SQL("ORDENCOMPRAS_L 0");
             GRD.DataSource = dtOrdenCompras;
-            vOrdenCompras = 18;
-            CargarOrden();
+            // vOrdenCompras = 18;
+            if (vOrdenCompras > 0) { CargarOrden(); }
         }
 
         private void bBuscarProveedor_Click(object sender, EventArgs e)
@@ -335,75 +374,85 @@ namespace Suite_FHFSoft
 
         private void bGuardar_Click(object sender, EventArgs e)
         {
-            if (!ValidarTodo()) { return; }
-            if (GRD.RowCount == 0)
-            { MessageBox.Show("No se Puede Guardar una Orden de Compras vacia, agrege articulos a la lista e intente de nuevo",
-                Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-            }
-
-            string Formaspago = "";
-
-            if (FormadePagoID.SelectedItems.Count > 0)
+            try
             {
-                for (int i = 0; i < FormadePagoID.Items.Count - 1; i++)
-                {
-                    if (FormadePagoID.Items[i].Checked)
-                    {
-                        Formaspago += (Formaspago.Length > 0 ? "," : "") + FormadePagoID.Items[i].Value.ToString();
+
+          
+                    if (!ValidarTodo()) { return; }
+                    if (GRD.RowCount == 0)
+                    { MessageBox.Show("No se Puede Guardar una Orden de Compras vacia, agrege articulos a la lista e intente de nuevo",
+                        Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                     }
 
-                }
-            }
+                    string Formaspago = "";
 
-            string sqlString = "";
+                 
+                        for (int i = 0; i <= FormadePagoID.Items.Count - 1; i++)
+                        {
+                            if (FormadePagoID.Items[i].Checked)
+                            {
+                                Formaspago += (Formaspago.Length > 0 ? "," : "") + FormadePagoID.Items[i].Value.ToString();
+                            }
 
-            sqlString = "Set nocount on; ";
-            sqlString += "Declare @OrdenID int;  set @ordenid =0";
-            
-            if(vOpt==0)
-            {
-                foreach (DataRow vRow in dtOrdenCompras.Rows)
-                {
-                    sqlString += "Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value + C.QSI +
-                    (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
-                    C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
-                    vRow["Lote"].ToString() + C.QSS + vRow["FechaExpiracion"].ToString() + C.QSI + vRow["Cantidad"].ToString() + ", @OrdenID output ";
-                }
-            }
-            else
-            {
-                int addnew = 0;
-
-                foreach (DataRow vRow in dtOrdenCompras.Rows)
-                {
-                    if(vRow["edit"].ToString()!="-1")
-                    {
-                        sqlString += "Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value + C.QSI +
-                    (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
-                    C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
-                    vRow["Lote"].ToString() + C.QSS + vRow["FechaExpiracion"].ToString() + C.QSI + vRow["Cantidad"].ToString() + ", @OrdenID output ";
-                        addnew = 1;
-                    }
+                        }
                     
-                }
 
-                if(addnew==0)
-                {
-                    DataRow vRow = dtOrdenCompras.Rows[0];
-                    sqlString += "Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value + C.QSI +
-                   (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
-                   C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
-                   vRow["Lote"].ToString() + C.QSS + vRow["FechaExpiracion"].ToString() + C.QSI + vRow["Cantidad"].ToString() + ", @OrdenID output ";
-                }
+                    string sqlString = "";
+
+                    sqlString = "Set nocount on; ";
+                    sqlString += "Declare @OrdenID int;  set @ordenid = " + (vOrdenCompras==0?0: vOrdenCompras);
+            
+                    if(vOpt==0)
+                    {
+                        foreach (DataRow vRow in dtOrdenCompras.Rows)
+                        {
+                            sqlString += " Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value + C.QSI +
+                            (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
+                            C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
+                            vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year==1?"NULL":"'" + vRow["FechaExpiracion"].ToString() +"'") + C.QII + vRow["Cantidad"].ToString() + ", @OrdenID output ";
+                        }
+                    }
+                    else
+                    {
+                        int addnew = 0;
+
+                        foreach (DataRow vRow in dtOrdenCompras.Rows)
+                        {
+                            if(vRow["edit"].ToString()!="-1")
+                            {
+                                sqlString += " Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value + C.QSI +
+                            (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
+                            C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
+                            vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year == 1 ? "NULL" : "'" + vRow["FechaExpiracion"].ToString() + "'") + C.QII + vRow["Cantidad"].ToString() + ", @OrdenID output ";
+                                addnew = 1;
+                            }
+                    
+                        }
+
+                        if(addnew==0)
+                        {
+                            DataRow vRow = dtOrdenCompras.Rows[0];
+                            sqlString += " Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value + C.QSI +
+                           (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
+                           C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
+                           vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year == 1 ? "NULL" : "'" + vRow["FechaExpiracion"].ToString() + "'") + C.QII + vRow["Cantidad"].ToString() + ", @OrdenID output ";
+                        }
+
+                    }
+
+
+
+                    dtOrdenCompras = C.SQL(sqlString + " exec ('ORDENCOMPRAS_L ' + @OrdenID)");
+                    CargarOrden();
+                    MessageBox.Show("Orden de Compras Guardada", Application.ProductName,MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            catch (Exception m)
+            {
 
+                MessageBox.Show(m.Message,Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
 
-
-            dtOrdenCompras = C.SQL(sqlString );
-
-
-            
         }
 
         private void bAddArticulo_Click(object sender, EventArgs e)
@@ -480,7 +529,7 @@ namespace Suite_FHFSoft
                         vRow["Costo"] = Costo.Value;
                         vRow["Lote"] = Lote.Text;
                         vRow["UnidadMedida"] = Unidad.Text;
-                        vRow["FechaExpiracion"] = FechaExpiracion.Value.Date;
+                        vRow["FechaExpiracion"] = (FechaExpiracion.Value);
                         vRow["Cantidad"] = Cantidad.Value;
                         vRow["Importe"] = importes;
                         vRow["ITBIS"] = Itbis;
@@ -510,7 +559,7 @@ namespace Suite_FHFSoft
                   
                     vRow["EDIT"] = 1;
                     vRow["Lote"] =Lote.Text;
-                    vRow["FechaExpiracion"] =FechaExpiracion.Value.Date;
+                    vRow["FechaExpiracion"] = (FechaExpiracion.Value.Date);
                     vRow["Costo"] =Costo.Value;
                     vRow["Cantidad"] =Cantidad.Value;
                 }
@@ -688,6 +737,12 @@ namespace Suite_FHFSoft
 
         private void bProcesar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void bEdit_Click(object sender, EventArgs e)
+        {
+            vOpt = 1;
 
         }
     }
