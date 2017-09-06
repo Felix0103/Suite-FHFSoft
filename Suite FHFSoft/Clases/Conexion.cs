@@ -73,6 +73,11 @@ namespace Suite_FHFSoft
         {
             try
             {
+                if (dato == "") {
+                    DateTime data = new DateTime();
+                    return data;
+                }
+
                 DateTime date = Convert.ToDateTime(dato);
                 return date;
             }
