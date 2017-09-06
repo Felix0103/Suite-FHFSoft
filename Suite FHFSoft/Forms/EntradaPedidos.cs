@@ -23,6 +23,7 @@ namespace Suite_FHFSoft
         int Contador = -3000;
         int vedit =0;
         int vOpt = 0;
+        int vLock = 0;
         public EntradaPedidos()
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace Suite_FHFSoft
                 return false;
             }
 
+            return true;
             if (TipodeComprobanteID.SelectedValue == null || TipodeComprobanteID.Text.Length == 0)
             {
                 MessageBox.Show("No puede Procesar una Orden de Compras si un tipo de Comprobante ", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -269,20 +271,57 @@ namespace Suite_FHFSoft
 
         private void Limpiar()
         {
+
+            GRD.ShowRowHeaderColumn = true;
+            GRD.Columns[1].IsVisible = false;
             TipodeComprobanteID.Text = "";
             FormadePagoID.Text = "";
             Fecha.Value = DateTime.Today;
             clearProveedor();
             OrdenNumber.Text = "";
-
+            DataTable dd = C.SQL("ORDENCOMPRAS_L 0");
+            GRD.DataSource = dd;
+            vLock = 0;
 
         }
 
+        private void ModificarProcesar()
+        {
+            GRD.ShowRowHeaderColumn = false;
+            GRD.Columns[1].IsVisible = true;
+        }
+        private void Procesar()
+        {
+            string sqlString = " set nocount on ";
+            foreach (DataRow vRow in dtOrdenCompras.Rows)
+            {
+                sqlString += " Exec KARDEX_M 0," + vRow["ArticuloId"] + C.QII + vRow["Cantidad"] + C.QIS +
+                    DateTime.Today.Date + C.QSI + C.vUserID + C.QII + vRow["OrdencompraId"] + C.QII + vRow["ORDENCOMPRASDETALLEID"] ;
+                
+
+            }
+
+            DataTable Result = C.SQL(sqlString + " Select R=0");
+
+            if(Result.Rows[0][0].ToString()=="0")
+            {
+                MessageBox.Show("Entrada de todos los articulos Correctamente ",Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al Procesar entrada", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
         private void Bloquear()
         {
-            radGroupBox1.Enabled = false;
-            radGroupBox2.Enabled = false;
-            bAddArticulo.Enabled = false;
+            vLock = 1;
+            lblStatus.Text = "Editable";
+
+        }
+        private void Desbloquear()
+        {
+            vLock = 0;
 
         }
         #endregion FINAL DE LOS METODOS
@@ -290,7 +329,7 @@ namespace Suite_FHFSoft
         public void CargarOrden()
         {
             Limpiar();
-            
+            Bloquear();
 
 
 
@@ -298,7 +337,9 @@ namespace Suite_FHFSoft
             vProveedorID = int.Parse(vRow["ProveedorID"].ToString());
             if (vProveedorID > 0)
             {
+                vLock = 0;
                 BuscarProveedores(vProveedorID);
+                vLock = 1;
             }
 
             vOrdenCompras = int.Parse(vRow["OrdenCompraId"].ToString());
@@ -356,10 +397,12 @@ namespace Suite_FHFSoft
             {
                 BuscarProveedor();
             }
+            
         }
 
         private void CodigoProveedor_TextChanged(object sender, EventArgs e)
         {
+            
             if(Nombre.Text.Length>0)
             {
                 clearProveedor();
@@ -376,6 +419,7 @@ namespace Suite_FHFSoft
         {
             try
             {
+                if (vLock == 1) { return; }
 
           
                     if (!ValidarTodo()) { return; }
@@ -693,7 +737,7 @@ namespace Suite_FHFSoft
 
         private void GRD_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
-            if (GRD.RowCount == 0) { return; }
+            if (GRD.RowCount == 0 || !radGroupBox3.Enabled) { return; }
 
             vORDENCOMPRASDETALLEID = int.Parse(GRD.CurrentRow.Cells[0].Value.ToString());
                 
@@ -737,13 +781,40 @@ namespace Suite_FHFSoft
 
         private void bProcesar_Click(object sender, EventArgs e)
         {
+            if (vOpt == 0) { return; }
 
+            //Poner aqui que si un articulo se guarda por serie no pregunte y pase a introducir las serieas
+            if (MessageBox.Show("Necesitas hacer modificaciones a la orden de compra (Cantidad de Articulos,Precio, Lote, Fecha Expiracion", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                ModificarProcesar();
+            }
+            else
+            {
+                Procesar();
+            }
         }
 
         private void bEdit_Click(object sender, EventArgs e)
         {
+            if (vLock == 0) { return; }
             vOpt = 1;
+            lblStatus.Text = "Editando";
 
+        }
+
+        private void CodigoProveedor_TextChanging(object sender, Telerik.WinControls.TextChangingEventArgs e)
+        {
+            if (vLock == 1)
+            { e.Cancel=true; }
+        }
+
+        private void bNuevo_Click(object sender, EventArgs e)
+        {
+            vLock = 0;
+            vOpt = 0;
+            lblStatus.Text = "Creacion";
+            Limpiar();
+            
         }
     }
 }
