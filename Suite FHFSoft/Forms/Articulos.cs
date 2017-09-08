@@ -283,5 +283,17 @@ namespace Suite_FHFSoft
             FillGrid();
 
         }
+
+        private void kardexToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Kardex form = new Kardex();
+            form.vArticuloID = Convert.ToInt32(GRD.CurrentRow.Cells[0].Value);
+            form.ShowDialog();
+        }
+
+        private void GRD_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
+        {
+            
+        }
     }
 }

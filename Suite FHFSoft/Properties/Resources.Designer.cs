@@ -183,6 +183,26 @@ namespace Suite_FHFSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_save_as_36557 {
+            get {
+                object obj = ResourceManager.GetObject("if_save as_36557", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_shopping_cart_36567 {
+            get {
+                object obj = ResourceManager.GetObject("if_shopping cart_36567", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_write_1_36589 {
             get {
                 object obj = ResourceManager.GetObject("if_write 1_36589", resourceCulture);

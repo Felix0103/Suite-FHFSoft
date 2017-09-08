@@ -159,6 +159,7 @@
             this.Controls.Add(this.radLabel6);
             this.Controls.Add(this.radTitleBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BuscarCliente";

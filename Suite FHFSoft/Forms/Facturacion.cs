@@ -17,6 +17,7 @@ namespace Suite_FHFSoft
         public int vArticuloID = 0;
         decimal ItbisPorciento = 0;
         DataTable dtFactura = new DataTable();
+        DataTable dtArticulos = new DataTable();
         int Contador = -3000;
 
         public Facturacion()
@@ -94,6 +95,8 @@ namespace Suite_FHFSoft
                             (vRow["Ciudad"].ToString().Length > 2 ? vRow["Ciudad"].ToString() + "," : "") + vRow["Pais"].ToString();
             Cedula.Text = vRow["Cedula"].ToString();
             Desc.Value= vRow["Descuento"].ToString();
+            Desc.Visible = (Convert.ToDecimal(Desc.Value) == 0 ? false : true);
+            radLabel28.Visible= (Convert.ToDecimal(Desc.Value) == 0 ? false : true);
             TipodeComprobanteID.SelectedValue =( C.Cint(vRow["TipoComprobanteID"].ToString())==0?2: C.Cint(vRow["TipoComprobanteID"].ToString()));
 
             CodigoA.Focus();
@@ -134,7 +137,7 @@ namespace Suite_FHFSoft
 
         private void BuscarArticulos(int vArticulos)
         {
-            DataTable dtArticulos = C.SQL("Articulos_L " + vArticulos);
+            dtArticulos = C.SQL("Articulos_L " + vArticulos);
 
             if (dtArticulos.Rows.Count == 0)
             {
@@ -157,7 +160,7 @@ namespace Suite_FHFSoft
         }
         private void BuscarArticulosCodigo(string vArticulos)
         {
-            DataTable dtArticulos = C.SQL("Articulos_L Null,'" + vArticulos + C.QS);
+            dtArticulos = C.SQL("Articulos_L Null,'" + vArticulos + C.QS);
 
             if (dtArticulos.Rows.Count == 0)
             {
@@ -187,6 +190,11 @@ namespace Suite_FHFSoft
                 MessageBox.Show("Este Articulo no tiene Precio definido, favor hable con su supervisor para poder facturar este articulo",Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 return;
             }
+            if (vRow["StockActual"].ToString() == "0.0000")
+            {
+                MessageBox.Show("Este Articulo no tiene Existencia, favor hablar con su supervisor para poder facturar", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             CodigoA.Text = vRow["Codigo"].ToString();
             Descripcion.Text = vRow["Descripcion"].ToString();
             Unidad.Text = vRow["UnidadMedida"].ToString();
@@ -209,6 +217,7 @@ namespace Suite_FHFSoft
             ItbisPorciento = 0;
             vArticuloID = 0;
 
+
         }
 
         private void NewFactura()
@@ -219,6 +228,19 @@ namespace Suite_FHFSoft
             GRD.DataSource = dtFactura;
 
 
+        }
+
+        private void Calcular()
+        {
+            decimal subtotal = 0;
+            decimal totalItbis = 0;
+            foreach (DataRow vRow in dtFactura.Rows)
+            {
+                subtotal += ((Convert.ToDecimal(vRow["Precioactual"].ToString()) * Convert.ToDecimal(vRow["Cantidad"].ToString())));
+
+            }
+
+            SubtotalF.Value = subtotal;
         }
         #endregion FINAL DE METODOS ADICIONALES
 
@@ -267,6 +289,13 @@ namespace Suite_FHFSoft
 
         private void bAddArticulo_Click(object sender, EventArgs e)
         {
+            if(vClienteID==0 || Codigo.Text.Length==0)
+            {
+                MessageBox.Show("Debes indicar el Cliente antes de iniciar a Facturar", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Codigo.Focus();
+                return;
+            }
+
             if (vArticuloID == 0 || Descripcion.Text.Length == 0)
             {
                 MessageBox.Show("Indique que articulo desea Facturar", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -281,6 +310,13 @@ namespace Suite_FHFSoft
                 return;
             }
 
+            if (Convert.ToDecimal(Existencia.Text)  < Convert.ToDecimal(Cantidad.Value.ToString()))
+            {
+                MessageBox.Show((Convert.ToDecimal(Existencia.Text) == 0 ? "Este Articulo no Tiene existencia Para facturar" : "La Cantidad de Articulos que deseas Facturar es mayor a la disponible en su inventario"),
+                    Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Cantidad.Focus();
+                return;
+            }
 
             dtFactura.PrimaryKey = new DataColumn[] { dtFactura.Columns["ArticuloID"] };
 
@@ -290,7 +326,8 @@ namespace Suite_FHFSoft
             {
                 dtFactura.PrimaryKey = new DataColumn[] { dtFactura.Columns["FacturaDetalleID"] };
                 decimal importes = (Convert.ToDecimal(Precio.Text) * Convert.ToDecimal(Cantidad.Text));
-                decimal Itbisamount = importes * ItbisPorciento;
+                decimal Itbisamount = (Convert.ToDecimal(Precio.Text) * Convert.ToDecimal(dtArticulos.Rows[0]["ITBISPorciento"].ToString()));
+                decimal precioActual = Convert.ToDecimal(Precio.Text)-(Convert.ToDecimal(Precio.Text) * Convert.ToDecimal(dtArticulos.Rows[0]["ITBISPorciento"].ToString())) ;
 
                 DataRow vRow = dtFactura.NewRow();
                 vRow["Edit"] = 0;
@@ -298,16 +335,40 @@ namespace Suite_FHFSoft
                 vRow["Descripcion"] = Descripcion.Text;
                 vRow["Codigo"] = CodigoA.Text;
                 vRow["ArticuloID"] = vArticuloID;
-                vRow["PrecioActual"] = Precio.Value;
+                vRow["PrecioActual"] = precioActual;
+                vRow["ArticuloPrecioID"] = dtArticulos.Rows[0]["PrecioActualId"].ToString();
                 vRow["UnidadMedida"] = Unidad.Text;
                 vRow["Cantidad"] = Cantidad.Value;
-                vRow["Importe"] = importes;
+                vRow["ItbisID"] = dtArticulos.Rows[0]["ItbisID"].ToString();
+                vRow["Importe"] = importes - (importes * Convert.ToDecimal(Desc.Value));
+                vRow["Descuento"] = importes * Convert.ToDecimal(Desc.Value);
                 vRow["ITBISAMOUNT"] = Itbisamount;
                
 
                 Contador++;
                 dtFactura.Rows.Add(vRow);
             }
+            else
+            {
+                if (Convert.ToDecimal(Existencia.Text) - Convert.ToDecimal(vRowActual["Cantidad"].ToString())  < Convert.ToDecimal(Cantidad.Value.ToString()))
+                {
+                    MessageBox.Show((Convert.ToDecimal(Existencia.Text) == 0 ? "No hay articulos Disponibles para Facturar" : "La Cantidad de Articulos que deseas Facturar es mayor a la disponible en su inventario"),
+                        Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+
+                vRowActual["Cantidad"] = Convert.ToInt32( vRowActual["Cantidad"].ToString()) + Convert.ToInt32( Cantidad.Value);
+                decimal importes = (Convert.ToDecimal(Precio.Text) * Convert.ToDecimal(vRowActual["Cantidad"].ToString()));
+                vRowActual["Importe"] = importes - (importes * Convert.ToDecimal(Desc.Value));
+
+
+
+
+            }
+
+            Calcular();
+            LimpiarArticulo();
+            CodigoA.Focus();
 
         }
 
@@ -329,6 +390,19 @@ namespace Suite_FHFSoft
             if(e.KeyValue==13)
             {
                 buscarArticulo();
+            }
+        }
+
+        private void Cantidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13) { bAddArticulo_Click(null, null); }
+        }
+
+        private void GRD_CellValueNeeded(object sender, Telerik.WinControls.UI.GridViewCellValueEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == e.Column.Index)
+            {
+                e.Value = e.RowIndex + 1;
             }
         }
     }

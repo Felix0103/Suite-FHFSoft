@@ -81,6 +81,7 @@
             this.GRD = new Telerik.WinControls.UI.RadGridView();
             this.CambioPrecio = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.actualizarPrecioDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kardexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox4)).BeginInit();
@@ -600,15 +601,17 @@
             this.GRD.Size = new System.Drawing.Size(883, 295);
             this.GRD.TabIndex = 52;
             this.GRD.SelectionChanged += new System.EventHandler(this.MasterTemplate_SelectionChanged);
+            this.GRD.CellClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.GRD_CellClick);
             this.GRD.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.MasterTemplate_CellDoubleClick);
             // 
             // CambioPrecio
             // 
             this.CambioPrecio.AccessibleRole = System.Windows.Forms.AccessibleRole.Alert;
             this.CambioPrecio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.actualizarPrecioDeVentasToolStripMenuItem});
+            this.actualizarPrecioDeVentasToolStripMenuItem,
+            this.kardexToolStripMenuItem});
             this.CambioPrecio.Name = "CambioPrecio";
-            this.CambioPrecio.Size = new System.Drawing.Size(216, 26);
+            this.CambioPrecio.Size = new System.Drawing.Size(216, 48);
             // 
             // actualizarPrecioDeVentasToolStripMenuItem
             // 
@@ -617,6 +620,13 @@
             this.actualizarPrecioDeVentasToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.actualizarPrecioDeVentasToolStripMenuItem.Text = "Actualizar Precio de Ventas";
             this.actualizarPrecioDeVentasToolStripMenuItem.Click += new System.EventHandler(this.actualizarPrecioDeVentasToolStripMenuItem_Click);
+            // 
+            // kardexToolStripMenuItem
+            // 
+            this.kardexToolStripMenuItem.Name = "kardexToolStripMenuItem";
+            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.kardexToolStripMenuItem.Text = "Kardex";
+            this.kardexToolStripMenuItem.Click += new System.EventHandler(this.kardexToolStripMenuItem_Click);
             // 
             // Articulos
             // 
@@ -728,5 +738,6 @@
         private Telerik.WinControls.UI.RadGridView GRD;
         private System.Windows.Forms.ContextMenuStrip CambioPrecio;
         private System.Windows.Forms.ToolStripMenuItem actualizarPrecioDeVentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kardexToolStripMenuItem;
     }
 }

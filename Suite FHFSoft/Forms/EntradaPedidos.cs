@@ -20,10 +20,12 @@ namespace Suite_FHFSoft
         string Itbis = "";
         decimal ItbisPorciento = 0;
         public DataTable dtOrdenCompras = new DataTable();
+        DataTable dtSurcursal = new DataTable();
         int Contador = -3000;
         int vedit =0;
         int vOpt = 0;
         int vLock = 0;
+        int Prosesada = 0;
         public EntradaPedidos()
         {
             InitializeComponent();
@@ -36,6 +38,13 @@ namespace Suite_FHFSoft
             {
                 MessageBox.Show("No puede Procesar una Orden de Compras sin definir un Proveedor",Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 CodigoProveedor.Focus();
+                return false;
+            }
+
+            if (AlmacenID.SelectedValue == null || AlmacenID.Text.Length == 0)
+            {
+                MessageBox.Show("No puede Procesar una Orden de Compras sin definir un Almacen de Destino", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                AlmacenID.Focus();
                 return false;
             }
 
@@ -85,6 +94,7 @@ namespace Suite_FHFSoft
         private void buscarArticulo()
         {
             vArticulo = 0;
+            if (Prosesada == 1) { MessageBox.Show("Esta Orden ya Fue Procesada, Cree una nueva para poder agregar mas Articulos",Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Information); return; }
 
             if (CodigoA.Text.Length == 0)
             {
@@ -249,6 +259,10 @@ namespace Suite_FHFSoft
             FormadePagoID.ValueMember = "FormasPagosID";
             FormadePagoID.DataSource = C.SQL("FORMASPAGOS_L");
 
+            AlmacenID.DisplayMember = "Descripcion";
+            AlmacenID.ValueMember = "SucursalID";
+            dtSurcursal = C.SQL("SUCURSAL_L " + C.vPerfilID);
+            AlmacenID.DataSource = dtSurcursal;
 
         }
 
@@ -279,6 +293,10 @@ namespace Suite_FHFSoft
             Fecha.Value = DateTime.Today;
             clearProveedor();
             OrdenNumber.Text = "";
+            AlmacenID.Text = "";
+            AlmacenID.SelectedValue = (dtSurcursal.Rows.Count == 1 ? Convert.ToInt64(dtSurcursal.Rows[0]["SucursalID"].ToString()) :0);
+
+
             DataTable dd = C.SQL("ORDENCOMPRAS_L 0");
             GRD.DataSource = dd;
             vLock = 0;
@@ -296,7 +314,8 @@ namespace Suite_FHFSoft
             foreach (DataRow vRow in dtOrdenCompras.Rows)
             {
                 sqlString += " Exec KARDEX_M 0," + vRow["ArticuloId"] + C.QII + vRow["Cantidad"] + C.QIS +
-                    DateTime.Today.Date + C.QSI + C.vUserID + C.QII + vRow["OrdencompraId"] + C.QII + vRow["ORDENCOMPRASDETALLEID"] ;
+                    DateTime.Today.Date + C.QSI + C.vUserID + C.QII + vRow["OrdencompraId"] + C.QII + vRow["ORDENCOMPRASDETALLEID"] + C.QII +
+                    (AlmacenID.SelectedValue==null?"Null": AlmacenID.SelectedValue.ToString());
                 
 
             }
@@ -306,6 +325,8 @@ namespace Suite_FHFSoft
             if(Result.Rows[0][0].ToString()=="0")
             {
                 MessageBox.Show("Entrada de todos los articulos Correctamente ",Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Prosesada = 1;
+                lblStatus.Text = "Orden Procesada";
             }
             else
             {
@@ -348,7 +369,8 @@ namespace Suite_FHFSoft
             NoComprobantes.Text = vRow["NoComprobante"].ToString();
             OrdenNumber.Text= vRow["OrdenCompraID"].ToString();
             Vendedor.Text= vRow["Usuario"].ToString();
-
+            Prosesada = C.Cint(vRow["Process"].ToString());
+            lblStatus.Text = (Prosesada == 1 ? "Orden Procesada" : "Editable");
             //formas de pago
             string Formasdepagos = vRow["Formasdepago"].ToString();
             int vv = 0;
@@ -378,7 +400,7 @@ namespace Suite_FHFSoft
         {
             Vendedor.Text = C.vUserName;
             FillCombo();
-            Limpiar();
+            bNuevo_Click(null, null);
             dtOrdenCompras = C.SQL("ORDENCOMPRAS_L 0");
             GRD.DataSource = dtOrdenCompras;
             // vOrdenCompras = 18;
@@ -419,6 +441,7 @@ namespace Suite_FHFSoft
         {
             try
             {
+                if (Prosesada == 1) { MessageBox.Show("Esta Orden ya Fue Procesada,No Puede Guardar cambios ", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
                 if (vLock == 1) { return; }
 
           
@@ -453,7 +476,8 @@ namespace Suite_FHFSoft
                             sqlString += " Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value + C.QSI +
                             (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
                             C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
-                            vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year==1?"NULL":"'" + vRow["FechaExpiracion"].ToString() +"'") + C.QII + vRow["Cantidad"].ToString() + ", @OrdenID output ";
+                            vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year==1?"NULL":"'" + vRow["FechaExpiracion"].ToString() +"'") + C.QII + vRow["Cantidad"].ToString() + C.QII +
+                            AlmacenID.SelectedValue.ToString() + ", @OrdenID output ";
                         }
                     }
                     else
@@ -467,7 +491,8 @@ namespace Suite_FHFSoft
                                 sqlString += " Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value + C.QSI +
                             (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
                             C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
-                            vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year == 1 ? "NULL" : "'" + vRow["FechaExpiracion"].ToString() + "'") + C.QII + vRow["Cantidad"].ToString() + ", @OrdenID output ";
+                            vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year == 1 ? "NULL" : "'" + vRow["FechaExpiracion"].ToString() + "'") + C.QII + vRow["Cantidad"].ToString() + C.QII +
+                            AlmacenID.SelectedValue.ToString() + ", @OrdenID output ";
                                 addnew = 1;
                             }
                     
@@ -479,7 +504,8 @@ namespace Suite_FHFSoft
                             sqlString += " Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value + C.QSI +
                            (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
                            C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
-                           vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year == 1 ? "NULL" : "'" + vRow["FechaExpiracion"].ToString() + "'") + C.QII + vRow["Cantidad"].ToString() + ", @OrdenID output ";
+                           vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year == 1 ? "NULL" : "'" + vRow["FechaExpiracion"].ToString() + "'") + C.QII + vRow["Cantidad"].ToString() + C.QII +
+                            AlmacenID.SelectedValue.ToString() + ", @OrdenID output ";
                         }
 
                     }
@@ -781,6 +807,8 @@ namespace Suite_FHFSoft
 
         private void bProcesar_Click(object sender, EventArgs e)
         {
+
+            if (Prosesada == 1) { MessageBox.Show("Esta Orden ya Fue Procesada, no Puede ser procesada nuevamente", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
             if (vOpt == 0) { return; }
 
             //Poner aqui que si un articulo se guarda por serie no pregunte y pase a introducir las serieas
@@ -796,6 +824,7 @@ namespace Suite_FHFSoft
 
         private void bEdit_Click(object sender, EventArgs e)
         {
+            if (Prosesada == 1) { MessageBox.Show("Esta Orden ya Fue Procesada, No puede Ser Editada", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
             if (vLock == 0) { return; }
             vOpt = 1;
             lblStatus.Text = "Editando";
@@ -815,6 +844,11 @@ namespace Suite_FHFSoft
             lblStatus.Text = "Creacion";
             Limpiar();
             
+        }
+
+        private void bNotas_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
