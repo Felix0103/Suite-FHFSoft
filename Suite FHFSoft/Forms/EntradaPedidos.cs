@@ -314,7 +314,7 @@ namespace Suite_FHFSoft
             foreach (DataRow vRow in dtOrdenCompras.Rows)
             {
                 sqlString += " Exec KARDEX_M 0," + vRow["ArticuloId"] + C.QII + vRow["Cantidad"] + C.QIS +
-                    DateTime.Today.Date + C.QSI + C.vUserID + C.QII + vRow["OrdencompraId"] + C.QII + vRow["ORDENCOMPRASDETALLEID"] + C.QII +
+                    DateTime.Today.Date.ToString().Replace("a.m.", "AM").Replace("p.m.", "PM") + C.QSI + C.vUserID + C.QII + vRow["OrdencompraId"] + C.QII + vRow["ORDENCOMPRASDETALLEID"] + C.QII +
                     (AlmacenID.SelectedValue==null?"Null": AlmacenID.SelectedValue.ToString());
                 
 
@@ -473,10 +473,10 @@ namespace Suite_FHFSoft
                     {
                         foreach (DataRow vRow in dtOrdenCompras.Rows)
                         {
-                            sqlString += " Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value + C.QSI +
+                            sqlString += " Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value.ToString().Replace("a.m.", "AM").Replace("p.m.", "PM") + C.QSI +
                             (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
                             C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
-                            vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year==1?"NULL":"'" + vRow["FechaExpiracion"].ToString() +"'") + C.QII + vRow["Cantidad"].ToString() + C.QII +
+                            vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year==1?"NULL":"'" + vRow["FechaExpiracion"].ToString().Replace("a.m.", "AM").Replace("p.m.", "PM") + "'") + C.QII + vRow["Cantidad"].ToString() + C.QII +
                             AlmacenID.SelectedValue.ToString() + ", @OrdenID output ";
                         }
                     }
@@ -488,10 +488,10 @@ namespace Suite_FHFSoft
                         {
                             if(vRow["edit"].ToString()!="-1")
                             {
-                                sqlString += " Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value + C.QSI +
+                                sqlString += " Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value.ToString().Replace("a.m.", "AM").Replace("p.m.", "PM") + C.QSI +
                             (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
                             C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
-                            vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year == 1 ? "NULL" : "'" + vRow["FechaExpiracion"].ToString() + "'") + C.QII + vRow["Cantidad"].ToString() + C.QII +
+                            vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year == 1 ? "NULL" : "'" + vRow["FechaExpiracion"].ToString().Replace("a.m.", "AM").Replace("p.m.", "PM") + "'") + C.QII + vRow["Cantidad"].ToString() + C.QII +
                             AlmacenID.SelectedValue.ToString() + ", @OrdenID output ";
                                 addnew = 1;
                             }
@@ -501,10 +501,10 @@ namespace Suite_FHFSoft
                         if(addnew==0)
                         {
                             DataRow vRow = dtOrdenCompras.Rows[0];
-                            sqlString += " Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value + C.QSI +
+                            sqlString += " Exec ORDENCOMPRAS_M " + vOpt + C.QII + (vOrdenCompras == 0 ? "@OrdenID" : vOrdenCompras.ToString()) + C.QII + vProveedorID + C.QIS + Fecha.Value.ToString().Replace("a.m.", "AM").Replace("p.m.", "PM") + C.QSI +
                            (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
                            C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
-                           vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year == 1 ? "NULL" : "'" + vRow["FechaExpiracion"].ToString() + "'") + C.QII + vRow["Cantidad"].ToString() + C.QII +
+                           vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year == 1 ? "NULL" : "'" + vRow["FechaExpiracion"].ToString().Replace("a.m.", "AM").Replace("p.m.", "PM") + "'") + C.QII + vRow["Cantidad"].ToString() + C.QII +
                             AlmacenID.SelectedValue.ToString() + ", @OrdenID output ";
                         }
 
@@ -843,6 +843,7 @@ namespace Suite_FHFSoft
             vOpt = 0;
             lblStatus.Text = "Creacion";
             Limpiar();
+            Prosesada = 0;
             
         }
 

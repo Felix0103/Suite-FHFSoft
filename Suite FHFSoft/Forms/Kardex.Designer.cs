@@ -46,15 +46,15 @@
             this.lblArticulo = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.AlmacenID = new Telerik.WinControls.UI.RadDropDownList();
+            this.ArticuloId = new Telerik.WinControls.UI.RadDropDownList();
             this.UsuarioID = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.Date2 = new Telerik.WinControls.UI.RadDateTimePicker();
             this.Date1 = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.ArticuloId = new Telerik.WinControls.UI.RadDropDownList();
-            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRD.MasterTemplate)).BeginInit();
@@ -63,15 +63,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AlmacenID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ArticuloId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Date2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Date1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ArticuloId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             this.SuspendLayout();
             // 
             // radTitleBar1
@@ -79,7 +79,7 @@
             this.radTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.radTitleBar1.Name = "radTitleBar1";
-            this.radTitleBar1.Size = new System.Drawing.Size(1003, 30);
+            this.radTitleBar1.Size = new System.Drawing.Size(1057, 30);
             this.radTitleBar1.TabIndex = 0;
             this.radTitleBar1.TabStop = false;
             this.radTitleBar1.Text = "Kardex";
@@ -103,7 +103,7 @@
             gridViewDateTimeColumn1.HeaderText = "Fecha";
             gridViewDateTimeColumn1.Name = "Fecha";
             gridViewDateTimeColumn1.ReadOnly = true;
-            gridViewDateTimeColumn1.Width = 83;
+            gridViewDateTimeColumn1.Width = 142;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "Documento";
             gridViewTextBoxColumn1.HeaderText = "Documento";
@@ -178,17 +178,18 @@
             this.GRD.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.GRD.Name = "GRD";
             this.GRD.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.GRD.Size = new System.Drawing.Size(977, 455);
+            this.GRD.Size = new System.Drawing.Size(1036, 455);
             this.GRD.TabIndex = 1;
             this.GRD.Text = "radGridView1";
             // 
             // bSalir
             // 
-            this.bSalir.Location = new System.Drawing.Point(879, 602);
+            this.bSalir.Location = new System.Drawing.Point(938, 602);
             this.bSalir.Name = "bSalir";
             this.bSalir.Size = new System.Drawing.Size(110, 24);
             this.bSalir.TabIndex = 52;
             this.bSalir.Text = "&Salir";
+            this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
             // 
             // lblArticulo
             // 
@@ -232,6 +233,16 @@
             this.radLabel3.Text = "Almacen";
             this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // radLabel4
+            // 
+            this.radLabel4.AutoSize = false;
+            this.radLabel4.Location = new System.Drawing.Point(13, 21);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(60, 18);
+            this.radLabel4.TabIndex = 24;
+            this.radLabel4.Text = "Articulo";
+            this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // radLabel9
             // 
             this.radLabel9.AutoSize = false;
@@ -248,6 +259,19 @@
             this.AlmacenID.Name = "AlmacenID";
             this.AlmacenID.Size = new System.Drawing.Size(124, 20);
             this.AlmacenID.TabIndex = 25;
+            // 
+            // ArticuloId
+            // 
+            this.ArticuloId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ArticuloId.AutoSizeItems = true;
+            this.ArticuloId.DropDownMinSize = new System.Drawing.Size(400, 0);
+            this.ArticuloId.EnableAlternatingItemColor = true;
+            this.ArticuloId.Location = new System.Drawing.Point(79, 21);
+            this.ArticuloId.Name = "ArticuloId";
+            this.ArticuloId.Size = new System.Drawing.Size(124, 20);
+            this.ArticuloId.TabIndex = 25;
+            this.ArticuloId.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.ArticuloId_SelectedIndexChanged);
+            ((Telerik.WinControls.UI.RadDropDownListElement)(this.ArticuloId.GetChildAt(0))).DefaultSize = new System.Drawing.Size(400, 0);
             // 
             // UsuarioID
             // 
@@ -298,35 +322,12 @@
             this.Date1.TabStop = false;
             this.Date1.Value = new System.DateTime(((long)(0)));
             // 
-            // ArticuloId
-            // 
-            this.ArticuloId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.ArticuloId.AutoSizeItems = true;
-            this.ArticuloId.DropDownMinSize = new System.Drawing.Size(400, 0);
-            this.ArticuloId.EnableAlternatingItemColor = true;
-            this.ArticuloId.Location = new System.Drawing.Point(79, 21);
-            this.ArticuloId.Name = "ArticuloId";
-            this.ArticuloId.Size = new System.Drawing.Size(124, 20);
-            this.ArticuloId.TabIndex = 25;
-            this.ArticuloId.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.ArticuloId_SelectedIndexChanged);
-            ((Telerik.WinControls.UI.RadDropDownListElement)(this.ArticuloId.GetChildAt(0))).DefaultSize = new System.Drawing.Size(400, 0);
-            // 
-            // radLabel4
-            // 
-            this.radLabel4.AutoSize = false;
-            this.radLabel4.Location = new System.Drawing.Point(13, 21);
-            this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(60, 18);
-            this.radLabel4.TabIndex = 24;
-            this.radLabel4.Text = "Articulo";
-            this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // Kardex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1003, 634);
+            this.ClientSize = new System.Drawing.Size(1057, 634);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.lblArticulo);
             this.Controls.Add(this.bSalir);
@@ -346,15 +347,15 @@
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AlmacenID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ArticuloId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Date2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Date1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ArticuloId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             this.ResumeLayout(false);
 
         }

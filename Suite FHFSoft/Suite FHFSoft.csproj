@@ -164,6 +164,12 @@
     <Compile Include="Forms\FBackup.Designer.cs">
       <DependentUpon>FBackup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FinalCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FinalCompra.Designer.cs">
+      <DependentUpon>FinalCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FBackup.resx">
       <DependentUpon>FBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FinalCompra.resx">
+      <DependentUpon>FinalCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>

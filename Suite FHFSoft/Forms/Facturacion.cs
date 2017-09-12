@@ -15,10 +15,13 @@ namespace Suite_FHFSoft
 
         public int vClienteID = 0;
         public int vArticuloID = 0;
+
         decimal ItbisPorciento = 0;
         DataTable dtFactura = new DataTable();
         DataTable dtArticulos = new DataTable();
+        DataTable dtDetallepago = new DataTable();
         int Contador = -3000;
+        public int vCobro = 0;
 
         public Facturacion()
         {
@@ -225,6 +228,7 @@ namespace Suite_FHFSoft
             LimpiarArticulo();
             clearCliente();
             dtFactura = C.SQL("FACTURA_L 0");
+            dtDetallepago= C.SQL("COBRAR_FACTURA_L 0");
             GRD.DataSource = dtFactura;
 
 
@@ -234,13 +238,25 @@ namespace Suite_FHFSoft
         {
             decimal subtotal = 0;
             decimal totalItbis = 0;
+            decimal descuentos = 0;
             foreach (DataRow vRow in dtFactura.Rows)
             {
                 subtotal += ((Convert.ToDecimal(vRow["Precioactual"].ToString()) * Convert.ToDecimal(vRow["Cantidad"].ToString())));
+                totalItbis += Convert.ToDecimal(vRow["ITBISAMOUNT"].ToString()) * Convert.ToDecimal(vRow["Cantidad"].ToString());
+                descuentos+= Convert.ToDecimal(vRow["Descuento"].ToString());
 
             }
 
             SubtotalF.Value = subtotal;
+            ITBISF.Value = totalItbis;
+            TotalF.Value= subtotal+ totalItbis;
+            DESCF.Value = descuentos;
+            TotalNeto.Value = (subtotal + totalItbis) - descuentos;
+        }
+
+        public void Pagos(DataTable dt)
+        {
+
         }
         #endregion FINAL DE METODOS ADICIONALES
 
@@ -404,6 +420,32 @@ namespace Suite_FHFSoft
             {
                 e.Value = e.RowIndex + 1;
             }
+        }
+
+        private void bCobrar_Click(object sender, EventArgs e)
+        {
+            if (GRD.RowCount == 0) { MessageBox.Show("Esta Factura no tene articulos para Cobrar",Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Exclamation); return; }
+            vCobro = 0;
+            FinalCompra form = new FinalCompra();
+            form.vForm = this.Name;
+            form.Facturacion(Convert.ToDecimal(TotalNeto.Value));
+            form.ShowDialog();
+
+            if (vCobro==1)
+            {
+                //General
+            }
+            else if (vCobro==0)
+            {
+                //Cncelado el cobro
+            }
+           
+
+        }
+
+        private void Cantidad_ValueChanged(object sender, EventArgs e)
+        {
+            SubTotal.Value = Convert.ToDecimal(Precio.Value) * Convert.ToDecimal(Cantidad.Value);
         }
     }
 }

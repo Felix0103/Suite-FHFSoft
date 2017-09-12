@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.FacturaNumber = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.TotalNeto = new Telerik.WinControls.UI.RadMaskedEditBox();
@@ -360,6 +360,7 @@
             this.bCobrar.TabIndex = 27;
             this.bCobrar.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.bCobrar, "Cobrar Factura");
+            this.bCobrar.Click += new System.EventHandler(this.bCobrar_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.bCobrar.GetChildAt(0))).Image = global::Suite_FHFSoft.Properties.Resources.if_shopping_cart_36567;
             ((Telerik.WinControls.UI.RadButtonElement)(this.bCobrar.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             ((Telerik.WinControls.UI.RadButtonElement)(this.bCobrar.GetChildAt(0))).Text = "";
@@ -479,6 +480,7 @@
             this.Cantidad.TabStop = false;
             this.Cantidad.Text = "0";
             this.Cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Cantidad.ValueChanged += new System.EventHandler(this.Cantidad_ValueChanged);
             this.Cantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cantidad_KeyDown);
             // 
             // Precio
@@ -487,6 +489,7 @@
             this.Precio.Mask = "f";
             this.Precio.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
             this.Precio.Size = new System.Drawing.Size(124, 20);
             this.Precio.TabIndex = 5;
             this.Precio.TabStop = false;
@@ -499,6 +502,7 @@
             this.SubTotal.Mask = "f";
             this.SubTotal.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
             this.SubTotal.Size = new System.Drawing.Size(124, 20);
             this.SubTotal.TabIndex = 5;
             this.SubTotal.TabStop = false;
@@ -509,6 +513,7 @@
             // 
             this.Existencia.Location = new System.Drawing.Point(646, 45);
             this.Existencia.Name = "Existencia";
+            this.Existencia.ReadOnly = true;
             this.Existencia.Size = new System.Drawing.Size(124, 20);
             this.Existencia.TabIndex = 1;
             // 
@@ -516,6 +521,7 @@
             // 
             this.Unidad.Location = new System.Drawing.Point(386, 45);
             this.Unidad.Name = "Unidad";
+            this.Unidad.ReadOnly = true;
             this.Unidad.Size = new System.Drawing.Size(124, 20);
             this.Unidad.TabIndex = 1;
             // 
@@ -567,6 +573,7 @@
             // 
             this.Descripcion.Location = new System.Drawing.Point(169, 45);
             this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
             this.Descripcion.Size = new System.Drawing.Size(209, 20);
             this.Descripcion.TabIndex = 1;
             // 
@@ -763,7 +770,7 @@
             this.Fecha.Size = new System.Drawing.Size(211, 20);
             this.Fecha.TabIndex = 1;
             this.Fecha.TabStop = false;
-            this.Fecha.Text = "Saturday, December 10, 2016";
+            this.Fecha.Text = "sábado, 10 de diciembre de 2016";
             this.Fecha.Value = new System.DateTime(2016, 12, 10, 20, 43, 48, 270);
             // 
             // radLabel7
@@ -921,73 +928,73 @@
             this.GRD.MasterTemplate.AllowDeleteRow = false;
             this.GRD.MasterTemplate.AllowEditRow = false;
             this.GRD.MasterTemplate.AutoGenerateColumns = false;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "Codigo";
-            gridViewTextBoxColumn1.HeaderText = "Codigo";
-            gridViewTextBoxColumn1.Name = "Codigo";
-            gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.Width = 75;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Descripcion";
-            gridViewTextBoxColumn2.HeaderText = "Descripcion";
-            gridViewTextBoxColumn2.Name = "Descripcion";
-            gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 331;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "Cantidad";
-            gridViewTextBoxColumn3.FormatString = "{0:#0.#0}";
-            gridViewTextBoxColumn3.HeaderText = "Cantdad";
-            gridViewTextBoxColumn3.Name = "Cantidad";
-            gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn3.Width = 117;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "UnidadMedida";
-            gridViewTextBoxColumn4.HeaderText = "Unidad";
-            gridViewTextBoxColumn4.Name = "Unidad";
-            gridViewTextBoxColumn4.ReadOnly = true;
-            gridViewTextBoxColumn4.Width = 121;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "PrecioActual";
-            gridViewTextBoxColumn5.FormatString = "{0:#0.#0}";
-            gridViewTextBoxColumn5.HeaderText = "Precio";
-            gridViewTextBoxColumn5.Name = "Precio";
-            gridViewTextBoxColumn5.ReadOnly = true;
-            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn5.Width = 92;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "ITBISAMOUNT";
-            gridViewTextBoxColumn6.FormatString = "{0:#0.#0}";
-            gridViewTextBoxColumn6.HeaderText = "ITBIS";
-            gridViewTextBoxColumn6.Name = "ITBIS";
-            gridViewTextBoxColumn6.ReadOnly = true;
-            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn6.Width = 96;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "Descuento";
-            gridViewTextBoxColumn7.HeaderText = "Desc";
-            gridViewTextBoxColumn7.Name = "Desc";
-            gridViewTextBoxColumn7.ReadOnly = true;
-            gridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn7.Width = 98;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "Importe";
-            gridViewTextBoxColumn8.FormatString = "{0:#0.#0}";
-            gridViewTextBoxColumn8.HeaderText = "Importe";
-            gridViewTextBoxColumn8.Name = "Importe";
-            gridViewTextBoxColumn8.ReadOnly = true;
-            gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn8.Width = 117;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "Codigo";
+            gridViewTextBoxColumn9.HeaderText = "Codigo";
+            gridViewTextBoxColumn9.Name = "Codigo";
+            gridViewTextBoxColumn9.ReadOnly = true;
+            gridViewTextBoxColumn9.Width = 75;
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "Descripcion";
+            gridViewTextBoxColumn10.HeaderText = "Descripcion";
+            gridViewTextBoxColumn10.Name = "Descripcion";
+            gridViewTextBoxColumn10.ReadOnly = true;
+            gridViewTextBoxColumn10.Width = 331;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "Cantidad";
+            gridViewTextBoxColumn11.FormatString = "{0:#0.#0}";
+            gridViewTextBoxColumn11.HeaderText = "Cantdad";
+            gridViewTextBoxColumn11.Name = "Cantidad";
+            gridViewTextBoxColumn11.ReadOnly = true;
+            gridViewTextBoxColumn11.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn11.Width = 117;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "UnidadMedida";
+            gridViewTextBoxColumn12.HeaderText = "Unidad";
+            gridViewTextBoxColumn12.Name = "Unidad";
+            gridViewTextBoxColumn12.ReadOnly = true;
+            gridViewTextBoxColumn12.Width = 121;
+            gridViewTextBoxColumn13.EnableExpressionEditor = false;
+            gridViewTextBoxColumn13.FieldName = "PrecioActual";
+            gridViewTextBoxColumn13.FormatString = "{0:#0.#0}";
+            gridViewTextBoxColumn13.HeaderText = "Precio";
+            gridViewTextBoxColumn13.Name = "Precio";
+            gridViewTextBoxColumn13.ReadOnly = true;
+            gridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn13.Width = 92;
+            gridViewTextBoxColumn14.EnableExpressionEditor = false;
+            gridViewTextBoxColumn14.FieldName = "ITBISAMOUNT";
+            gridViewTextBoxColumn14.FormatString = "{0:#0.#0}";
+            gridViewTextBoxColumn14.HeaderText = "ITBIS";
+            gridViewTextBoxColumn14.Name = "ITBIS";
+            gridViewTextBoxColumn14.ReadOnly = true;
+            gridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn14.Width = 96;
+            gridViewTextBoxColumn15.EnableExpressionEditor = false;
+            gridViewTextBoxColumn15.FieldName = "Descuento";
+            gridViewTextBoxColumn15.HeaderText = "Desc";
+            gridViewTextBoxColumn15.Name = "Desc";
+            gridViewTextBoxColumn15.ReadOnly = true;
+            gridViewTextBoxColumn15.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn15.Width = 98;
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.FieldName = "Importe";
+            gridViewTextBoxColumn16.FormatString = "{0:#0.#0}";
+            gridViewTextBoxColumn16.HeaderText = "Importe";
+            gridViewTextBoxColumn16.Name = "Importe";
+            gridViewTextBoxColumn16.ReadOnly = true;
+            gridViewTextBoxColumn16.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn16.Width = 117;
             this.GRD.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8});
-            this.GRD.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16});
+            this.GRD.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.GRD.Name = "GRD";
             this.GRD.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.GRD.Size = new System.Drawing.Size(1076, 235);
@@ -1028,7 +1035,7 @@
             this.Desc.Size = new System.Drawing.Size(51, 20);
             this.Desc.TabIndex = 7;
             this.Desc.TabStop = false;
-            this.Desc.Text = "0.00 %";
+            this.Desc.Text = "0.00%";
             this.Desc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Desc.Visible = false;
             // 

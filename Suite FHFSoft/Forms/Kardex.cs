@@ -29,7 +29,7 @@ namespace Suite_FHFSoft
             AlmacenID.DataSource = dtSurcursal;
 
             UsuarioID.DisplayMember = "NombreCompleto";
-            UsuarioID.ValueMember = "Susuarioid";
+            UsuarioID.ValueMember = "usuarioid";
             UsuarioID.DataSource = C.SQL("USUARIOS_L") ;
 
             ArticuloId.DisplayMember = "Descripcion";
@@ -46,7 +46,8 @@ namespace Suite_FHFSoft
         {
 
             if (ArticuloId.SelectedValue == null) { MessageBox.Show("Seleccione Un Articulo Para buscar su Kardex "); return; }
-                dtKardex = C.SQL("KARDEX_L 0," + ArticuloId.SelectedValue + C.QII+ (Date1.Value.Year==1?"NULL": "'" + Date1.Value.Date.ToString() + "'" ) + C.QII + (Date2.Value.Year == 1 ? "NULL" : "'" + Date2.Value.Date.ToString() + "'") + C.QII +
+                dtKardex = C.SQL("KARDEX_L 0," + ArticuloId.SelectedValue + C.QII+ (Date1.Value.Year==1?"NULL": "'" + Date1.Value.Date.ToString().Replace("a.m.","AM").Replace("p.m.","PM") + "'" ) + C.QII 
+                    + (Date2.Value.Year == 1 ? "NULL" : "'" + Date2.Value.Date.ToString().Replace("a.m.", "AM").Replace("p.m.", "PM") + "'") + C.QII +
                 (AlmacenID.SelectedValue == null ? "NULL" : AlmacenID.SelectedValue.ToString() ) + C.QII + (UsuarioID.SelectedValue == null ? "NULL" : UsuarioID.SelectedValue.ToString()));
             GRD.DataSource = dtKardex;
         }
@@ -68,6 +69,11 @@ namespace Suite_FHFSoft
         {
             lblArticulo.Text = ArticuloId.Text;
             FillGrid();
+        }
+
+        private void bSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
