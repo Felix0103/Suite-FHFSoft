@@ -26,6 +26,11 @@ namespace Suite_FHFSoft
         private void FinalCompra_Load(object sender, EventArgs e)
         {
             dtDetallepago = C.SQL("COBRAR_FACTURA_L 0");
+
+            TipodeTarjeta.DisplayMember = "Descripcion";
+            TipodeTarjeta.ValueMember = "Formaspagosid";
+            TipodeTarjeta.DataSource = C.SQL("[FORMASPAGOS_L] 1 ");
+            TipodeTarjeta.Text = "";
         }
         
         private void Calculate()
@@ -45,6 +50,7 @@ namespace Suite_FHFSoft
 
             return true;
         }
+
         private void Efectivo_KeyDown(object sender, KeyEventArgs e)
         {
             
@@ -75,8 +81,6 @@ namespace Suite_FHFSoft
             Calculate();
         }
 
-  
-
         private void Cheque_ValueChanged(object sender, EventArgs e)
         {
             if (Convert.ToDecimal(Cheque.Value) > 0)
@@ -88,17 +92,16 @@ namespace Suite_FHFSoft
             {
                 this.Size = new Size(347, 353);
                 NumeroCheque.Visible = false;
-                
             }
+
             if (!CalculateTotal())
             {
                 Cheque.Value = 0;
-
             }
+
             Calculate();
         }
 
-     
         private void Credito_ValueChanged(object sender, EventArgs e)
         {
             if (Convert.ToDecimal(Cheque.Value) > 0)
@@ -110,12 +113,10 @@ namespace Suite_FHFSoft
             {
                 this.Size = new Size(347, 353);
                 Referencia.Visible = false;
-
             }
             if (!CalculateTotal())
             {
                 Credito.Value = 0;
-
             }
 
             Calculate();
@@ -135,15 +136,15 @@ namespace Suite_FHFSoft
             }
             else if (e.KeyValue == 13)
             {
-
                 SendKeys.Send("{TAB}");
             }
+
+            
         }
 
         private void Efectivo_ValueChanged(object sender, EventArgs e)
         {
             Calculate();
-           
         }
 
         private void Cambio_ValueChanged(object sender, EventArgs e)
@@ -206,16 +207,56 @@ namespace Suite_FHFSoft
 
                         if (Convert.ToDecimal(Tarjeta.Value) > 0)
                         {
+                            if (TipodeTarjeta.SelectedValue == null)
+                            { MessageBox.Show("Selecione el tipo de Tarjeta con la realizo el pago",Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                                return;
+
+                            }
                             DataRow vRow = dtDetallepago.NewRow();
-                            vRow["TipoFormaPagoID"] = 2;
+                            vRow["TipoFormaPagoID"] = TipodeTarjeta.SelectedValue;
                             vRow["Monto"] = Convert.ToDecimal(Tarjeta.Value);
                             vRow["TipodeTransaccion"] = 1;
-                            vRow["TipodeTransaccion"] = 1;
+                            vRow["NoFormapago"] = NumeroTarjeta.Text;
+
 
                             dtDetallepago.Rows.Add(vRow);
                         }
 
+                        if (Convert.ToDecimal(Cheque.Value) > 0)
+                        {
+                            if (NumeroCheque.Text.Length==0)
+                            {
+                                MessageBox.Show("Digite el numero de Cheque y el Banco Ejemplo: 001278-Banco Cuarquiera", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                return;
 
+                            }
+                            DataRow vRow = dtDetallepago.NewRow();
+                            vRow["TipoFormaPagoID"] = 4;
+                            vRow["Monto"] = Convert.ToDecimal(Cheque.Value);
+                            vRow["TipodeTransaccion"] = 1;
+                            vRow["NoFormapago"] = NumeroCheque.Text;
+
+
+                            dtDetallepago.Rows.Add(vRow);
+                        }
+
+                        if (Convert.ToDecimal(Credito.Value) > 0)
+                        {
+                            DataRow vRow = dtDetallepago.NewRow();
+                            vRow["TipoFormaPagoID"] = 5;
+                            vRow["Monto"] = Convert.ToDecimal(Credito.Value);
+                            vRow["TipodeTransaccion"] = 1;
+                            vRow["Reference"] = 0;
+                            dtDetallepago.Rows.Add(vRow);
+                        }
+                        decimal cambio = Convert.ToDecimal(Cambio.Value);
+                        if(cambio<0 || cambio > 1999)
+                        {
+                            MessageBox.Show("Verifique la distribucion de pagos," + (cambio < 0?"Falta dinero para saldar la factura, indique a que pertenece":"Distribucion de pagos no real"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+
+                        ((Facturacion)Application.OpenForms[i]).AdministrarPagos(dtDetallepago);
                         ((Facturacion)Application.OpenForms[i]).vCobro=1;
                         this.Close();
                     }

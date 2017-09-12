@@ -25,17 +25,6 @@ namespace Suite_FHFSoft.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\test;Initial Catalog=SuiteFHFSoft;Persist Security Info=True;User I" +
-            "D=sa;Password=as")]
-        public string Setting {
-            get {
-                return ((string)(this["Setting"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("FHF")]
         public string USER1 {
             get {
@@ -61,6 +50,17 @@ namespace Suite_FHFSoft.Properties {
         public string Licencia {
             get {
                 return ((string)(this["Licencia"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\TEST;Initial Catalog=SuiteFHFSoft;Persist Security Info=True;User I" +
+            "D=sa;Password=as")]
+        public string Setting {
+            get {
+                return ((string)(this["Setting"]));
             }
         }
     }

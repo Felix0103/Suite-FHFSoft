@@ -45,9 +45,15 @@ namespace Suite_FHFSoft
 
         private void BuscarArticulo_KeyDown(object sender, KeyEventArgs e)
         {
-            if (GRD.CurrentRow.Cells[0].Value == null) { MessageBox.Show("Selecione un Articulo", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
+            if(e.KeyValue==27)
+            {
+                this.Close();
+            }
+
+            
             if (e.KeyValue == 13)
             {
+                if (GRD.CurrentRow.Cells[0].Value == null) { MessageBox.Show("Selecione un Articulo", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
                 if (int.Parse(GRD.CurrentRow.Cells[0].Value.ToString()) > 0)
                 {
                     GRD_CellDoubleClick(null, null);

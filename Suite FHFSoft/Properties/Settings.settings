@@ -2,14 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Suite_FHFSoft.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Setting" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=.\test;Initial Catalog=SuiteFHFSoft;Persist Security Info=True;User ID=sa;Password=as&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=.\test;Initial Catalog=SuiteFHFSoft;Persist Security Info=True;User ID=sa;Password=as</Value>
-    </Setting>
     <Setting Name="USER1" Type="System.String" Scope="Application">
       <Value Profile="(Default)">FHF</Value>
     </Setting>
@@ -18,6 +10,14 @@
     </Setting>
     <Setting Name="Licencia" Type="System.String" Scope="Application">
       <Value Profile="(Default)">MAAxAC8AMQAwAC8AMgAwADEANwA=</Value>
+    </Setting>
+    <Setting Name="Setting" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=.\TEST;Initial Catalog=SuiteFHFSoft;Persist Security Info=True;User ID=sa;Password=as&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=.\TEST;Initial Catalog=SuiteFHFSoft;Persist Security Info=True;User ID=sa;Password=as</Value>
     </Setting>
   </Settings>
 </SettingsFile>

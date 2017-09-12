@@ -22,6 +22,8 @@ namespace Suite_FHFSoft
         DataTable dtDetallepago = new DataTable();
         int Contador = -3000;
         public int vCobro = 0;
+        int vFacturaID = 0;
+        int vOpt = 0;
 
         public Facturacion()
         {
@@ -230,8 +232,13 @@ namespace Suite_FHFSoft
             dtFactura = C.SQL("FACTURA_L 0");
             dtDetallepago= C.SQL("COBRAR_FACTURA_L 0");
             GRD.DataSource = dtFactura;
-
-
+            vFacturaID = 0;
+            vOpt = 0;
+            Calcular();
+            Codigo.Text = "1";
+            BuscarCliente();
+            CodigoA.Focus();
+            
         }
 
         private void Calcular()
@@ -254,9 +261,9 @@ namespace Suite_FHFSoft
             TotalNeto.Value = (subtotal + totalItbis) - descuentos;
         }
 
-        public void Pagos(DataTable dt)
+        public void AdministrarPagos(DataTable dt)
         {
-
+            dtDetallepago = dt;
         }
         #endregion FINAL DE METODOS ADICIONALES
 
@@ -283,6 +290,10 @@ namespace Suite_FHFSoft
             else if(e.KeyValue==113)
             {
                 buscarArticulo();
+            }
+            else if(e.KeyValue==114)
+            {
+                bCobrar_Click(null, null);
             }
         }
 
@@ -370,7 +381,7 @@ namespace Suite_FHFSoft
                 {
                     MessageBox.Show((Convert.ToDecimal(Existencia.Text) == 0 ? "No hay articulos Disponibles para Facturar" : "La Cantidad de Articulos que deseas Facturar es mayor a la disponible en su inventario"),
                         Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                    return;
                 }
 
                 vRowActual["Cantidad"] = Convert.ToInt32( vRowActual["Cantidad"].ToString()) + Convert.ToInt32( Cantidad.Value);
@@ -431,13 +442,34 @@ namespace Suite_FHFSoft
             form.Facturacion(Convert.ToDecimal(TotalNeto.Value));
             form.ShowDialog();
 
-            if (vCobro==1)
+            if (vCobro == 1)
             {
-                //General
+                string sqlString = "";
+
+                sqlString = "Set nocount on; ";
+                sqlString += "Declare @FacturaID int;  set @Facturaid = " + (vFacturaID == 0 ? 0 : vFacturaID);
+
+
+
+                foreach (DataRow vRow in dtFactura.Rows)
+                {
+                    sqlString += " Exec [FACTURA_M] " + vOpt + C.QII + "@FacturaID" + C.QII + vClienteID + C.QIS + Fecha.Value.ToString().Replace("a.m.", "AM").Replace("p.m.", "PM") + C.QSI +                                       
+                    TipodeComprobanteID.SelectedValue + C.QII + C.vUserID + C.QII + vRow["FacturaDetalleID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + 
+                    vRow["ARTICULOPRECIOID"].ToString() + C.QII + vRow["Cantidad"].ToString() + C.QII + vRow["Descuento"].ToString() + C.QII + vRow["ITBISID"].ToString() + C.QII +
+                    C.vSucursalID + ", @FacturaID output ";
+                }
+
+
+                dtFactura = C.SQL(sqlString + " Select R= @FacturaID");
+                MessageBox.Show(dtFactura.Rows[0][0].ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                NewFactura();
+                
+                
+                
             }
             else if (vCobro==0)
             {
-                //Cncelado el cobro
+                //Cancelado el cobro
             }
            
 
@@ -446,6 +478,25 @@ namespace Suite_FHFSoft
         private void Cantidad_ValueChanged(object sender, EventArgs e)
         {
             SubTotal.Value = Convert.ToDecimal(Precio.Value) * Convert.ToDecimal(Cantidad.Value);
+        }
+
+        private void bCancelar_Click(object sender, EventArgs e)
+        {
+            if(GRD.RowCount>0)
+            {
+                if (MessageBox.Show("Deseas Cancelar la Factura?",Application.ProductName,MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                {
+                    NewFactura();
+                }
+                else
+                {
+                    CodigoA.Focus();
+                }
+            }
+            else
+            {
+                NewFactura();
+            }
         }
     }
 }

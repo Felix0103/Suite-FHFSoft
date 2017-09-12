@@ -35,6 +35,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
@@ -75,7 +76,7 @@
             gridViewTextBoxColumn3.FieldName = "Descripcion";
             gridViewTextBoxColumn3.HeaderText = "Articulo";
             gridViewTextBoxColumn3.Name = "Articulo";
-            gridViewTextBoxColumn3.Width = 209;
+            gridViewTextBoxColumn3.Width = 198;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "Categoria";
             gridViewTextBoxColumn4.HeaderText = "Categoria";
@@ -90,12 +91,18 @@
             gridViewTextBoxColumn6.FieldName = "PrecioActual";
             gridViewTextBoxColumn6.HeaderText = "Precio Actual";
             gridViewTextBoxColumn6.Name = "Precio";
-            gridViewTextBoxColumn6.Width = 126;
+            gridViewTextBoxColumn6.Width = 79;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "ITBIS";
             gridViewTextBoxColumn7.HeaderText = "ITBIS";
             gridViewTextBoxColumn7.Name = "ITBIS";
-            gridViewTextBoxColumn7.Width = 105;
+            gridViewTextBoxColumn7.Width = 94;
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "StockActual";
+            gridViewDecimalColumn1.HeaderText = "Existencia";
+            gridViewDecimalColumn1.Name = "existencia";
+            gridViewDecimalColumn1.ReadOnly = true;
+            gridViewDecimalColumn1.Width = 81;
             gridViewCheckBoxColumn1.EnableExpressionEditor = false;
             gridViewCheckBoxColumn1.FieldName = "Estatus";
             gridViewCheckBoxColumn1.HeaderText = "Estado";
@@ -110,6 +117,7 @@
             gridViewTextBoxColumn5,
             gridViewTextBoxColumn6,
             gridViewTextBoxColumn7,
+            gridViewDecimalColumn1,
             gridViewCheckBoxColumn1});
             this.GRD.MasterTemplate.EnableFiltering = true;
             this.GRD.MasterTemplate.ShowRowHeaderColumn = false;
@@ -121,7 +129,7 @@
             this.GRD.Name = "GRD";
             this.GRD.ReadOnly = true;
             this.GRD.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.GRD.Size = new System.Drawing.Size(816, 524);
+            this.GRD.Size = new System.Drawing.Size(835, 524);
             this.GRD.TabIndex = 6;
             this.GRD.Text = "radGridView1";
             this.GRD.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.GRD_CellDoubleClick);
@@ -144,7 +152,7 @@
             this.radTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.radTitleBar1.Name = "radTitleBar1";
-            this.radTitleBar1.Size = new System.Drawing.Size(832, 34);
+            this.radTitleBar1.Size = new System.Drawing.Size(848, 34);
             this.radTitleBar1.TabIndex = 4;
             this.radTitleBar1.TabStop = false;
             this.radTitleBar1.Text = "Buscar Articulo";
@@ -154,7 +162,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(832, 623);
+            this.ClientSize = new System.Drawing.Size(848, 623);
             this.Controls.Add(this.GRD);
             this.Controls.Add(this.radLabel6);
             this.Controls.Add(this.radTitleBar1);

@@ -73,7 +73,7 @@
             this.radTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.radTitleBar1.Name = "radTitleBar1";
-            this.radTitleBar1.Size = new System.Drawing.Size(351, 37);
+            this.radTitleBar1.Size = new System.Drawing.Size(345, 37);
             this.radTitleBar1.TabIndex = 0;
             this.radTitleBar1.TabStop = false;
             this.radTitleBar1.Text = "Cobros";
@@ -307,7 +307,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(351, 353);
+            this.ClientSize = new System.Drawing.Size(345, 353);
             this.Controls.Add(this.Referencia);
             this.Controls.Add(this.NumeroCheque);
             this.Controls.Add(this.NumeroTarjeta);
