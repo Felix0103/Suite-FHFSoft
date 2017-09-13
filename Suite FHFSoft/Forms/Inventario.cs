@@ -32,5 +32,15 @@ namespace Suite_FHFSoft
             EntradaPedidos frm = new EntradaPedidos();
             frm.Show(this);
         }
+
+        private void bArticulos_Click(object sender, EventArgs e)
+        {
+            C.OpenForm("Articulos");
+        }
+
+        private void bKardex_Click(object sender, EventArgs e)
+        {
+            C.OpenForm("Kardex");
+        }
     }
 }

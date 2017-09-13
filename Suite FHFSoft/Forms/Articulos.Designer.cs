@@ -455,7 +455,7 @@
             this.Fecha.Size = new System.Drawing.Size(245, 20);
             this.Fecha.TabIndex = 5;
             this.Fecha.TabStop = false;
-            this.Fecha.Text = "Monday, November 28, 2016";
+            this.Fecha.Text = "lunes, 28 de noviembre de 2016";
             this.Fecha.Value = new System.DateTime(2016, 11, 28, 22, 8, 37, 961);
             // 
             // radMenuItem1
@@ -646,6 +646,7 @@
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.bEditar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "Articulos";
             this.Text = "Articulos";
             this.Load += new System.EventHandler(this.Articulos_Load);

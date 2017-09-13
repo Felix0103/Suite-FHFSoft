@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn6 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn7 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn3 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn15 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn16 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn17 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn18 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn19 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn20 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn21 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor3 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radTitleBar1 = new Telerik.WinControls.UI.RadTitleBar();
             this.GRD = new Telerik.WinControls.UI.RadGridView();
             this.bSalir = new Telerik.WinControls.UI.RadButton();
@@ -55,6 +55,8 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.Date2 = new Telerik.WinControls.UI.RadDateTimePicker();
             this.Date1 = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.bBuscarCliente = new Telerik.WinControls.UI.RadButton();
+            this.radLabel23 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRD.MasterTemplate)).BeginInit();
@@ -72,6 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Date2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Date1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bBuscarCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel23)).BeginInit();
             this.SuspendLayout();
             // 
             // radTitleBar1
@@ -98,84 +102,84 @@
             this.GRD.MasterTemplate.AllowAddNewRow = false;
             this.GRD.MasterTemplate.AllowDeleteRow = false;
             this.GRD.MasterTemplate.AutoGenerateColumns = false;
-            gridViewDateTimeColumn1.EnableExpressionEditor = false;
-            gridViewDateTimeColumn1.FieldName = "FechaCreacion";
-            gridViewDateTimeColumn1.HeaderText = "Fecha";
-            gridViewDateTimeColumn1.Name = "Fecha";
-            gridViewDateTimeColumn1.ReadOnly = true;
-            gridViewDateTimeColumn1.Width = 142;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "Documento";
-            gridViewTextBoxColumn1.HeaderText = "Documento";
-            gridViewTextBoxColumn1.Name = "Documento";
-            gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.Width = 131;
-            gridViewDecimalColumn1.EnableExpressionEditor = false;
-            gridViewDecimalColumn1.FieldName = "Entrada";
-            gridViewDecimalColumn1.HeaderText = "Entrada";
-            gridViewDecimalColumn1.Name = "Entrada";
-            gridViewDecimalColumn1.ReadOnly = true;
-            gridViewDecimalColumn1.Width = 69;
-            gridViewDecimalColumn2.EnableExpressionEditor = false;
-            gridViewDecimalColumn2.FieldName = "Salida";
-            gridViewDecimalColumn2.HeaderText = "Salida";
-            gridViewDecimalColumn2.Name = "Salida";
-            gridViewDecimalColumn2.ReadOnly = true;
-            gridViewDecimalColumn2.Width = 62;
-            gridViewDecimalColumn3.DecimalPlaces = 0;
-            gridViewDecimalColumn3.EnableExpressionEditor = false;
-            gridViewDecimalColumn3.FieldName = "Costo";
-            gridViewDecimalColumn3.HeaderText = "Costo";
-            gridViewDecimalColumn3.Name = "Costo";
-            gridViewDecimalColumn3.ReadOnly = true;
-            gridViewDecimalColumn3.Width = 77;
-            gridViewDecimalColumn4.EnableExpressionEditor = false;
-            gridViewDecimalColumn4.FieldName = "PrecioVenta";
-            gridViewDecimalColumn4.HeaderText = "Precio Venta";
-            gridViewDecimalColumn4.Name = "Precio_Venta";
-            gridViewDecimalColumn4.ReadOnly = true;
-            gridViewDecimalColumn4.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending;
-            gridViewDecimalColumn4.Width = 84;
-            gridViewDecimalColumn5.EnableExpressionEditor = false;
-            gridViewDecimalColumn5.FieldName = "StockActual";
-            gridViewDecimalColumn5.HeaderText = "Stock Actual";
-            gridViewDecimalColumn5.Name = "StockActual";
-            gridViewDecimalColumn5.ReadOnly = true;
-            gridViewDecimalColumn5.Width = 81;
-            gridViewDecimalColumn6.EnableExpressionEditor = false;
-            gridViewDecimalColumn6.FieldName = "NuevoStock";
-            gridViewDecimalColumn6.HeaderText = "Nuevo Stock";
-            gridViewDecimalColumn6.Name = "Nuevo Stock";
-            gridViewDecimalColumn6.ReadOnly = true;
-            gridViewDecimalColumn6.Width = 85;
-            gridViewDecimalColumn7.EnableExpressionEditor = false;
-            gridViewDecimalColumn7.FieldName = "ValorExistencia";
-            gridViewDecimalColumn7.HeaderText = "Valor en Existencia";
-            gridViewDecimalColumn7.Name = "ValorExistencia";
-            gridViewDecimalColumn7.ReadOnly = true;
-            gridViewDecimalColumn7.Width = 102;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Observaciones";
-            gridViewTextBoxColumn2.HeaderText = "Observaciones";
-            gridViewTextBoxColumn2.Name = "Observaciones";
-            gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 169;
+            gridViewDateTimeColumn3.EnableExpressionEditor = false;
+            gridViewDateTimeColumn3.FieldName = "FechaCreacion";
+            gridViewDateTimeColumn3.HeaderText = "Fecha";
+            gridViewDateTimeColumn3.Name = "Fecha";
+            gridViewDateTimeColumn3.ReadOnly = true;
+            gridViewDateTimeColumn3.Width = 142;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "Documento";
+            gridViewTextBoxColumn5.HeaderText = "Documento";
+            gridViewTextBoxColumn5.Name = "Documento";
+            gridViewTextBoxColumn5.ReadOnly = true;
+            gridViewTextBoxColumn5.Width = 131;
+            gridViewDecimalColumn15.EnableExpressionEditor = false;
+            gridViewDecimalColumn15.FieldName = "Entrada";
+            gridViewDecimalColumn15.HeaderText = "Entrada";
+            gridViewDecimalColumn15.Name = "Entrada";
+            gridViewDecimalColumn15.ReadOnly = true;
+            gridViewDecimalColumn15.Width = 69;
+            gridViewDecimalColumn16.EnableExpressionEditor = false;
+            gridViewDecimalColumn16.FieldName = "Salida";
+            gridViewDecimalColumn16.HeaderText = "Salida";
+            gridViewDecimalColumn16.Name = "Salida";
+            gridViewDecimalColumn16.ReadOnly = true;
+            gridViewDecimalColumn16.Width = 62;
+            gridViewDecimalColumn17.DecimalPlaces = 0;
+            gridViewDecimalColumn17.EnableExpressionEditor = false;
+            gridViewDecimalColumn17.FieldName = "Costo";
+            gridViewDecimalColumn17.HeaderText = "Costo";
+            gridViewDecimalColumn17.Name = "Costo";
+            gridViewDecimalColumn17.ReadOnly = true;
+            gridViewDecimalColumn17.Width = 77;
+            gridViewDecimalColumn18.EnableExpressionEditor = false;
+            gridViewDecimalColumn18.FieldName = "PrecioVenta";
+            gridViewDecimalColumn18.HeaderText = "Precio Venta";
+            gridViewDecimalColumn18.Name = "Precio_Venta";
+            gridViewDecimalColumn18.ReadOnly = true;
+            gridViewDecimalColumn18.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending;
+            gridViewDecimalColumn18.Width = 84;
+            gridViewDecimalColumn19.EnableExpressionEditor = false;
+            gridViewDecimalColumn19.FieldName = "StockActual";
+            gridViewDecimalColumn19.HeaderText = "Stock Actual";
+            gridViewDecimalColumn19.Name = "StockActual";
+            gridViewDecimalColumn19.ReadOnly = true;
+            gridViewDecimalColumn19.Width = 81;
+            gridViewDecimalColumn20.EnableExpressionEditor = false;
+            gridViewDecimalColumn20.FieldName = "NuevoStock";
+            gridViewDecimalColumn20.HeaderText = "Nuevo Stock";
+            gridViewDecimalColumn20.Name = "Nuevo Stock";
+            gridViewDecimalColumn20.ReadOnly = true;
+            gridViewDecimalColumn20.Width = 85;
+            gridViewDecimalColumn21.EnableExpressionEditor = false;
+            gridViewDecimalColumn21.FieldName = "ValorExistencia";
+            gridViewDecimalColumn21.HeaderText = "Valor en Existencia";
+            gridViewDecimalColumn21.Name = "ValorExistencia";
+            gridViewDecimalColumn21.ReadOnly = true;
+            gridViewDecimalColumn21.Width = 102;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "Observaciones";
+            gridViewTextBoxColumn6.HeaderText = "Observaciones";
+            gridViewTextBoxColumn6.Name = "Observaciones";
+            gridViewTextBoxColumn6.ReadOnly = true;
+            gridViewTextBoxColumn6.Width = 169;
             this.GRD.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDateTimeColumn1,
-            gridViewTextBoxColumn1,
-            gridViewDecimalColumn1,
-            gridViewDecimalColumn2,
-            gridViewDecimalColumn3,
-            gridViewDecimalColumn4,
-            gridViewDecimalColumn5,
-            gridViewDecimalColumn6,
-            gridViewDecimalColumn7,
-            gridViewTextBoxColumn2});
-            sortDescriptor1.Direction = System.ComponentModel.ListSortDirection.Descending;
-            sortDescriptor1.PropertyName = "Precio_Venta";
+            gridViewDateTimeColumn3,
+            gridViewTextBoxColumn5,
+            gridViewDecimalColumn15,
+            gridViewDecimalColumn16,
+            gridViewDecimalColumn17,
+            gridViewDecimalColumn18,
+            gridViewDecimalColumn19,
+            gridViewDecimalColumn20,
+            gridViewDecimalColumn21,
+            gridViewTextBoxColumn6});
+            sortDescriptor3.Direction = System.ComponentModel.ListSortDirection.Descending;
+            sortDescriptor3.PropertyName = "Precio_Venta";
             this.GRD.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor1});
-            this.GRD.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            sortDescriptor3});
+            this.GRD.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.GRD.Name = "GRD";
             this.GRD.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.GRD.Size = new System.Drawing.Size(1036, 455);
@@ -199,13 +203,14 @@
             this.lblArticulo.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.lblArticulo.Location = new System.Drawing.Point(12, 36);
             this.lblArticulo.Name = "lblArticulo";
-            this.lblArticulo.Size = new System.Drawing.Size(977, 54);
+            this.lblArticulo.Size = new System.Drawing.Size(1028, 54);
             this.lblArticulo.TabIndex = 53;
             this.lblArticulo.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.bBuscarCliente);
             this.radGroupBox1.Controls.Add(this.radLabel3);
             this.radGroupBox1.Controls.Add(this.radLabel4);
             this.radGroupBox1.Controls.Add(this.radLabel9);
@@ -217,9 +222,9 @@
             this.radGroupBox1.Controls.Add(this.Date2);
             this.radGroupBox1.Controls.Add(this.Date1);
             this.radGroupBox1.HeaderText = "Filtros";
-            this.radGroupBox1.Location = new System.Drawing.Point(12, 90);
+            this.radGroupBox1.Location = new System.Drawing.Point(12, 88);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(977, 45);
+            this.radGroupBox1.Size = new System.Drawing.Size(1033, 48);
             this.radGroupBox1.TabIndex = 54;
             this.radGroupBox1.Text = "Filtros";
             // 
@@ -322,12 +327,49 @@
             this.Date1.TabStop = false;
             this.Date1.Value = new System.DateTime(((long)(0)));
             // 
+            // bBuscarCliente
+            // 
+            this.bBuscarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.bBuscarCliente.Image = global::Suite_FHFSoft.Properties.Resources._1481444391_search;
+            this.bBuscarCliente.Location = new System.Drawing.Point(970, 13);
+            this.bBuscarCliente.Name = "bBuscarCliente";
+            this.bBuscarCliente.Size = new System.Drawing.Size(38, 30);
+            this.bBuscarCliente.TabIndex = 26;
+            this.bBuscarCliente.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.bBuscarCliente.Click += new System.EventHandler(this.bBuscarCliente_Click);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarCliente.GetChildAt(0))).Image = global::Suite_FHFSoft.Properties.Resources._1481444391_search;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarCliente.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarCliente.GetChildAt(0))).Text = "";
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.bBuscarCliente.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.None;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarCliente.GetChildAt(0).GetChildAt(2))).LeftColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarCliente.GetChildAt(0).GetChildAt(2))).TopColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarCliente.GetChildAt(0).GetChildAt(2))).RightColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarCliente.GetChildAt(0).GetChildAt(2))).BottomColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarCliente.GetChildAt(0).GetChildAt(2))).ForeColor2 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarCliente.GetChildAt(0).GetChildAt(2))).ForeColor3 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarCliente.GetChildAt(0).GetChildAt(2))).ForeColor4 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarCliente.GetChildAt(0).GetChildAt(2))).ForeColor = System.Drawing.Color.Transparent;
+            // 
+            // radLabel23
+            // 
+            this.radLabel23.AutoSize = false;
+            this.radLabel23.Font = new System.Drawing.Font("Sitka Small", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel23.ForeColor = System.Drawing.Color.DarkGreen;
+            this.radLabel23.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.radLabel23.Location = new System.Drawing.Point(12, 602);
+            this.radLabel23.Name = "radLabel23";
+            this.radLabel23.Size = new System.Drawing.Size(197, 18);
+            this.radLabel23.TabIndex = 55;
+            this.radLabel23.Text = "F5-Buscar Articulos";
+            this.radLabel23.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Kardex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1057, 634);
+            this.Controls.Add(this.radLabel23);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.lblArticulo);
             this.Controls.Add(this.bSalir);
@@ -356,6 +398,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Date2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Date1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bBuscarCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel23)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -377,5 +421,7 @@
         private Telerik.WinControls.UI.RadDropDownList UsuarioID;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadDropDownList ArticuloId;
+        private Telerik.WinControls.UI.RadButton bBuscarCliente;
+        private Telerik.WinControls.UI.RadLabel radLabel23;
     }
 }

@@ -459,6 +459,15 @@ namespace Suite_FHFSoft
                     C.vSucursalID + ", @FacturaID output ";
                 }
 
+                foreach (DataRow vRow in dtDetallepago.Rows)
+                {
+                    sqlString += "  Exec [COBRAR_FACTURA_M] " + vOpt + C.QII + "@FacturaID" + C.QII + vRow["TipoFormaPagoID"].ToString() + C.QIS + vRow["NoFormapago"].ToString() + C.QSI +
+                                    vRow["Monto"].ToString() + C.QII + (vRow["Reference"].ToString().Length==0?"NULL": vRow["Reference"].ToString()) + C.QII + vRow["TipodeTransaccion"].ToString() + C.QII +
+                                    C.vUserID ;
+                }
+
+
+
 
                 dtFactura = C.SQL(sqlString + " Select R= @FacturaID");
                 MessageBox.Show(dtFactura.Rows[0][0].ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);

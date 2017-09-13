@@ -45,8 +45,8 @@ namespace Suite_FHFSoft
         private void FillGrid()
         {
 
-            if (ArticuloId.SelectedValue == null) { MessageBox.Show("Seleccione Un Articulo Para buscar su Kardex "); return; }
-                dtKardex = C.SQL("KARDEX_L 0," + ArticuloId.SelectedValue + C.QII+ (Date1.Value.Year==1?"NULL": "'" + Date1.Value.Date.ToString().Replace("a.m.","AM").Replace("p.m.","PM") + "'" ) + C.QII 
+            //if (ArticuloId.SelectedValue == null) { MessageBox.Show("Seleccione Un Articulo Para buscar su Kardex "); return; }
+                dtKardex = C.SQL("KARDEX_L 0," + (ArticuloId.SelectedValue==null?"NULL": ArticuloId.SelectedValue.ToString()) + C.QII+ (Date1.Value.Year==1?"NULL": "'" + Date1.Value.Date.ToString().Replace("a.m.","AM").Replace("p.m.","PM") + "'" ) + C.QII 
                     + (Date2.Value.Year == 1 ? "NULL" : "'" + Date2.Value.Date.ToString().Replace("a.m.", "AM").Replace("p.m.", "PM") + "'") + C.QII +
                 (AlmacenID.SelectedValue == null ? "NULL" : AlmacenID.SelectedValue.ToString() ) + C.QII + (UsuarioID.SelectedValue == null ? "NULL" : UsuarioID.SelectedValue.ToString()));
             GRD.DataSource = dtKardex;
@@ -58,9 +58,10 @@ namespace Suite_FHFSoft
             AlmacenID.SelectedValue = (dtSurcursal.Rows.Count == 1 ? Convert.ToInt64(dtSurcursal.Rows[0]["SucursalID"].ToString()) : 0);
             AlmacenID.ReadOnly= (dtSurcursal.Rows.Count == 1 ? true : false);
             UsuarioID.Text = "";
-            Date1.Text = "";
+            Date1.Value = DateTime.Today.Date; 
             Date2.Value = DateTime.Today.Date;
-            ArticuloId.SelectedValue = vArticuloID;
+            if (vArticuloID == 0) { ArticuloId.Text = ""; } else { ArticuloId.SelectedValue = vArticuloID; }
+            
             FillGrid();
 
         }
@@ -74,6 +75,11 @@ namespace Suite_FHFSoft
         private void bSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bBuscarCliente_Click(object sender, EventArgs e)
+        {
+            FillGrid();
         }
     }
 }
