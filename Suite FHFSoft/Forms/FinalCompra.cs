@@ -258,6 +258,7 @@ namespace Suite_FHFSoft
 
                         ((Facturacion)Application.OpenForms[i]).AdministrarPagos(dtDetallepago);
                         ((Facturacion)Application.OpenForms[i]).vCobro=1;
+                        ((Facturacion)Application.OpenForms[i]).vImprimir = (chkFactura.Checked?1:0);
                         this.Close();
                     }
                 }

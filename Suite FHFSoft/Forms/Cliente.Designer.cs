@@ -74,10 +74,10 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox4 = new Telerik.WinControls.UI.RadGroupBox();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.TipodeComprobanteID = new Telerik.WinControls.UI.RadDropDownList();
+            this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.radTitleBar1 = new Telerik.WinControls.UI.RadTitleBar();
-            this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
-            this.TipodeComprobanteID = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.bGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRD.MasterTemplate)).BeginInit();
@@ -119,10 +119,10 @@
             this.radGroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TipodeComprobanteID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TipodeComprobanteID)).BeginInit();
             this.SuspendLayout();
             // 
             // bGuardar
@@ -584,6 +584,24 @@
             this.radGroupBox1.TabIndex = 26;
             this.radGroupBox1.Text = "Registro de Cliente";
             // 
+            // TipodeComprobanteID
+            // 
+            this.TipodeComprobanteID.Location = new System.Drawing.Point(152, 179);
+            this.TipodeComprobanteID.Name = "TipodeComprobanteID";
+            this.TipodeComprobanteID.Size = new System.Drawing.Size(265, 20);
+            this.TipodeComprobanteID.TabIndex = 10;
+            this.TipodeComprobanteID.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.ProvinciaID_SelectedIndexChanged);
+            // 
+            // radLabel16
+            // 
+            this.radLabel16.AutoSize = false;
+            this.radLabel16.Location = new System.Drawing.Point(13, 180);
+            this.radLabel16.Name = "radLabel16";
+            this.radLabel16.Size = new System.Drawing.Size(132, 18);
+            this.radLabel16.TabIndex = 0;
+            this.radLabel16.Text = "Tipo de Comprobante";
+            this.radLabel16.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // radLabel3
             // 
             this.radLabel3.AutoSize = false;
@@ -604,24 +622,6 @@
             this.radTitleBar1.TabStop = false;
             this.radTitleBar1.Text = "Cliente";
             // 
-            // radLabel16
-            // 
-            this.radLabel16.AutoSize = false;
-            this.radLabel16.Location = new System.Drawing.Point(13, 180);
-            this.radLabel16.Name = "radLabel16";
-            this.radLabel16.Size = new System.Drawing.Size(132, 18);
-            this.radLabel16.TabIndex = 0;
-            this.radLabel16.Text = "Tipo de Comprobante";
-            this.radLabel16.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // TipodeComprobanteID
-            // 
-            this.TipodeComprobanteID.Location = new System.Drawing.Point(152, 179);
-            this.TipodeComprobanteID.Name = "TipodeComprobanteID";
-            this.TipodeComprobanteID.Size = new System.Drawing.Size(265, 20);
-            this.TipodeComprobanteID.TabIndex = 10;
-            this.TipodeComprobanteID.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.ProvinciaID_SelectedIndexChanged);
-            // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -638,6 +638,7 @@
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.radTitleBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "Cliente";
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.Cliente_Load);
@@ -683,10 +684,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TipodeComprobanteID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TipodeComprobanteID)).EndInit();
             this.ResumeLayout(false);
 
         }

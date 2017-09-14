@@ -55,6 +55,7 @@
             this.imageList1.Images.SetKeyName(10, "if_Sales-by-Payment-Method-rep_49616.png");
             this.imageList1.Images.SetKeyName(11, "if_bookmarks_list_add_18556.png");
             this.imageList1.Images.SetKeyName(12, "if_kthememgr_3472.png");
+            this.imageList1.Images.SetKeyName(13, "if_folder_favorites_3668.png");
             // 
             // radRibbonBar1
             // 

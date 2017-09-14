@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Drawing.Printing;
 namespace Suite_FHFSoft
 {
     public partial class Reports : Form
@@ -18,8 +18,9 @@ namespace Suite_FHFSoft
         DataTable dtReport = new DataTable();
         public string vReportName = "";
         public string vSQLString = "";
+        public int vImprimir = 0; 
 
-        string vTitleReports = "";
+        public string vTitleReports = "";
         public Reports()
         {
             InitializeComponent();
@@ -40,16 +41,28 @@ namespace Suite_FHFSoft
 
             dtReport = C.SQL(vSQLString);
 
-
-
-            report.Load("C:\\Users\\LHVCDevelopment1\\Documents\\Visual Studio 2015\\Projects\\Evolution\\Evolution\\Reports\\" + vReportName);
+            report.Load(Application.StartupPath + "\\Reports\\" + vReportName);
             report.SetDatabaseLogon("", "");
             report.SetDataSource(dtReport);
 
-            crystalReportViewer1.ReportSource = report;
-            //crystalReportViewer1.ReportSource= "C:\\Users\\LHVCDevelopment1\\Documents\\Visual Studio 2015\\Projects\\Evolution\\Evolution\\Reports\\" + vReportName;
+    
+          
 
-            crystalReportViewer1.Refresh();
+            if(vImprimir==1)
+            {
+                PrintDialog pd = new PrintDialog();
+
+
+                report.PrintOptions.PrinterName = pd.PrinterSettings.PrinterName.ToString();
+                report.PrintToPrinter(1,true,0,0);
+            }
+            else
+            {
+                crystalReportViewer1.ReportSource = report;
+                //crystalReportViewer1.ReportSource= "C:\\Users\\LHVCDevelopment1\\Documents\\Visual Studio 2015\\Projects\\Evolution\\Evolution\\Reports\\" + vReportName;
+
+                crystalReportViewer1.Refresh();
+            }
         }
 
         private void SetTitle()

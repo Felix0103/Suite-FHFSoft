@@ -47,6 +47,7 @@
             this.NumeroTarjeta = new Telerik.WinControls.UI.RadTextBox();
             this.NumeroCheque = new Telerik.WinControls.UI.RadTextBox();
             this.Referencia = new Telerik.WinControls.UI.RadTextBox();
+            this.chkFactura = new Telerik.WinControls.UI.RadCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalFacturado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NumeroTarjeta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumeroCheque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Referencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkFactura)).BeginInit();
             this.SuspendLayout();
             // 
             // radTitleBar1
@@ -244,9 +246,9 @@
             // bAplicar
             // 
             this.bAplicar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAplicar.Location = new System.Drawing.Point(110, 305);
+            this.bAplicar.Location = new System.Drawing.Point(130, 305);
             this.bAplicar.Name = "bAplicar";
-            this.bAplicar.Size = new System.Drawing.Size(110, 36);
+            this.bAplicar.Size = new System.Drawing.Size(100, 36);
             this.bAplicar.TabIndex = 9;
             this.bAplicar.Text = "&Generar";
             this.bAplicar.Click += new System.EventHandler(this.bAplicar_Click);
@@ -254,9 +256,9 @@
             // bSalir
             // 
             this.bSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bSalir.Location = new System.Drawing.Point(226, 305);
+            this.bSalir.Location = new System.Drawing.Point(236, 305);
             this.bSalir.Name = "bSalir";
-            this.bSalir.Size = new System.Drawing.Size(110, 36);
+            this.bSalir.Size = new System.Drawing.Size(100, 36);
             this.bSalir.TabIndex = 10;
             this.bSalir.Text = "&Cancelar";
             this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
@@ -302,12 +304,23 @@
             this.Referencia.TabIndex = 8;
             this.Referencia.Visible = false;
             // 
+            // chkFactura
+            // 
+            this.chkFactura.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkFactura.Location = new System.Drawing.Point(12, 316);
+            this.chkFactura.Name = "chkFactura";
+            this.chkFactura.Size = new System.Drawing.Size(102, 18);
+            this.chkFactura.TabIndex = 51;
+            this.chkFactura.Text = "Imprimir Factura";
+            this.chkFactura.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            // 
             // FinalCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(345, 353);
+            this.Controls.Add(this.chkFactura);
             this.Controls.Add(this.Referencia);
             this.Controls.Add(this.NumeroCheque);
             this.Controls.Add(this.NumeroTarjeta);
@@ -356,6 +369,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NumeroTarjeta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumeroCheque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Referencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkFactura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,5 +396,6 @@
         private Telerik.WinControls.UI.RadTextBox NumeroTarjeta;
         private Telerik.WinControls.UI.RadTextBox NumeroCheque;
         private Telerik.WinControls.UI.RadTextBox Referencia;
+        private Telerik.WinControls.UI.RadCheckBox chkFactura;
     }
 }

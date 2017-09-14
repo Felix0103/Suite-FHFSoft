@@ -44,7 +44,7 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(3, 32);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ShowLogo = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(740, 493);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(367, 508);
             this.crystalReportViewer1.TabIndex = 2;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -53,7 +53,7 @@
             this.radTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.radTitleBar1.Name = "radTitleBar1";
-            this.radTitleBar1.Size = new System.Drawing.Size(765, 35);
+            this.radTitleBar1.Size = new System.Drawing.Size(373, 35);
             this.radTitleBar1.TabIndex = 3;
             this.radTitleBar1.TabStop = false;
             this.radTitleBar1.Text = "Reports";
@@ -64,7 +64,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(765, 537);
+            this.ClientSize = new System.Drawing.Size(373, 552);
             this.Controls.Add(this.radTitleBar1);
             this.Controls.Add(this.crystalReportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

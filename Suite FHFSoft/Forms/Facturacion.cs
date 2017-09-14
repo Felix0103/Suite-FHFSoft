@@ -15,6 +15,7 @@ namespace Suite_FHFSoft
 
         public int vClienteID = 0;
         public int vArticuloID = 0;
+        public int vImprimir = 0;
 
         decimal ItbisPorciento = 0;
         DataTable dtFactura = new DataTable();
@@ -470,11 +471,22 @@ namespace Suite_FHFSoft
 
 
                 dtFactura = C.SQL(sqlString + " Select R= @FacturaID");
-                MessageBox.Show(dtFactura.Rows[0][0].ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                
+                
+                if(vImprimir==1)
+                {
+                    Reports frm = new Reports();
+                    frm.MdiParent = MainMenu.ActiveForm;
+                    frm.vReportName = "FacturaSmall.rpt";
+                    frm.vImprimir=1;
+                    frm.vSQLString = "[FACTURA_T] " + dtFactura.Rows[0][0].ToString();
+                    frm.vTitleReports = "Factura #"+ dtFactura.Rows[0][0].ToString();
+                    frm.Show();
+                    frm.Close();
+                }
                 NewFactura();
-                
-                
-                
+
             }
             else if (vCobro==0)
             {

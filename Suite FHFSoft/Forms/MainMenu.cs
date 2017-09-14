@@ -46,7 +46,7 @@ namespace Suite_FHFSoft
             // SetRibbon();
 
 
-            ThemeResolutionService.ApplicationThemeName = ThemeOffice2007BlackTheme.ThemeName;
+            ThemeResolutionService.ApplicationThemeName = ThemeOffice2010BlueTheme.ThemeName;
 
             
         }
@@ -69,6 +69,63 @@ namespace Suite_FHFSoft
             progressBarElement.Visibility = ElementVisibility.Hidden;
             radStatusStrip1.Items.AddRange(new RadItem[] { labelElement, buttonElement, repeatButtonElement, separator, progressBarElement });
         }
+
+        public void setFavorites(DataTable Datos)
+        {
+            ((RibbonTab)radRibbonBar1.CommandTabs[0]).Items.Clear();
+
+            int item2 = -1;
+            int item3 = -1;
+            RadRibbonBarGroup[] radRibbonBarGroup = new RadRibbonBarGroup[40];
+            RadButtonElement[] radButtonElement = new RadButtonElement[50];
+
+            item2++;
+            radRibbonBarGroup[item2] = new RadRibbonBarGroup();
+            radRibbonBarGroup[item2].Text = "Mis Items Favoritos";
+            radRibbonBarGroup[item2].MinSize = new Size(300, 300);
+            ((RibbonTab)radRibbonBar1.CommandTabs[0]).Items.Add(radRibbonBarGroup[item2]);
+
+            item3++;
+            radButtonElement[item3] = new RadButtonElement();
+            radButtonElement[item3].Text = "Favoritos";
+            radButtonElement[item3].TextAlignment = ContentAlignment.BottomCenter;
+            radButtonElement[item3].TextWrap = true;
+            radButtonElement[item3].Tag = "Favoritos";
+            radButtonElement[item3].ImageIndex = 13;
+            radButtonElement[item3].ImageAlignment = ContentAlignment.MiddleCenter;
+            radButtonElement[item3].Size = new Size(100, 80);
+            radButtonElement[item3].AutoSize = false;
+            radButtonElement[item3].Click += ClickRibbonbar;
+            radRibbonBarGroup[item2].Items.Add(radButtonElement[item3]);
+
+            DataTable dtfavorites = dtfavorites = C.SQL("MISFAVORITOS_L " + C.vUserID);
+
+            foreach (DataRow vRow in dtfavorites.Rows)
+            {
+                if (vRow["Access"].ToString() == "1")
+                {
+                    item3++;
+                    radButtonElement[item3] = new RadButtonElement();
+                    radButtonElement[item3].Text = vRow["Detalle"].ToString();
+                    radButtonElement[item3].TextAlignment = ContentAlignment.BottomCenter;
+                    radButtonElement[item3].TextWrap = true;
+                    radButtonElement[item3].Tag = ((string)vRow["FormName"]);
+                    radButtonElement[item3].ImageIndex = ((int)vRow["ImageID"]);
+                    radButtonElement[item3].ImageAlignment = ContentAlignment.MiddleCenter;
+                    radButtonElement[item3].Size = new Size(100, 80);
+                    radButtonElement[item3].AutoSize = false;
+                    radButtonElement[item3].Click += ClickRibbonbar;
+                    radRibbonBarGroup[item2].Items.Add(radButtonElement[item3]);
+                }
+
+
+
+
+            }
+
+
+        }
+
         public void SetRibbon(DataTable Datos )
         {
             int item1 = -1;
@@ -102,15 +159,40 @@ namespace Suite_FHFSoft
             radButtonElement[item3].TextAlignment = ContentAlignment.BottomCenter;
             radButtonElement[item3].TextWrap = true;
             radButtonElement[item3].Tag = "Favoritos";
-            radButtonElement[item3].ImageIndex = 11;
+            radButtonElement[item3].ImageIndex = 13;
             radButtonElement[item3].ImageAlignment = ContentAlignment.MiddleCenter;
             radButtonElement[item3].Size = new Size(100, 80);
             radButtonElement[item3].AutoSize = false;
             radButtonElement[item3].Click += ClickRibbonbar;
             radRibbonBarGroup[item2].Items.Add(radButtonElement[item3]);
 
+            DataTable dtfavorites = dtfavorites = C.SQL("MISFAVORITOS_L " + C.vUserID);
+
+            foreach (DataRow vRow in dtfavorites.Rows)
+            {
+               if (vRow["Access"].ToString()=="1")
+                {
+                    item3++;
+                    radButtonElement[item3] = new RadButtonElement();
+                    radButtonElement[item3].Text = vRow["Detalle"].ToString();
+                    radButtonElement[item3].TextAlignment = ContentAlignment.BottomCenter;
+                    radButtonElement[item3].TextWrap = true;
+                    radButtonElement[item3].Tag = ((string)vRow["FormName"]);
+                    radButtonElement[item3].ImageIndex = ((int)vRow["ImageID"]);
+                    radButtonElement[item3].ImageAlignment = ContentAlignment.MiddleCenter;
+                    radButtonElement[item3].Size = new Size(100, 80);
+                    radButtonElement[item3].AutoSize = false;
+                    radButtonElement[item3].Click += ClickRibbonbar;
+                    radRibbonBarGroup[item2].Items.Add(radButtonElement[item3]);
+                }
+              
+
+
+
+            }
+
             //Aqui un for de los favoritos
-           // tabItem[item1].Items.Remove(radRibbonBarGroup[0]);
+            // tabItem[item1].Items.Remove(radRibbonBarGroup[0]);
 
 
             foreach (DataRow vRow in Datos.Rows)
