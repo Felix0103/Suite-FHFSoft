@@ -42,6 +42,7 @@ namespace Suite_FHFSoft
             dtReport = C.SQL(vSQLString);
 
             report.Load(Application.StartupPath + "\\Reports\\" + vReportName);
+          
             report.SetDatabaseLogon("", "");
             report.SetDataSource(dtReport);
 

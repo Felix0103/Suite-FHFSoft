@@ -306,7 +306,7 @@ namespace Suite_FHFSoft
 
         private void MainMenu_Activated(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+           this.WindowState = FormWindowState.Maximized;
         }
 
         private void vCerrarSesion_Click(object sender, EventArgs e)

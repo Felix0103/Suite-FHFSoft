@@ -230,6 +230,7 @@ namespace Suite_FHFSoft
         {
             LimpiarArticulo();
             clearCliente();
+            Fecha.Value = DateTime.Today;
             dtFactura = C.SQL("FACTURA_L 0");
             dtDetallepago= C.SQL("COBRAR_FACTURA_L 0");
             GRD.DataSource = dtFactura;
@@ -478,12 +479,12 @@ namespace Suite_FHFSoft
                 {
                     Reports frm = new Reports();
                     frm.MdiParent = MainMenu.ActiveForm;
-                    frm.vReportName = "FacturaSmall.rpt";
-                    frm.vImprimir=1;
+                    frm.vReportName = "FacturaMatricial.rpt";
+                    frm.vImprimir=0;
                     frm.vSQLString = "[FACTURA_T] " + dtFactura.Rows[0][0].ToString();
                     frm.vTitleReports = "Factura #"+ dtFactura.Rows[0][0].ToString();
                     frm.Show();
-                    frm.Close();
+                    //frm.Close();
                 }
                 NewFactura();
 
