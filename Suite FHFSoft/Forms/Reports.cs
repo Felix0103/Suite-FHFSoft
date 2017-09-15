@@ -66,9 +66,14 @@ namespace Suite_FHFSoft
             }
         }
 
-        private void SetTitle()
+        public void SetTitle()
         {
             this.Text = vTitleReports;
+        }
+
+        private void Reports_Activated(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

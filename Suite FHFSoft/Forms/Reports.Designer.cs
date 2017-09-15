@@ -70,6 +70,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Reports";
             this.Text = "Reports";
+            this.Activated += new System.EventHandler(this.Reports_Activated);
             this.Load += new System.EventHandler(this.Reports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).EndInit();
             this.ResumeLayout(false);
