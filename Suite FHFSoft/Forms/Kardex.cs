@@ -81,5 +81,10 @@ namespace Suite_FHFSoft
         {
             FillGrid();
         }
+
+        private void lblArticulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

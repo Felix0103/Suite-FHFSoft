@@ -199,7 +199,7 @@ namespace Suite_FHFSoft
                         {
                             DataRow vRow = dtDetallepago.NewRow();
                             vRow["TipoFormaPagoID"] = 1;
-                            vRow["Monto"] = Convert.ToDecimal(Efectivo.Value);
+                            vRow["Monto"] = Convert.ToDecimal(Efectivo.Value)- Convert.ToDecimal(Cambio.Value);
                             vRow["TipodeTransaccion"] = 1;
 
                             dtDetallepago.Rows.Add(vRow);

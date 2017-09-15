@@ -35,7 +35,7 @@
             // 
             // crystalReportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
+            this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -43,7 +43,6 @@
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Location = new System.Drawing.Point(3, 32);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = "E:\\Projectos\\Suite FHFSoft\\Suite FHFSoft\\bin\\Debug\\Reports\\FacturaMatricial.rpt";
             this.crystalReportViewer1.ShowLogo = false;
             this.crystalReportViewer1.Size = new System.Drawing.Size(906, 508);
             this.crystalReportViewer1.TabIndex = 2;
