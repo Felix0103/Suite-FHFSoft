@@ -117,7 +117,6 @@
             this.radLabel3.Size = new System.Drawing.Size(242, 62);
             this.radLabel3.TabIndex = 4;
             this.radLabel3.Text = "Suite FHFSoft";
-            this.radLabel3.Visible = false;
             // 
             // bLogin
             // 

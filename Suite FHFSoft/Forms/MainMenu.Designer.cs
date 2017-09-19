@@ -58,6 +58,15 @@
             this.imageList1.Images.SetKeyName(13, "if_folder_favorites_3668.png");
             this.imageList1.Images.SetKeyName(14, "if_report_56294.png");
             this.imageList1.Images.SetKeyName(15, "if_sales-report_49617.png");
+            this.imageList1.Images.SetKeyName(16, "if_money_47488.png");
+            this.imageList1.Images.SetKeyName(17, "if_cashbox_58874.png");
+            this.imageList1.Images.SetKeyName(18, "if_maintenance_60190.png");
+            this.imageList1.Images.SetKeyName(19, "if_internt_web_technology-02_274895.png");
+            this.imageList1.Images.SetKeyName(20, "if_developer-api-coding-screen_532707.png");
+            this.imageList1.Images.SetKeyName(21, "if_system-users_118828.png");
+            this.imageList1.Images.SetKeyName(22, "if_shopping_cart_465074.png");
+            this.imageList1.Images.SetKeyName(23, "if_inventory-maintenance_49590.png");
+            this.imageList1.Images.SetKeyName(24, "if_electronic_billing_machine_44639.png");
             // 
             // radRibbonBar1
             // 

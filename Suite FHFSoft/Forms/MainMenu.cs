@@ -55,6 +55,11 @@ namespace Suite_FHFSoft
         {
             RadLabelElement labelElement = new RadLabelElement();
             labelElement.Text = C.vUserName + "@" + C.vProfileName + "      Sucursal:" + C.vSucursalName;
+
+            RadLabelElement labelElement2 = new RadLabelElement();
+            labelElement2.Font=new Font("Cambria", 16);
+            labelElement2.Text = C.vCompanyName;
+
             RadButtonElement buttonElement = new RadButtonElement();
             buttonElement.Text = "My ButtonElement";
             buttonElement.Visibility = ElementVisibility.Hidden;
@@ -67,7 +72,7 @@ namespace Suite_FHFSoft
             RadProgressBarElement progressBarElement = new RadProgressBarElement();
             progressBarElement.Text = "My Progress Bar";
             progressBarElement.Visibility = ElementVisibility.Hidden;
-            radStatusStrip1.Items.AddRange(new RadItem[] { labelElement, buttonElement, repeatButtonElement, separator, progressBarElement });
+            radStatusStrip1.Items.AddRange(new RadItem[] { labelElement, buttonElement, repeatButtonElement, separator, progressBarElement,labelElement2 });
         }
 
         public void setFavorites(DataTable Datos)

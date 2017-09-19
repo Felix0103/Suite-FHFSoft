@@ -31,6 +31,8 @@ namespace Suite_FHFSoft
             TipodeTarjeta.ValueMember = "Formaspagosid";
             TipodeTarjeta.DataSource = C.SQL("[FORMASPAGOS_L] 1 ");
             TipodeTarjeta.Text = "";
+
+            chkFactura.Checked = (C.imprimir == 1 ? true : false);
         }
         
         private void Calculate()
@@ -263,6 +265,16 @@ namespace Suite_FHFSoft
                     }
                 }
             }
+        }
+
+        private void radLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radLabel2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

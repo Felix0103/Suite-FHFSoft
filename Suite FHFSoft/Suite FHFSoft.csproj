@@ -153,6 +153,18 @@
   <ItemGroup>
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Seguridad.cs" />
+    <Compile Include="Forms\ArqueoCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ArqueoCaja.Designer.cs">
+      <DependentUpon>ArqueoCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Arqueos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Arqueos.Designer.cs">
+      <DependentUpon>Arqueos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Articulos.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -287,6 +299,12 @@
     <Compile Include="Forms\Usuario.Designer.cs">
       <DependentUpon>Usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wait.Designer.cs">
+      <DependentUpon>Wait.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reportes\ReporteVentas.cs">
@@ -295,6 +313,12 @@
     <Compile Include="Reportes\ReporteVentas.Designer.cs">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\ArqueoCaja.resx">
+      <DependentUpon>ArqueoCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Arqueos.resx">
+      <DependentUpon>Arqueos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Articulos.resx">
       <DependentUpon>Articulos.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -365,6 +389,9 @@
     <EmbeddedResource Include="Forms\Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wait.resx">
+      <DependentUpon>Wait.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -410,6 +437,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="if_Creative_Suite_63827.ico" />
+    <None Include="Resources\if_Gnome-View-Refresh-64_55783.png" />
     <None Include="Resources\if_save as_36557.png" />
     <None Include="Resources\if_shopping cart_36567.png" />
     <None Include="Resources\if_file_new_36497.png" />

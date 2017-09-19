@@ -122,6 +122,8 @@ namespace Suite_FHFSoft
         public static int vSucursalID;
         public static int vPerfilID;
         public static string vSucursalName;
+        public static string vCompanyName;
+        public static int imprimir;
     }
 }
 

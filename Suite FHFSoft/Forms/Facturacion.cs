@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -437,6 +438,7 @@ namespace Suite_FHFSoft
 
         private void bCobrar_Click(object sender, EventArgs e)
         {
+            
             if (GRD.RowCount == 0) { MessageBox.Show("Esta Factura no tene articulos para Cobrar",Application.ProductName,MessageBoxButtons.OK,MessageBoxIcon.Exclamation); return; }
             vCobro = 0;
             FinalCompra form = new FinalCompra();
@@ -477,14 +479,23 @@ namespace Suite_FHFSoft
                 
                 if(vImprimir==1)
                 {
-                    Reports frm = new Reports();
-                    frm.MdiParent = MainMenu.ActiveForm;
-                    frm.vReportName = "FacturaMatricial.rpt";
-                    frm.vImprimir=0;
-                    frm.vSQLString = "[FACTURA_T] " + dtFactura.Rows[0][0].ToString();
-                    frm.vTitleReports = "Factura #"+ dtFactura.Rows[0][0].ToString();
-                    frm.Show();
-                    //frm.Close();
+                    
+                    ReportDocument report = new ReportDocument();
+
+                    DataTable dtReport = new DataTable();
+
+                    dtReport = C.SQL("[FACTURA_T] " + dtFactura.Rows[0][0].ToString());
+
+                    report.Load(Application.StartupPath + "\\Reports\\FacturaMatricial.rpt");
+
+                    report.SetDatabaseLogon("", "");
+                    report.SetDataSource(dtReport);
+
+                    PrintDialog pd = new PrintDialog();
+
+
+                    report.PrintOptions.PrinterName = pd.PrinterSettings.PrinterName.ToString();
+                    report.PrintToPrinter(1, true, 0, 0);
                 }
                 NewFactura();
 
@@ -519,6 +530,11 @@ namespace Suite_FHFSoft
             {
                 NewFactura();
             }
+        }
+
+        private void bCotizacion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

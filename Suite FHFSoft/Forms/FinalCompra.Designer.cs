@@ -145,6 +145,7 @@
             this.radLabel2.TabIndex = 6;
             this.radLabel2.Text = "Tarjeta";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.radLabel2.Click += new System.EventHandler(this.radLabel2_Click);
             // 
             // Tarjeta
             // 
@@ -227,6 +228,7 @@
             this.radLabel5.TabIndex = 6;
             this.radLabel5.Text = "Cambio";
             this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.radLabel5.Click += new System.EventHandler(this.radLabel5_Click);
             // 
             // Cambio
             // 

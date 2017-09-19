@@ -311,6 +311,7 @@
             this.bCotizacion.TabIndex = 30;
             this.bCotizacion.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.bCotizacion, "Guardar como Cotizacion");
+            this.bCotizacion.Click += new System.EventHandler(this.bCotizacion_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.bCotizacion.GetChildAt(0))).Image = global::Suite_FHFSoft.Properties.Resources.if_save_as_36557;
             ((Telerik.WinControls.UI.RadButtonElement)(this.bCotizacion.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             ((Telerik.WinControls.UI.RadButtonElement)(this.bCotizacion.GetChildAt(0))).Text = "";
@@ -771,7 +772,7 @@
             this.Fecha.Size = new System.Drawing.Size(211, 20);
             this.Fecha.TabIndex = 1;
             this.Fecha.TabStop = false;
-            this.Fecha.Text = "Saturday, December 10, 2016";
+            this.Fecha.Text = "sábado, 10 de diciembre de 2016";
             this.Fecha.Value = new System.DateTime(2016, 12, 10, 20, 43, 48, 270);
             // 
             // radLabel7
@@ -1036,7 +1037,7 @@
             this.Desc.Size = new System.Drawing.Size(51, 20);
             this.Desc.TabIndex = 7;
             this.Desc.TabStop = false;
-            this.Desc.Text = "0.00 %";
+            this.Desc.Text = "0.00%";
             this.Desc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Desc.Visible = false;
             // 

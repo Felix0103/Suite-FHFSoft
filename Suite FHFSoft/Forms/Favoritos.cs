@@ -62,5 +62,10 @@ namespace Suite_FHFSoft
 
               this.Close();
         }
+
+        private void bSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

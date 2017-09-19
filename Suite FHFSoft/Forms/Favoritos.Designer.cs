@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Favoritos));
             this.FavoritosList = new Telerik.WinControls.UI.RadCheckedListBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.radTitleBar1 = new Telerik.WinControls.UI.RadTitleBar();
             this.bSalir = new Telerik.WinControls.UI.RadButton();
             this.bGuardar = new Telerik.WinControls.UI.RadButton();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.FavoritosList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bSalir)).BeginInit();
@@ -50,6 +50,34 @@
             this.FavoritosList.Size = new System.Drawing.Size(586, 325);
             this.FavoritosList.TabIndex = 0;
             this.FavoritosList.Text = "radCheckedListBox1";
+            // 
+            // radTitleBar1
+            // 
+            this.radTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radTitleBar1.Location = new System.Drawing.Point(0, 0);
+            this.radTitleBar1.Name = "radTitleBar1";
+            this.radTitleBar1.Size = new System.Drawing.Size(611, 33);
+            this.radTitleBar1.TabIndex = 0;
+            this.radTitleBar1.TabStop = false;
+            this.radTitleBar1.Text = "Favoritos";
+            // 
+            // bSalir
+            // 
+            this.bSalir.Location = new System.Drawing.Point(486, 370);
+            this.bSalir.Name = "bSalir";
+            this.bSalir.Size = new System.Drawing.Size(110, 24);
+            this.bSalir.TabIndex = 53;
+            this.bSalir.Text = "&Salir";
+            this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
+            // 
+            // bGuardar
+            // 
+            this.bGuardar.Location = new System.Drawing.Point(370, 370);
+            this.bGuardar.Name = "bGuardar";
+            this.bGuardar.Size = new System.Drawing.Size(110, 24);
+            this.bGuardar.TabIndex = 52;
+            this.bGuardar.Text = "&Guardar";
+            this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
             // 
             // imageList1
             // 
@@ -71,33 +99,14 @@
             this.imageList1.Images.SetKeyName(13, "if_folder_favorites_3668.png");
             this.imageList1.Images.SetKeyName(14, "if_report_56294.png");
             this.imageList1.Images.SetKeyName(15, "if_sales-report_49617.png");
-            // 
-            // radTitleBar1
-            // 
-            this.radTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radTitleBar1.Location = new System.Drawing.Point(0, 0);
-            this.radTitleBar1.Name = "radTitleBar1";
-            this.radTitleBar1.Size = new System.Drawing.Size(611, 33);
-            this.radTitleBar1.TabIndex = 0;
-            this.radTitleBar1.TabStop = false;
-            this.radTitleBar1.Text = "Favoritos";
-            // 
-            // bSalir
-            // 
-            this.bSalir.Location = new System.Drawing.Point(486, 370);
-            this.bSalir.Name = "bSalir";
-            this.bSalir.Size = new System.Drawing.Size(110, 24);
-            this.bSalir.TabIndex = 53;
-            this.bSalir.Text = "&Salir";
-            // 
-            // bGuardar
-            // 
-            this.bGuardar.Location = new System.Drawing.Point(370, 370);
-            this.bGuardar.Name = "bGuardar";
-            this.bGuardar.Size = new System.Drawing.Size(110, 24);
-            this.bGuardar.TabIndex = 52;
-            this.bGuardar.Text = "&Guardar";
-            this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
+            this.imageList1.Images.SetKeyName(16, "if_money_47488.png");
+            this.imageList1.Images.SetKeyName(17, "if_cashbox_58874.png");
+            this.imageList1.Images.SetKeyName(18, "if_maintenance_60190.png");
+            this.imageList1.Images.SetKeyName(19, "if_internt_web_technology-02_274895.png");
+            this.imageList1.Images.SetKeyName(20, "if_developer-api-coding-screen_532707.png");
+            this.imageList1.Images.SetKeyName(21, "if_system-users_118828.png");
+            this.imageList1.Images.SetKeyName(22, "if_shopping_cart_465074.png");
+            this.imageList1.Images.SetKeyName(23, "if_inventory-maintenance_49590.png");
             // 
             // Favoritos
             // 
@@ -126,9 +135,9 @@
         #endregion
 
         private Telerik.WinControls.UI.RadCheckedListBox FavoritosList;
-        private System.Windows.Forms.ImageList imageList1;
         private Telerik.WinControls.UI.RadTitleBar radTitleBar1;
         private Telerik.WinControls.UI.RadButton bSalir;
         private Telerik.WinControls.UI.RadButton bGuardar;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

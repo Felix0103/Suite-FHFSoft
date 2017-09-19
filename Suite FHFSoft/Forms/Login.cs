@@ -57,6 +57,8 @@ namespace Suite_FHFSoft
                 C.vSucursalID= C.Cint(vRow["SucursalID"].ToString());
                 C.vProfileName = vRow["PerfilName"].ToString();
                 C.vSucursalName = vRow["SucursalName"].ToString(); 
+                C.vCompanyName= vRow["NombreEmpresa"].ToString();
+                C.imprimir = C.Cint(vRow["Imprimir"].ToString());
                 MainMenu vMenu = new MainMenu();
                 vMenu.SetRibbon(dtLogin);
                 vMenu.setStatus();
