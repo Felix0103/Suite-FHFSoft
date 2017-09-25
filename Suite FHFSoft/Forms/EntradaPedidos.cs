@@ -289,6 +289,9 @@ namespace Suite_FHFSoft
             GRD.ShowRowHeaderColumn = true;
             GRD.Columns[1].IsVisible = false;
             TipodeComprobanteID.Text = "";
+           
+            vORDENCOMPRASDETALLEID = 0;
+
             FormadePagoID.Text = "";
             Fecha.Value = DateTime.Today;
             clearProveedor();
@@ -297,8 +300,9 @@ namespace Suite_FHFSoft
             AlmacenID.SelectedValue = (dtSurcursal.Rows.Count == 1 ? Convert.ToInt64(dtSurcursal.Rows[0]["SucursalID"].ToString()) :0);
 
 
-            DataTable dd = C.SQL("ORDENCOMPRAS_L 0");
-            GRD.DataSource = dd;
+            dtOrdenCompras = C.SQL("ORDENCOMPRAS_L " + vOrdenCompras );
+            vOrdenCompras = 0;
+            GRD.DataSource = dtOrdenCompras;
             vLock = 0;
 
         }
@@ -510,10 +514,14 @@ namespace Suite_FHFSoft
 
                     }
 
+                bGuardar.Enabled = false;
+                bEdit.Enabled = true;
+                bProcesar.Enabled = false;
+                bNotas.Enabled = false;
 
-
-                    dtOrdenCompras = C.SQL(sqlString + " exec ('ORDENCOMPRAS_L ' + @OrdenID)");
-                    CargarOrden();
+                dtOrdenCompras = C.SQL(sqlString + " exec ('ORDENCOMPRAS_L ' + @OrdenID)");
+                vOrdenCompras= int.Parse(dtOrdenCompras.Rows[0]["OrdenCompraId"].ToString());
+                CargarOrden();
                     MessageBox.Show("Orden de Compras Guardada", Application.ProductName,MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
@@ -820,6 +828,11 @@ namespace Suite_FHFSoft
             {
                 Procesar();
             }
+
+            bGuardar.Enabled = false;
+            bEdit.Enabled = false;
+            bProcesar.Enabled = false;
+            bNotas.Enabled = false;
         }
 
         private void bEdit_Click(object sender, EventArgs e)
@@ -828,6 +841,11 @@ namespace Suite_FHFSoft
             if (vLock == 0) { return; }
             vOpt = 1;
             lblStatus.Text = "Editando";
+
+            bGuardar.Enabled = true;
+            bEdit.Enabled = false;
+            bProcesar.Enabled = true;
+            bNotas.Enabled = true;
 
         }
 
@@ -844,12 +862,26 @@ namespace Suite_FHFSoft
             lblStatus.Text = "Creacion";
             Limpiar();
             Prosesada = 0;
-            
+            bGuardar.Enabled = true;
+            bEdit.Enabled = false;
+            bProcesar.Enabled = false;
+            bNotas.Enabled = true;
         }
 
         private void bNotas_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bCalculadora_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process calc = new System.Diagnostics.Process { StartInfo = { FileName = @"calc.exe" } };
+            calc.Start();
         }
     }
 }

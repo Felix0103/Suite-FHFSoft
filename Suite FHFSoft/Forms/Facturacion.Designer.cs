@@ -37,6 +37,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.FacturaNumber = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
@@ -183,7 +184,7 @@
             this.FacturaNumber.Location = new System.Drawing.Point(123, 46);
             this.FacturaNumber.Name = "FacturaNumber";
             this.FacturaNumber.ReadOnly = true;
-            this.FacturaNumber.Size = new System.Drawing.Size(211, 20);
+            this.FacturaNumber.Size = new System.Drawing.Size(176, 20);
             this.FacturaNumber.TabIndex = 1;
             // 
             // radLabel8
@@ -199,7 +200,7 @@
             // 
             // TotalNeto
             // 
-            this.TotalNeto.Location = new System.Drawing.Point(984, 617);
+            this.TotalNeto.Location = new System.Drawing.Point(841, 572);
             this.TotalNeto.Mask = "f";
             this.TotalNeto.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.TotalNeto.Name = "TotalNeto";
@@ -212,7 +213,7 @@
             // 
             // TotalF
             // 
-            this.TotalF.Location = new System.Drawing.Point(985, 573);
+            this.TotalF.Location = new System.Drawing.Point(841, 528);
             this.TotalF.Mask = "f";
             this.TotalF.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.TotalF.Name = "TotalF";
@@ -225,7 +226,7 @@
             // 
             // DESCF
             // 
-            this.DESCF.Location = new System.Drawing.Point(985, 595);
+            this.DESCF.Location = new System.Drawing.Point(841, 550);
             this.DESCF.Mask = "f";
             this.DESCF.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.DESCF.Name = "DESCF";
@@ -238,7 +239,7 @@
             // 
             // ITBISF
             // 
-            this.ITBISF.Location = new System.Drawing.Point(985, 550);
+            this.ITBISF.Location = new System.Drawing.Point(841, 505);
             this.ITBISF.Mask = "f";
             this.ITBISF.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.ITBISF.Name = "ITBISF";
@@ -254,7 +255,7 @@
             this.radButton9.BackColor = System.Drawing.Color.Transparent;
             this.radButton9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton9.Image = global::Suite_FHFSoft.Properties.Resources._1481449800_search;
-            this.radButton9.Location = new System.Drawing.Point(256, 548);
+            this.radButton9.Location = new System.Drawing.Point(256, 503);
             this.radButton9.Name = "radButton9";
             this.radButton9.Size = new System.Drawing.Size(74, 66);
             this.radButton9.TabIndex = 34;
@@ -277,7 +278,7 @@
             this.bCancelar.BackColor = System.Drawing.Color.Transparent;
             this.bCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancelar.Image = global::Suite_FHFSoft.Properties.Resources.delete_Cancel;
-            this.bCancelar.Location = new System.Drawing.Point(488, 548);
+            this.bCancelar.Location = new System.Drawing.Point(488, 503);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(74, 66);
             this.bCancelar.TabIndex = 30;
@@ -305,7 +306,7 @@
             this.bCotizacion.BackColor = System.Drawing.Color.Transparent;
             this.bCotizacion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCotizacion.Image = global::Suite_FHFSoft.Properties.Resources.if_save_as_36557;
-            this.bCotizacion.Location = new System.Drawing.Point(416, 548);
+            this.bCotizacion.Location = new System.Drawing.Point(416, 503);
             this.bCotizacion.Name = "bCotizacion";
             this.bCotizacion.Size = new System.Drawing.Size(74, 66);
             this.bCotizacion.TabIndex = 30;
@@ -333,7 +334,7 @@
             this.radButton4.BackColor = System.Drawing.Color.Transparent;
             this.radButton4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton4.Image = global::Suite_FHFSoft.Properties.Resources._1481449260_calculator;
-            this.radButton4.Location = new System.Drawing.Point(25, 548);
+            this.radButton4.Location = new System.Drawing.Point(25, 503);
             this.radButton4.Name = "radButton4";
             this.radButton4.Size = new System.Drawing.Size(74, 66);
             this.radButton4.TabIndex = 28;
@@ -356,7 +357,7 @@
             this.bCobrar.BackColor = System.Drawing.Color.Transparent;
             this.bCobrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCobrar.Image = global::Suite_FHFSoft.Properties.Resources.if_shopping_cart_36567;
-            this.bCobrar.Location = new System.Drawing.Point(336, 548);
+            this.bCobrar.Location = new System.Drawing.Point(336, 503);
             this.bCobrar.Name = "bCobrar";
             this.bCobrar.Size = new System.Drawing.Size(74, 66);
             this.bCobrar.TabIndex = 27;
@@ -377,7 +378,7 @@
             // 
             // SubtotalF
             // 
-            this.SubtotalF.Location = new System.Drawing.Point(985, 527);
+            this.SubtotalF.Location = new System.Drawing.Point(841, 482);
             this.SubtotalF.Mask = "f";
             this.SubtotalF.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.SubtotalF.Name = "SubtotalF";
@@ -408,9 +409,9 @@
             this.radGroupBox3.Controls.Add(this.radLabel13);
             this.radGroupBox3.Controls.Add(this.radLabel2);
             this.radGroupBox3.HeaderText = "Articulo";
-            this.radGroupBox3.Location = new System.Drawing.Point(8, 202);
+            this.radGroupBox3.Location = new System.Drawing.Point(5, 202);
             this.radGroupBox3.Name = "radGroupBox3";
-            this.radGroupBox3.Size = new System.Drawing.Size(1080, 77);
+            this.radGroupBox3.Size = new System.Drawing.Size(937, 67);
             this.radGroupBox3.TabIndex = 20;
             this.radGroupBox3.Text = "Articulo";
             // 
@@ -419,7 +420,7 @@
             this.bAddArticulo.BackColor = System.Drawing.Color.Transparent;
             this.bAddArticulo.Image = global::Suite_FHFSoft.Properties.Resources._1481974794_shopcartadd_32x32;
             this.bAddArticulo.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bAddArticulo.Location = new System.Drawing.Point(1036, 36);
+            this.bAddArticulo.Location = new System.Drawing.Point(883, 21);
             this.bAddArticulo.Name = "bAddArticulo";
             this.bAddArticulo.Size = new System.Drawing.Size(37, 38);
             this.bAddArticulo.TabIndex = 6;
@@ -433,7 +434,7 @@
             // 
             this.bBuscarArticulo.BackColor = System.Drawing.Color.Transparent;
             this.bBuscarArticulo.Image = global::Suite_FHFSoft.Properties.Resources._1481444391_search;
-            this.bBuscarArticulo.Location = new System.Drawing.Point(127, 36);
+            this.bBuscarArticulo.Location = new System.Drawing.Point(127, 30);
             this.bBuscarArticulo.Name = "bBuscarArticulo";
             this.bBuscarArticulo.Size = new System.Drawing.Size(38, 36);
             this.bBuscarArticulo.TabIndex = 5;
@@ -453,7 +454,7 @@
             // 
             this.radLabel12.AutoSize = false;
             this.radLabel12.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel12.Location = new System.Drawing.Point(21, 22);
+            this.radLabel12.Location = new System.Drawing.Point(21, 16);
             this.radLabel12.Name = "radLabel12";
             this.radLabel12.Size = new System.Drawing.Size(100, 20);
             this.radLabel12.TabIndex = 0;
@@ -462,7 +463,7 @@
             // 
             // CodigoA
             // 
-            this.CodigoA.Location = new System.Drawing.Point(21, 45);
+            this.CodigoA.Location = new System.Drawing.Point(21, 39);
             this.CodigoA.Name = "CodigoA";
             this.CodigoA.Size = new System.Drawing.Size(100, 20);
             this.CodigoA.TabIndex = 1;
@@ -473,11 +474,11 @@
             // Cantidad
             // 
             this.Cantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.Cantidad.Location = new System.Drawing.Point(776, 45);
+            this.Cantidad.Location = new System.Drawing.Point(701, 39);
             this.Cantidad.Mask = "d";
             this.Cantidad.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Size = new System.Drawing.Size(124, 20);
+            this.Cantidad.Size = new System.Drawing.Size(72, 20);
             this.Cantidad.TabIndex = 5;
             this.Cantidad.TabStop = false;
             this.Cantidad.Text = "0";
@@ -487,12 +488,12 @@
             // 
             // Precio
             // 
-            this.Precio.Location = new System.Drawing.Point(516, 45);
+            this.Precio.Location = new System.Drawing.Point(516, 39);
             this.Precio.Mask = "f";
             this.Precio.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
-            this.Precio.Size = new System.Drawing.Size(124, 20);
+            this.Precio.Size = new System.Drawing.Size(80, 20);
             this.Precio.TabIndex = 5;
             this.Precio.TabStop = false;
             this.Precio.Text = "0.00";
@@ -500,12 +501,12 @@
             // 
             // SubTotal
             // 
-            this.SubTotal.Location = new System.Drawing.Point(906, 45);
+            this.SubTotal.Location = new System.Drawing.Point(779, 39);
             this.SubTotal.Mask = "f";
             this.SubTotal.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.SubTotal.Name = "SubTotal";
             this.SubTotal.ReadOnly = true;
-            this.SubTotal.Size = new System.Drawing.Size(124, 20);
+            this.SubTotal.Size = new System.Drawing.Size(98, 20);
             this.SubTotal.TabIndex = 5;
             this.SubTotal.TabStop = false;
             this.SubTotal.Text = "0.00";
@@ -513,15 +514,15 @@
             // 
             // Existencia
             // 
-            this.Existencia.Location = new System.Drawing.Point(646, 45);
+            this.Existencia.Location = new System.Drawing.Point(602, 39);
             this.Existencia.Name = "Existencia";
             this.Existencia.ReadOnly = true;
-            this.Existencia.Size = new System.Drawing.Size(124, 20);
+            this.Existencia.Size = new System.Drawing.Size(81, 20);
             this.Existencia.TabIndex = 1;
             // 
             // Unidad
             // 
-            this.Unidad.Location = new System.Drawing.Point(386, 45);
+            this.Unidad.Location = new System.Drawing.Point(386, 39);
             this.Unidad.Name = "Unidad";
             this.Unidad.ReadOnly = true;
             this.Unidad.Size = new System.Drawing.Size(124, 20);
@@ -531,9 +532,9 @@
             // 
             this.radLabel16.AutoSize = false;
             this.radLabel16.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel16.Location = new System.Drawing.Point(776, 22);
+            this.radLabel16.Location = new System.Drawing.Point(701, 16);
             this.radLabel16.Name = "radLabel16";
-            this.radLabel16.Size = new System.Drawing.Size(124, 18);
+            this.radLabel16.Size = new System.Drawing.Size(72, 18);
             this.radLabel16.TabIndex = 0;
             this.radLabel16.Text = "Cantidad";
             this.radLabel16.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -542,9 +543,9 @@
             // 
             this.radLabel17.AutoSize = false;
             this.radLabel17.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel17.Location = new System.Drawing.Point(906, 22);
+            this.radLabel17.Location = new System.Drawing.Point(779, 16);
             this.radLabel17.Name = "radLabel17";
-            this.radLabel17.Size = new System.Drawing.Size(124, 18);
+            this.radLabel17.Size = new System.Drawing.Size(98, 18);
             this.radLabel17.TabIndex = 0;
             this.radLabel17.Text = "Sub Total";
             this.radLabel17.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -553,9 +554,9 @@
             // 
             this.radLabel15.AutoSize = false;
             this.radLabel15.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel15.Location = new System.Drawing.Point(646, 22);
+            this.radLabel15.Location = new System.Drawing.Point(602, 16);
             this.radLabel15.Name = "radLabel15";
-            this.radLabel15.Size = new System.Drawing.Size(124, 18);
+            this.radLabel15.Size = new System.Drawing.Size(81, 18);
             this.radLabel15.TabIndex = 0;
             this.radLabel15.Text = "Existencia";
             this.radLabel15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -564,16 +565,16 @@
             // 
             this.radLabel14.AutoSize = false;
             this.radLabel14.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel14.Location = new System.Drawing.Point(516, 22);
+            this.radLabel14.Location = new System.Drawing.Point(516, 16);
             this.radLabel14.Name = "radLabel14";
-            this.radLabel14.Size = new System.Drawing.Size(124, 18);
+            this.radLabel14.Size = new System.Drawing.Size(80, 18);
             this.radLabel14.TabIndex = 0;
             this.radLabel14.Text = "Precio";
             this.radLabel14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Descripcion
             // 
-            this.Descripcion.Location = new System.Drawing.Point(169, 45);
+            this.Descripcion.Location = new System.Drawing.Point(169, 39);
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
             this.Descripcion.Size = new System.Drawing.Size(209, 20);
@@ -583,7 +584,7 @@
             // 
             this.radLabel13.AutoSize = false;
             this.radLabel13.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel13.Location = new System.Drawing.Point(386, 22);
+            this.radLabel13.Location = new System.Drawing.Point(386, 16);
             this.radLabel13.Name = "radLabel13";
             this.radLabel13.Size = new System.Drawing.Size(124, 18);
             this.radLabel13.TabIndex = 0;
@@ -594,7 +595,7 @@
             // 
             this.radLabel2.AutoSize = false;
             this.radLabel2.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel2.Location = new System.Drawing.Point(169, 22);
+            this.radLabel2.Location = new System.Drawing.Point(169, 16);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(209, 18);
             this.radLabel2.TabIndex = 0;
@@ -605,7 +606,7 @@
             // 
             this.radLabel27.AutoSize = false;
             this.radLabel27.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel27.Location = new System.Drawing.Point(912, 617);
+            this.radLabel27.Location = new System.Drawing.Point(768, 572);
             this.radLabel27.Name = "radLabel27";
             this.radLabel27.Size = new System.Drawing.Size(65, 18);
             this.radLabel27.TabIndex = 16;
@@ -616,7 +617,7 @@
             // 
             this.radLabel22.AutoSize = false;
             this.radLabel22.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel22.Location = new System.Drawing.Point(913, 573);
+            this.radLabel22.Location = new System.Drawing.Point(769, 528);
             this.radLabel22.Name = "radLabel22";
             this.radLabel22.Size = new System.Drawing.Size(65, 18);
             this.radLabel22.TabIndex = 15;
@@ -627,7 +628,7 @@
             // 
             this.radLabel21.AutoSize = false;
             this.radLabel21.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel21.Location = new System.Drawing.Point(917, 596);
+            this.radLabel21.Location = new System.Drawing.Point(773, 551);
             this.radLabel21.Name = "radLabel21";
             this.radLabel21.Size = new System.Drawing.Size(65, 18);
             this.radLabel21.TabIndex = 14;
@@ -638,7 +639,7 @@
             // 
             this.radLabel26.AutoSize = false;
             this.radLabel26.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel26.Location = new System.Drawing.Point(915, 528);
+            this.radLabel26.Location = new System.Drawing.Point(771, 483);
             this.radLabel26.Name = "radLabel26";
             this.radLabel26.Size = new System.Drawing.Size(65, 18);
             this.radLabel26.TabIndex = 13;
@@ -649,7 +650,7 @@
             // 
             this.radLabel20.AutoSize = false;
             this.radLabel20.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel20.Location = new System.Drawing.Point(914, 550);
+            this.radLabel20.Location = new System.Drawing.Point(770, 505);
             this.radLabel20.Name = "radLabel20";
             this.radLabel20.Size = new System.Drawing.Size(65, 18);
             this.radLabel20.TabIndex = 12;
@@ -662,7 +663,7 @@
             this.radLabel25.Font = new System.Drawing.Font("Sitka Small", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel25.ForeColor = System.Drawing.Color.DarkGreen;
             this.radLabel25.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel25.Location = new System.Drawing.Point(419, 526);
+            this.radLabel25.Location = new System.Drawing.Point(419, 481);
             this.radLabel25.Name = "radLabel25";
             this.radLabel25.Size = new System.Drawing.Size(275, 18);
             this.radLabel25.TabIndex = 11;
@@ -675,7 +676,7 @@
             this.radLabel24.Font = new System.Drawing.Font("Sitka Small", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel24.ForeColor = System.Drawing.Color.DarkGreen;
             this.radLabel24.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel24.Location = new System.Drawing.Point(406, 526);
+            this.radLabel24.Location = new System.Drawing.Point(406, 481);
             this.radLabel24.Name = "radLabel24";
             this.radLabel24.Size = new System.Drawing.Size(197, 18);
             this.radLabel24.TabIndex = 10;
@@ -688,7 +689,7 @@
             this.radLabel23.Font = new System.Drawing.Font("Sitka Small", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel23.ForeColor = System.Drawing.Color.DarkGreen;
             this.radLabel23.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel23.Location = new System.Drawing.Point(203, 526);
+            this.radLabel23.Location = new System.Drawing.Point(203, 481);
             this.radLabel23.Name = "radLabel23";
             this.radLabel23.Size = new System.Drawing.Size(197, 18);
             this.radLabel23.TabIndex = 9;
@@ -701,7 +702,7 @@
             this.radLabel19.Font = new System.Drawing.Font("Sitka Small", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel19.ForeColor = System.Drawing.Color.DarkGreen;
             this.radLabel19.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.radLabel19.Location = new System.Drawing.Point(8, 526);
+            this.radLabel19.Location = new System.Drawing.Point(8, 481);
             this.radLabel19.Name = "radLabel19";
             this.radLabel19.Size = new System.Drawing.Size(185, 18);
             this.radLabel19.TabIndex = 8;
@@ -722,9 +723,9 @@
             this.radGroupBox2.Controls.Add(this.FacturaNumber);
             this.radGroupBox2.Controls.Add(this.radLabel8);
             this.radGroupBox2.HeaderText = "";
-            this.radGroupBox2.Location = new System.Drawing.Point(737, 46);
+            this.radGroupBox2.Location = new System.Drawing.Point(630, 46);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(347, 150);
+            this.radGroupBox2.Size = new System.Drawing.Size(312, 150);
             this.radGroupBox2.TabIndex = 19;
             // 
             // FormadePagoID
@@ -733,7 +734,7 @@
             this.FormadePagoID.Location = new System.Drawing.Point(123, 97);
             this.FormadePagoID.Name = "FormadePagoID";
             this.FormadePagoID.NullText = "Seleccione la forma de pago";
-            this.FormadePagoID.Size = new System.Drawing.Size(211, 20);
+            this.FormadePagoID.Size = new System.Drawing.Size(176, 20);
             this.FormadePagoID.TabIndex = 7;
             // 
             // radLabel10
@@ -760,7 +761,7 @@
             // 
             this.TipodeComprobanteID.Location = new System.Drawing.Point(123, 71);
             this.TipodeComprobanteID.Name = "TipodeComprobanteID";
-            this.TipodeComprobanteID.Size = new System.Drawing.Size(211, 20);
+            this.TipodeComprobanteID.Size = new System.Drawing.Size(176, 20);
             this.TipodeComprobanteID.TabIndex = 3;
             // 
             // Fecha
@@ -769,10 +770,10 @@
             this.Fecha.Location = new System.Drawing.Point(123, 21);
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
-            this.Fecha.Size = new System.Drawing.Size(211, 20);
+            this.Fecha.Size = new System.Drawing.Size(176, 20);
             this.Fecha.TabIndex = 1;
             this.Fecha.TabStop = false;
-            this.Fecha.Text = "sábado, 10 de diciembre de 2016";
+            this.Fecha.Text = "Saturday, December 10, 2016";
             this.Fecha.Value = new System.DateTime(2016, 12, 10, 20, 43, 48, 270);
             // 
             // radLabel7
@@ -792,7 +793,7 @@
             this.Vendedor.Location = new System.Drawing.Point(123, 123);
             this.Vendedor.Name = "Vendedor";
             this.Vendedor.ReadOnly = true;
-            this.Vendedor.Size = new System.Drawing.Size(211, 20);
+            this.Vendedor.Size = new System.Drawing.Size(176, 20);
             this.Vendedor.TabIndex = 1;
             // 
             // radLabel11
@@ -922,7 +923,7 @@
             this.GRD.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.GRD.ForeColor = System.Drawing.SystemColors.ControlText;
             this.GRD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.GRD.Location = new System.Drawing.Point(8, 285);
+            this.GRD.Location = new System.Drawing.Point(8, 273);
             // 
             // 
             // 
@@ -935,21 +936,22 @@
             gridViewTextBoxColumn1.HeaderText = "Codigo";
             gridViewTextBoxColumn1.Name = "Codigo";
             gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.Width = 75;
+            gridViewTextBoxColumn1.Width = 69;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Descripcion";
             gridViewTextBoxColumn2.HeaderText = "Descripcion";
             gridViewTextBoxColumn2.Name = "Descripcion";
             gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 331;
+            gridViewTextBoxColumn2.Width = 259;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "Cantidad";
             gridViewTextBoxColumn3.FormatString = "{0:#0.#0}";
             gridViewTextBoxColumn3.HeaderText = "Cantdad";
             gridViewTextBoxColumn3.Name = "Cantidad";
             gridViewTextBoxColumn3.ReadOnly = true;
+            gridViewTextBoxColumn3.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending;
             gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn3.Width = 117;
+            gridViewTextBoxColumn3.Width = 86;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "UnidadMedida";
             gridViewTextBoxColumn4.HeaderText = "Unidad";
@@ -963,7 +965,7 @@
             gridViewTextBoxColumn5.Name = "Precio";
             gridViewTextBoxColumn5.ReadOnly = true;
             gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn5.Width = 92;
+            gridViewTextBoxColumn5.Width = 84;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "ITBISAMOUNT";
             gridViewTextBoxColumn6.FormatString = "{0:#0.#0}";
@@ -971,14 +973,14 @@
             gridViewTextBoxColumn6.Name = "ITBIS";
             gridViewTextBoxColumn6.ReadOnly = true;
             gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn6.Width = 96;
+            gridViewTextBoxColumn6.Width = 84;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "Descuento";
             gridViewTextBoxColumn7.HeaderText = "Desc";
             gridViewTextBoxColumn7.Name = "Desc";
             gridViewTextBoxColumn7.ReadOnly = true;
             gridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn7.Width = 98;
+            gridViewTextBoxColumn7.Width = 86;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
             gridViewTextBoxColumn8.FieldName = "Importe";
             gridViewTextBoxColumn8.FormatString = "{0:#0.#0}";
@@ -996,10 +998,15 @@
             gridViewTextBoxColumn6,
             gridViewTextBoxColumn7,
             gridViewTextBoxColumn8});
+            sortDescriptor1.Direction = System.ComponentModel.ListSortDirection.Descending;
+            sortDescriptor1.PropertyName = "Cantidad";
+            this.GRD.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
+            sortDescriptor1});
             this.GRD.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.GRD.Name = "GRD";
             this.GRD.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.GRD.Size = new System.Drawing.Size(1076, 235);
+            this.GRD.ShowGroupPanel = false;
+            this.GRD.Size = new System.Drawing.Size(934, 203);
             this.GRD.TabIndex = 21;
             this.GRD.Text = "radGridView1";
             this.GRD.CellValueNeeded += new Telerik.WinControls.UI.GridViewCellValueEventHandler(this.GRD_CellValueNeeded);
@@ -1037,7 +1044,7 @@
             this.Desc.Size = new System.Drawing.Size(51, 20);
             this.Desc.TabIndex = 7;
             this.Desc.TabStop = false;
-            this.Desc.Text = "0.00%";
+            this.Desc.Text = "0.00 %";
             this.Desc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Desc.Visible = false;
             // 
@@ -1069,7 +1076,7 @@
             this.radTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.radTitleBar1.Name = "radTitleBar1";
-            this.radTitleBar1.Size = new System.Drawing.Size(1097, 40);
+            this.radTitleBar1.Size = new System.Drawing.Size(955, 40);
             this.radTitleBar1.TabIndex = 17;
             this.radTitleBar1.TabStop = false;
             this.radTitleBar1.Text = "Facturacion";
@@ -1077,12 +1084,12 @@
             // radLabel6
             // 
             this.radLabel6.AutoSize = false;
-            this.radLabel6.Font = new System.Drawing.Font("Segoe Print", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel6.Font = new System.Drawing.Font("Segoe Print", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel6.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.radLabel6.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.radLabel6.Location = new System.Drawing.Point(342, 57);
             this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(389, 104);
+            this.radLabel6.Size = new System.Drawing.Size(291, 104);
             this.radLabel6.TabIndex = 7;
             this.radLabel6.Text = "Facturación";
             this.radLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1092,7 +1099,7 @@
             this.radButton6.BackColor = System.Drawing.Color.Transparent;
             this.radButton6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton6.Image = global::Suite_FHFSoft.Properties.Resources._1481449538_chat;
-            this.radButton6.Location = new System.Drawing.Point(99, 548);
+            this.radButton6.Location = new System.Drawing.Point(99, 503);
             this.radButton6.Name = "radButton6";
             this.radButton6.Size = new System.Drawing.Size(74, 66);
             this.radButton6.TabIndex = 31;
@@ -1114,7 +1121,7 @@
             this.radButton5.BackColor = System.Drawing.Color.Transparent;
             this.radButton5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton5.Image = global::Suite_FHFSoft.Properties.Resources._1481449625_printer;
-            this.radButton5.Location = new System.Drawing.Point(179, 548);
+            this.radButton5.Location = new System.Drawing.Point(179, 503);
             this.radButton5.Name = "radButton5";
             this.radButton5.Size = new System.Drawing.Size(74, 66);
             this.radButton5.TabIndex = 29;
@@ -1136,7 +1143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1097, 644);
+            this.ClientSize = new System.Drawing.Size(955, 598);
             this.Controls.Add(this.radButton9);
             this.Controls.Add(this.radButton6);
             this.Controls.Add(this.bCancelar);

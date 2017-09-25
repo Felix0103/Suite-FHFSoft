@@ -95,7 +95,7 @@ namespace Suite_FHFSoft
             DateTime Licencia = C.Cdate(Seguridad.DesEncriptar(C.SQL("ini_L").Rows[0][0].ToString()));
             if (Licencia < DateTime.Today)
             {
-                MessageBox.Show("Su Lcencia esta Vencida, Favor contactar a su Representante de Suite FHFSoft.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Su Licencia esta Vencida, Favor contactar a su Representante de Suite FHFSoft.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Username.ReadOnly = true;
                 Password.ReadOnly = true;
             }

@@ -437,6 +437,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="if_Creative_Suite_63827.ico" />
+    <None Include="Resources\if_document-new_23212.png" />
+    <None Include="Resources\if_calculator_103862.png" />
+    <None Include="Resources\if_07_note_47541.png" />
+    <None Include="Resources\if_Exit_32467.png" />
+    <None Include="Resources\if_edit_87425.png" />
+    <None Include="Resources\if_process_ok_71128.png" />
+    <None Include="Resources\if_save_173091.png" />
     <None Include="Resources\if_Gnome-View-Refresh-64_55783.png" />
     <None Include="Resources\if_save as_36557.png" />
     <None Include="Resources\if_shopping cart_36567.png" />
