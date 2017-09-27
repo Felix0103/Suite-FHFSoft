@@ -168,5 +168,10 @@ namespace Suite_FHFSoft
         {
 
         }
+
+        private void radButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
