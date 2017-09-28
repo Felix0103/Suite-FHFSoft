@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition5 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition6 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             this.MontoCheque = new Telerik.WinControls.UI.RadMaskedEditBox();
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.Credito = new Telerik.WinControls.UI.RadMaskedEditBox();
@@ -192,7 +192,7 @@
             this.MontoCheque.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.MontoCheque.Name = "MontoCheque";
             this.MontoCheque.ReadOnly = true;
-            this.MontoCheque.Size = new System.Drawing.Size(68, 20);
+            this.MontoCheque.Size = new System.Drawing.Size(64, 20);
             this.MontoCheque.TabIndex = 3;
             this.MontoCheque.TabStop = false;
             this.MontoCheque.Text = "0.00";
@@ -201,9 +201,9 @@
             // radLabel13
             // 
             this.radLabel13.AutoSize = false;
-            this.radLabel13.Location = new System.Drawing.Point(137, 60);
+            this.radLabel13.Location = new System.Drawing.Point(124, 60);
             this.radLabel13.Name = "radLabel13";
-            this.radLabel13.Size = new System.Drawing.Size(50, 18);
+            this.radLabel13.Size = new System.Drawing.Size(46, 18);
             this.radLabel13.TabIndex = 8;
             this.radLabel13.Text = "Credito:";
             this.radLabel13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -211,11 +211,11 @@
             // Credito
             // 
             this.Credito.BackColor = System.Drawing.Color.LightGreen;
-            this.Credito.Location = new System.Drawing.Point(193, 57);
+            this.Credito.Location = new System.Drawing.Point(178, 57);
             this.Credito.Mask = "f";
             this.Credito.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.Credito.Name = "Credito";
-            this.Credito.Size = new System.Drawing.Size(68, 20);
+            this.Credito.Size = new System.Drawing.Size(56, 20);
             this.Credito.TabIndex = 9;
             this.Credito.TabStop = false;
             this.Credito.Text = "0.00";
@@ -239,7 +239,7 @@
             this.Efectivo.Mask = "f";
             this.Efectivo.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.Efectivo.Name = "Efectivo";
-            this.Efectivo.Size = new System.Drawing.Size(68, 20);
+            this.Efectivo.Size = new System.Drawing.Size(55, 20);
             this.Efectivo.TabIndex = 7;
             this.Efectivo.TabStop = false;
             this.Efectivo.Text = "0.00";
@@ -249,9 +249,9 @@
             // radLabel19
             // 
             this.radLabel19.AutoSize = false;
-            this.radLabel19.Location = new System.Drawing.Point(137, 29);
+            this.radLabel19.Location = new System.Drawing.Point(124, 29);
             this.radLabel19.Name = "radLabel19";
-            this.radLabel19.Size = new System.Drawing.Size(50, 18);
+            this.radLabel19.Size = new System.Drawing.Size(49, 18);
             this.radLabel19.TabIndex = 4;
             this.radLabel19.Text = "Cheque:";
             this.radLabel19.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -269,11 +269,11 @@
             // Cheque
             // 
             this.Cheque.BackColor = System.Drawing.Color.LightGreen;
-            this.Cheque.Location = new System.Drawing.Point(193, 29);
+            this.Cheque.Location = new System.Drawing.Point(178, 29);
             this.Cheque.Mask = "f";
             this.Cheque.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.Cheque.Name = "Cheque";
-            this.Cheque.Size = new System.Drawing.Size(68, 20);
+            this.Cheque.Size = new System.Drawing.Size(56, 20);
             this.Cheque.TabIndex = 5;
             this.Cheque.TabStop = false;
             this.Cheque.Text = "0.00";
@@ -287,7 +287,7 @@
             this.TarjetaCheques.Mask = "f";
             this.TarjetaCheques.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.TarjetaCheques.Name = "TarjetaCheques";
-            this.TarjetaCheques.Size = new System.Drawing.Size(68, 20);
+            this.TarjetaCheques.Size = new System.Drawing.Size(55, 20);
             this.TarjetaCheques.TabIndex = 5;
             this.TarjetaCheques.TabStop = false;
             this.TarjetaCheques.Text = "0.00";
@@ -297,9 +297,9 @@
             // radLabel14
             // 
             this.radLabel14.AutoSize = false;
-            this.radLabel14.Location = new System.Drawing.Point(138, 57);
+            this.radLabel14.Location = new System.Drawing.Point(125, 57);
             this.radLabel14.Name = "radLabel14";
-            this.radLabel14.Size = new System.Drawing.Size(50, 18);
+            this.radLabel14.Size = new System.Drawing.Size(46, 18);
             this.radLabel14.TabIndex = 8;
             this.radLabel14.Text = "Credito:";
             this.radLabel14.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -307,12 +307,12 @@
             // FaltanteCredito
             // 
             this.FaltanteCredito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.FaltanteCredito.Location = new System.Drawing.Point(193, 56);
+            this.FaltanteCredito.Location = new System.Drawing.Point(176, 56);
             this.FaltanteCredito.Mask = "f";
             this.FaltanteCredito.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.FaltanteCredito.Name = "FaltanteCredito";
             this.FaltanteCredito.ReadOnly = true;
-            this.FaltanteCredito.Size = new System.Drawing.Size(68, 20);
+            this.FaltanteCredito.Size = new System.Drawing.Size(56, 20);
             this.FaltanteCredito.TabIndex = 9;
             this.FaltanteCredito.TabStop = false;
             this.FaltanteCredito.Text = "0.00";
@@ -340,7 +340,7 @@
             this.radGroupBox7.Controls.Add(this.TotalEfectivoCobro);
             this.radGroupBox7.Controls.Add(this.radLabel6);
             this.radGroupBox7.HeaderText = "Pagos";
-            this.radGroupBox7.Location = new System.Drawing.Point(612, 295);
+            this.radGroupBox7.Location = new System.Drawing.Point(580, 295);
             this.radGroupBox7.Name = "radGroupBox7";
             this.radGroupBox7.Size = new System.Drawing.Size(174, 141);
             this.radGroupBox7.TabIndex = 35;
@@ -353,7 +353,7 @@
             this.TotalTarjetaCobro.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.TotalTarjetaCobro.Name = "TotalTarjetaCobro";
             this.TotalTarjetaCobro.ReadOnly = true;
-            this.TotalTarjetaCobro.Size = new System.Drawing.Size(68, 20);
+            this.TotalTarjetaCobro.Size = new System.Drawing.Size(64, 20);
             this.TotalTarjetaCobro.TabIndex = 3;
             this.TotalTarjetaCobro.TabStop = false;
             this.TotalTarjetaCobro.Text = "0.00";
@@ -367,7 +367,7 @@
             this.TotalCobro.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.TotalCobro.Name = "TotalCobro";
             this.TotalCobro.ReadOnly = true;
-            this.TotalCobro.Size = new System.Drawing.Size(68, 20);
+            this.TotalCobro.Size = new System.Drawing.Size(64, 20);
             this.TotalCobro.TabIndex = 3;
             this.TotalCobro.TabStop = false;
             this.TotalCobro.Text = "0.00";
@@ -411,7 +411,7 @@
             this.TotalChequeCobro.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.TotalChequeCobro.Name = "TotalChequeCobro";
             this.TotalChequeCobro.ReadOnly = true;
-            this.TotalChequeCobro.Size = new System.Drawing.Size(68, 20);
+            this.TotalChequeCobro.Size = new System.Drawing.Size(64, 20);
             this.TotalChequeCobro.TabIndex = 3;
             this.TotalChequeCobro.TabStop = false;
             this.TotalChequeCobro.Text = "0.00";
@@ -424,7 +424,7 @@
             this.TotalEfectivoCobro.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.TotalEfectivoCobro.Name = "TotalEfectivoCobro";
             this.TotalEfectivoCobro.ReadOnly = true;
-            this.TotalEfectivoCobro.Size = new System.Drawing.Size(68, 20);
+            this.TotalEfectivoCobro.Size = new System.Drawing.Size(64, 20);
             this.TotalEfectivoCobro.TabIndex = 3;
             this.TotalEfectivoCobro.TabStop = false;
             this.TotalEfectivoCobro.Text = "0.00";
@@ -444,7 +444,7 @@
             // 
             this.EfectivoEnCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.EfectivoEnCaja.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EfectivoEnCaja.Location = new System.Drawing.Point(544, 464);
+            this.EfectivoEnCaja.Location = new System.Drawing.Point(518, 464);
             this.EfectivoEnCaja.Mask = "f";
             this.EfectivoEnCaja.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.EfectivoEnCaja.Name = "EfectivoEnCaja";
@@ -457,7 +457,7 @@
             // 
             // TotalFondo
             // 
-            this.TotalFondo.Location = new System.Drawing.Point(718, 439);
+            this.TotalFondo.Location = new System.Drawing.Point(687, 439);
             this.TotalFondo.Mask = "f";
             this.TotalFondo.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.TotalFondo.Name = "TotalFondo";
@@ -471,7 +471,7 @@
             // radLabel8
             // 
             this.radLabel8.AutoSize = false;
-            this.radLabel8.Location = new System.Drawing.Point(445, 441);
+            this.radLabel8.Location = new System.Drawing.Point(419, 441);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(94, 18);
             this.radLabel8.TabIndex = 21;
@@ -481,12 +481,12 @@
             // FaltanteCheque
             // 
             this.FaltanteCheque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.FaltanteCheque.Location = new System.Drawing.Point(193, 30);
+            this.FaltanteCheque.Location = new System.Drawing.Point(176, 30);
             this.FaltanteCheque.Mask = "f";
             this.FaltanteCheque.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.FaltanteCheque.Name = "FaltanteCheque";
             this.FaltanteCheque.ReadOnly = true;
-            this.FaltanteCheque.Size = new System.Drawing.Size(68, 20);
+            this.FaltanteCheque.Size = new System.Drawing.Size(56, 20);
             this.FaltanteCheque.TabIndex = 5;
             this.FaltanteCheque.TabStop = false;
             this.FaltanteCheque.Text = "0.00";
@@ -495,12 +495,12 @@
             // FaltanteTarjeta
             // 
             this.FaltanteTarjeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.FaltanteTarjeta.Location = new System.Drawing.Point(64, 29);
+            this.FaltanteTarjeta.Location = new System.Drawing.Point(61, 29);
             this.FaltanteTarjeta.Mask = "f";
             this.FaltanteTarjeta.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.FaltanteTarjeta.Name = "FaltanteTarjeta";
             this.FaltanteTarjeta.ReadOnly = true;
-            this.FaltanteTarjeta.Size = new System.Drawing.Size(68, 20);
+            this.FaltanteTarjeta.Size = new System.Drawing.Size(56, 20);
             this.FaltanteTarjeta.TabIndex = 5;
             this.FaltanteTarjeta.TabStop = false;
             this.FaltanteTarjeta.Text = "0.00";
@@ -519,21 +519,21 @@
             this.radGroupBox6.Controls.Add(this.FaltanteTarjeta);
             this.radGroupBox6.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox6.HeaderText = "Faltante";
-            this.radGroupBox6.Location = new System.Drawing.Point(796, 387);
+            this.radGroupBox6.Location = new System.Drawing.Point(762, 387);
             this.radGroupBox6.Name = "radGroupBox6";
-            this.radGroupBox6.Size = new System.Drawing.Size(268, 89);
+            this.radGroupBox6.Size = new System.Drawing.Size(241, 89);
             this.radGroupBox6.TabIndex = 28;
             this.radGroupBox6.Text = "Faltante";
             // 
             // FaltanteEfectivo
             // 
             this.FaltanteEfectivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.FaltanteEfectivo.Location = new System.Drawing.Point(64, 56);
+            this.FaltanteEfectivo.Location = new System.Drawing.Point(61, 56);
             this.FaltanteEfectivo.Mask = "f";
             this.FaltanteEfectivo.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.FaltanteEfectivo.Name = "FaltanteEfectivo";
             this.FaltanteEfectivo.ReadOnly = true;
-            this.FaltanteEfectivo.Size = new System.Drawing.Size(68, 20);
+            this.FaltanteEfectivo.Size = new System.Drawing.Size(56, 20);
             this.FaltanteEfectivo.TabIndex = 7;
             this.FaltanteEfectivo.TabStop = false;
             this.FaltanteEfectivo.Text = "0.00";
@@ -542,9 +542,9 @@
             // radLabel20
             // 
             this.radLabel20.AutoSize = false;
-            this.radLabel20.Location = new System.Drawing.Point(138, 31);
+            this.radLabel20.Location = new System.Drawing.Point(125, 31);
             this.radLabel20.Name = "radLabel20";
-            this.radLabel20.Size = new System.Drawing.Size(50, 18);
+            this.radLabel20.Size = new System.Drawing.Size(48, 18);
             this.radLabel20.TabIndex = 4;
             this.radLabel20.Text = "Cheque:";
             this.radLabel20.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -572,18 +572,18 @@
             this.radGroupBox5.Controls.Add(this.TarjetaCheques);
             this.radGroupBox5.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox5.HeaderText = "Cuadre";
-            this.radGroupBox5.Location = new System.Drawing.Point(794, 296);
+            this.radGroupBox5.Location = new System.Drawing.Point(760, 296);
             this.radGroupBox5.Name = "radGroupBox5";
-            this.radGroupBox5.Size = new System.Drawing.Size(268, 85);
+            this.radGroupBox5.Size = new System.Drawing.Size(241, 85);
             this.radGroupBox5.TabIndex = 29;
             this.radGroupBox5.Text = "Cuadre";
             // 
             // radLabel9
             // 
             this.radLabel9.AutoSize = false;
-            this.radLabel9.Location = new System.Drawing.Point(620, 440);
+            this.radLabel9.Location = new System.Drawing.Point(594, 440);
             this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(91, 18);
+            this.radLabel9.Size = new System.Drawing.Size(87, 18);
             this.radLabel9.TabIndex = 22;
             this.radLabel9.Text = "Fondo Anterior";
             this.radLabel9.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -602,9 +602,9 @@
             this.radGroupBox4.Controls.Add(this.MontoTarjeta);
             this.radGroupBox4.Controls.Add(this.MontoEfectivo);
             this.radGroupBox4.HeaderText = "Facturas";
-            this.radGroupBox4.Location = new System.Drawing.Point(440, 295);
+            this.radGroupBox4.Location = new System.Drawing.Point(414, 295);
             this.radGroupBox4.Name = "radGroupBox4";
-            this.radGroupBox4.Size = new System.Drawing.Size(166, 141);
+            this.radGroupBox4.Size = new System.Drawing.Size(160, 141);
             this.radGroupBox4.TabIndex = 27;
             this.radGroupBox4.Text = "Facturas";
             // 
@@ -646,7 +646,7 @@
             this.TotalVentas.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.TotalVentas.Name = "TotalVentas";
             this.TotalVentas.ReadOnly = true;
-            this.TotalVentas.Size = new System.Drawing.Size(68, 20);
+            this.TotalVentas.Size = new System.Drawing.Size(64, 20);
             this.TotalVentas.TabIndex = 3;
             this.TotalVentas.TabStop = false;
             this.TotalVentas.Text = "0.00";
@@ -680,7 +680,7 @@
             this.MontoCredito.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.MontoCredito.Name = "MontoCredito";
             this.MontoCredito.ReadOnly = true;
-            this.MontoCredito.Size = new System.Drawing.Size(68, 20);
+            this.MontoCredito.Size = new System.Drawing.Size(64, 20);
             this.MontoCredito.TabIndex = 3;
             this.MontoCredito.TabStop = false;
             this.MontoCredito.Text = "0.00";
@@ -693,7 +693,7 @@
             this.MontoTarjeta.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.MontoTarjeta.Name = "MontoTarjeta";
             this.MontoTarjeta.ReadOnly = true;
-            this.MontoTarjeta.Size = new System.Drawing.Size(68, 20);
+            this.MontoTarjeta.Size = new System.Drawing.Size(64, 20);
             this.MontoTarjeta.TabIndex = 3;
             this.MontoTarjeta.TabStop = false;
             this.MontoTarjeta.Text = "0.00";
@@ -706,7 +706,7 @@
             this.MontoEfectivo.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.MontoEfectivo.Name = "MontoEfectivo";
             this.MontoEfectivo.ReadOnly = true;
-            this.MontoEfectivo.Size = new System.Drawing.Size(68, 20);
+            this.MontoEfectivo.Size = new System.Drawing.Size(64, 20);
             this.MontoEfectivo.TabIndex = 3;
             this.MontoEfectivo.TabStop = false;
             this.MontoEfectivo.Text = "0.00";
@@ -717,7 +717,7 @@
             this.radTitleBar2.Dock = System.Windows.Forms.DockStyle.Top;
             this.radTitleBar2.Location = new System.Drawing.Point(0, 0);
             this.radTitleBar2.Name = "radTitleBar2";
-            this.radTitleBar2.Size = new System.Drawing.Size(1073, 34);
+            this.radTitleBar2.Size = new System.Drawing.Size(1011, 34);
             this.radTitleBar2.TabIndex = 16;
             this.radTitleBar2.TabStop = false;
             this.radTitleBar2.Text = "Arqueo de Caja";
@@ -734,60 +734,63 @@
             // 
             // 
             this.grdFacturas.MasterTemplate.AllowAddNewRow = false;
+            this.grdFacturas.MasterTemplate.AllowColumnReorder = false;
             this.grdFacturas.MasterTemplate.AllowDeleteRow = false;
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "FacturaID";
-            gridViewTextBoxColumn10.HeaderText = "FacturaID";
-            gridViewTextBoxColumn10.IsVisible = false;
-            gridViewTextBoxColumn10.Name = "FacturaID";
-            gridViewTextBoxColumn10.ReadOnly = true;
-            gridViewTextBoxColumn11.EnableExpressionEditor = false;
-            gridViewTextBoxColumn11.FieldName = "FECHAHORA";
-            gridViewTextBoxColumn11.HeaderText = "Fecha/Hora";
-            gridViewTextBoxColumn11.Name = "column5";
-            gridViewTextBoxColumn11.ReadOnly = true;
-            gridViewTextBoxColumn11.Width = 132;
-            gridViewTextBoxColumn11.WrapText = true;
-            gridViewTextBoxColumn12.EnableExpressionEditor = false;
-            gridViewTextBoxColumn12.FieldName = "FACTURANO";
-            gridViewTextBoxColumn12.HeaderText = "Numero de Facura";
-            gridViewTextBoxColumn12.Name = "column1";
-            gridViewTextBoxColumn12.ReadOnly = true;
-            gridViewTextBoxColumn12.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending;
-            gridViewTextBoxColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn12.Width = 67;
-            gridViewTextBoxColumn12.WrapText = true;
-            gridViewTextBoxColumn13.EnableExpressionEditor = false;
-            gridViewTextBoxColumn13.FieldName = "TOTAL";
-            gridViewTextBoxColumn13.FormatString = "{0:#,###.#0}";
-            gridViewTextBoxColumn13.HeaderText = "Total Factura";
-            gridViewTextBoxColumn13.Name = "column3";
-            gridViewTextBoxColumn13.ReadOnly = true;
-            gridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn13.Width = 68;
-            gridViewTextBoxColumn13.WrapText = true;
-            gridViewTextBoxColumn14.EnableExpressionEditor = false;
-            gridViewTextBoxColumn14.FieldName = "Vendedor";
-            gridViewTextBoxColumn14.HeaderText = "Vendedor";
-            gridViewTextBoxColumn14.Name = "column4";
-            gridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn14.Width = 132;
+            this.grdFacturas.MasterTemplate.AllowEditRow = false;
+            this.grdFacturas.MasterTemplate.AutoGenerateColumns = false;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "FacturaID";
+            gridViewTextBoxColumn1.HeaderText = "FacturaID";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "FacturaID";
+            gridViewTextBoxColumn1.ReadOnly = true;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "FECHAHORA";
+            gridViewTextBoxColumn2.HeaderText = "Fecha/Hora";
+            gridViewTextBoxColumn2.Name = "column5";
+            gridViewTextBoxColumn2.ReadOnly = true;
+            gridViewTextBoxColumn2.Width = 132;
+            gridViewTextBoxColumn2.WrapText = true;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "FACTURANO";
+            gridViewTextBoxColumn3.HeaderText = "Numero de Facura";
+            gridViewTextBoxColumn3.Name = "column1";
+            gridViewTextBoxColumn3.ReadOnly = true;
+            gridViewTextBoxColumn3.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending;
+            gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn3.Width = 66;
+            gridViewTextBoxColumn3.WrapText = true;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "TOTAL";
+            gridViewTextBoxColumn4.FormatString = "{0:#,###.#0}";
+            gridViewTextBoxColumn4.HeaderText = "Total Factura";
+            gridViewTextBoxColumn4.Name = "column3";
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn4.Width = 64;
+            gridViewTextBoxColumn4.WrapText = true;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "Vendedor";
+            gridViewTextBoxColumn5.HeaderText = "Vendedor";
+            gridViewTextBoxColumn5.Name = "column4";
+            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn5.Width = 117;
             this.grdFacturas.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn10,
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5});
             this.grdFacturas.MasterTemplate.ShowRowHeaderColumn = false;
-            sortDescriptor2.Direction = System.ComponentModel.ListSortDirection.Descending;
-            sortDescriptor2.PropertyName = "column1";
+            sortDescriptor1.Direction = System.ComponentModel.ListSortDirection.Descending;
+            sortDescriptor1.PropertyName = "column1";
             this.grdFacturas.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor2});
-            this.grdFacturas.MasterTemplate.ViewDefinition = tableViewDefinition4;
+            sortDescriptor1});
+            this.grdFacturas.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.grdFacturas.Name = "grdFacturas";
             this.grdFacturas.ReadOnly = true;
             this.grdFacturas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.grdFacturas.Size = new System.Drawing.Size(414, 448);
+            this.grdFacturas.Size = new System.Drawing.Size(392, 448);
             this.grdFacturas.TabIndex = 1;
             this.grdFacturas.Text = "radGridView1";
             // 
@@ -796,9 +799,9 @@
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.Controls.Add(this.grdFacturas);
             this.radGroupBox1.HeaderText = "Facturas";
-            this.radGroupBox1.Location = new System.Drawing.Point(12, 82);
+            this.radGroupBox1.Location = new System.Drawing.Point(8, 82);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(422, 474);
+            this.radGroupBox1.Size = new System.Drawing.Size(400, 474);
             this.radGroupBox1.TabIndex = 19;
             this.radGroupBox1.Text = "Facturas";
             // 
@@ -807,9 +810,9 @@
             this.radGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox2.Controls.Add(this.grdCobros);
             this.radGroupBox2.HeaderText = "Pagos";
-            this.radGroupBox2.Location = new System.Drawing.Point(668, 82);
+            this.radGroupBox2.Location = new System.Drawing.Point(659, 82);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(395, 208);
+            this.radGroupBox2.Size = new System.Drawing.Size(340, 208);
             this.radGroupBox2.TabIndex = 18;
             this.radGroupBox2.Text = "Pagos";
             // 
@@ -826,40 +829,40 @@
             // 
             this.grdCobros.MasterTemplate.AllowAddNewRow = false;
             this.grdCobros.MasterTemplate.AllowDeleteRow = false;
-            gridViewTextBoxColumn15.EnableExpressionEditor = false;
-            gridViewTextBoxColumn15.FieldName = "TransacionID";
-            gridViewTextBoxColumn15.HeaderText = "TransacionID";
-            gridViewTextBoxColumn15.IsVisible = false;
-            gridViewTextBoxColumn15.Name = "TransacionID";
-            gridViewTextBoxColumn16.EnableExpressionEditor = false;
-            gridViewTextBoxColumn16.FieldName = "Cliente";
-            gridViewTextBoxColumn16.HeaderText = "Cliente";
-            gridViewTextBoxColumn16.Name = "Cliente";
-            gridViewTextBoxColumn16.ReadOnly = true;
-            gridViewTextBoxColumn16.Width = 143;
-            gridViewTextBoxColumn17.EnableExpressionEditor = false;
-            gridViewTextBoxColumn17.FieldName = "Monto";
-            gridViewTextBoxColumn17.FormatString = "{0:#,###.#0}";
-            gridViewTextBoxColumn17.HeaderText = "Monto";
-            gridViewTextBoxColumn17.Name = "Monto";
-            gridViewTextBoxColumn17.ReadOnly = true;
-            gridViewTextBoxColumn17.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn17.Width = 83;
-            gridViewTextBoxColumn18.EnableExpressionEditor = false;
-            gridViewTextBoxColumn18.FieldName = "Vendedor";
-            gridViewTextBoxColumn18.HeaderText = "Vendedor";
-            gridViewTextBoxColumn18.Name = "Vendedor";
-            gridViewTextBoxColumn18.Width = 136;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "TransacionID";
+            gridViewTextBoxColumn6.HeaderText = "TransacionID";
+            gridViewTextBoxColumn6.IsVisible = false;
+            gridViewTextBoxColumn6.Name = "TransacionID";
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "Cliente";
+            gridViewTextBoxColumn7.HeaderText = "Cliente";
+            gridViewTextBoxColumn7.Name = "Cliente";
+            gridViewTextBoxColumn7.ReadOnly = true;
+            gridViewTextBoxColumn7.Width = 131;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "Monto";
+            gridViewTextBoxColumn8.FormatString = "{0:#,###.#0}";
+            gridViewTextBoxColumn8.HeaderText = "Monto";
+            gridViewTextBoxColumn8.Name = "Monto";
+            gridViewTextBoxColumn8.ReadOnly = true;
+            gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn8.Width = 70;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "Vendedor";
+            gridViewTextBoxColumn9.HeaderText = "Vendedor";
+            gridViewTextBoxColumn9.Name = "Vendedor";
+            gridViewTextBoxColumn9.Width = 117;
             this.grdCobros.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn15,
-            gridViewTextBoxColumn16,
-            gridViewTextBoxColumn17,
-            gridViewTextBoxColumn18});
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9});
             this.grdCobros.MasterTemplate.ShowRowHeaderColumn = false;
-            this.grdCobros.MasterTemplate.ViewDefinition = tableViewDefinition5;
+            this.grdCobros.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.grdCobros.Name = "grdCobros";
             this.grdCobros.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.grdCobros.Size = new System.Drawing.Size(382, 182);
+            this.grdCobros.Size = new System.Drawing.Size(331, 182);
             this.grdCobros.TabIndex = 1;
             this.grdCobros.Text = "radGridView1";
             // 
@@ -868,7 +871,7 @@
             this.radGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox3.Controls.Add(this.radGridView3);
             this.radGroupBox3.HeaderText = "Gastos de Caja";
-            this.radGroupBox3.Location = new System.Drawing.Point(440, 82);
+            this.radGroupBox3.Location = new System.Drawing.Point(414, 82);
             this.radGroupBox3.Name = "radGroupBox3";
             this.radGroupBox3.Size = new System.Drawing.Size(222, 208);
             this.radGroupBox3.TabIndex = 17;
@@ -880,7 +883,7 @@
             // 
             // 
             // 
-            this.radGridView3.MasterTemplate.ViewDefinition = tableViewDefinition6;
+            this.radGridView3.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.radGridView3.Name = "radGridView3";
             this.radGridView3.Size = new System.Drawing.Size(210, 182);
             this.radGridView3.TabIndex = 1;
@@ -890,7 +893,7 @@
             // 
             this.radLabel10.AutoSize = false;
             this.radLabel10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel10.Location = new System.Drawing.Point(443, 466);
+            this.radLabel10.Location = new System.Drawing.Point(417, 466);
             this.radLabel10.Name = "radLabel10";
             this.radLabel10.Size = new System.Drawing.Size(97, 18);
             this.radLabel10.TabIndex = 20;
@@ -900,7 +903,7 @@
             // GastosCaja
             // 
             this.GastosCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.GastosCaja.Location = new System.Drawing.Point(544, 440);
+            this.GastosCaja.Location = new System.Drawing.Point(518, 440);
             this.GastosCaja.Mask = "f";
             this.GastosCaja.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.GastosCaja.Name = "GastosCaja";
@@ -917,7 +920,7 @@
             this.radGroupBox8.Controls.Add(this.lblStatus);
             this.radGroupBox8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radGroupBox8.HeaderText = "Estatus de Edicion";
-            this.radGroupBox8.Location = new System.Drawing.Point(864, 40);
+            this.radGroupBox8.Location = new System.Drawing.Point(799, 40);
             this.radGroupBox8.Name = "radGroupBox8";
             this.radGroupBox8.Size = new System.Drawing.Size(200, 46);
             this.radGroupBox8.TabIndex = 54;
@@ -961,7 +964,7 @@
             this.radButton2.BackColor = System.Drawing.Color.Transparent;
             this.radButton2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton2.Image = global::Suite_FHFSoft.Properties.Resources.delete_Cancel;
-            this.radButton2.Location = new System.Drawing.Point(988, 490);
+            this.radButton2.Location = new System.Drawing.Point(884, 490);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(74, 66);
             this.radButton2.TabIndex = 34;
@@ -989,7 +992,7 @@
             this.radButton4.BackColor = System.Drawing.Color.Transparent;
             this.radButton4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton4.Image = global::Suite_FHFSoft.Properties.Resources._1481449260_calculator;
-            this.radButton4.Location = new System.Drawing.Point(916, 490);
+            this.radButton4.Location = new System.Drawing.Point(812, 490);
             this.radButton4.Name = "radButton4";
             this.radButton4.Size = new System.Drawing.Size(74, 66);
             this.radButton4.TabIndex = 33;
@@ -1012,7 +1015,7 @@
             this.radButton8.BackColor = System.Drawing.Color.Transparent;
             this.radButton8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton8.Image = global::Suite_FHFSoft.Properties.Resources._1481449538_chat;
-            this.radButton8.Location = new System.Drawing.Point(843, 490);
+            this.radButton8.Location = new System.Drawing.Point(739, 490);
             this.radButton8.Name = "radButton8";
             this.radButton8.Size = new System.Drawing.Size(74, 66);
             this.radButton8.TabIndex = 32;
@@ -1035,7 +1038,7 @@
             this.radButton1.BackColor = System.Drawing.Color.Transparent;
             this.radButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton1.Image = global::Suite_FHFSoft.Properties.Resources.if_Gnome_View_Refresh_64_55783;
-            this.radButton1.Location = new System.Drawing.Point(678, 490);
+            this.radButton1.Location = new System.Drawing.Point(574, 490);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(74, 66);
             this.radButton1.TabIndex = 31;
@@ -1059,7 +1062,7 @@
             this.radButton9.BackColor = System.Drawing.Color.Transparent;
             this.radButton9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton9.Image = global::Suite_FHFSoft.Properties.Resources._1481449800_search;
-            this.radButton9.Location = new System.Drawing.Point(763, 490);
+            this.radButton9.Location = new System.Drawing.Point(659, 490);
             this.radButton9.Name = "radButton9";
             this.radButton9.Size = new System.Drawing.Size(74, 66);
             this.radButton9.TabIndex = 31;
@@ -1083,7 +1086,7 @@
             this.radButton7.BackColor = System.Drawing.Color.Transparent;
             this.radButton7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radButton7.Image = global::Suite_FHFSoft.Properties.Resources._1481449625_printer;
-            this.radButton7.Location = new System.Drawing.Point(598, 490);
+            this.radButton7.Location = new System.Drawing.Point(494, 490);
             this.radButton7.Name = "radButton7";
             this.radButton7.Size = new System.Drawing.Size(74, 66);
             this.radButton7.TabIndex = 30;
@@ -1106,7 +1109,7 @@
             this.bCobrar.BackColor = System.Drawing.Color.Transparent;
             this.bCobrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCobrar.Image = global::Suite_FHFSoft.Properties.Resources.if_save_as_36557;
-            this.bCobrar.Location = new System.Drawing.Point(518, 490);
+            this.bCobrar.Location = new System.Drawing.Point(414, 490);
             this.bCobrar.Name = "bCobrar";
             this.bCobrar.Size = new System.Drawing.Size(74, 66);
             this.bCobrar.TabIndex = 26;
@@ -1128,9 +1131,9 @@
             // radLabel22
             // 
             this.radLabel22.AutoSize = false;
-            this.radLabel22.Location = new System.Drawing.Point(620, 464);
+            this.radLabel22.Location = new System.Drawing.Point(600, 464);
             this.radLabel22.Name = "radLabel22";
-            this.radLabel22.Size = new System.Drawing.Size(91, 18);
+            this.radLabel22.Size = new System.Drawing.Size(81, 18);
             this.radLabel22.TabIndex = 22;
             this.radLabel22.Text = "Fondo Nuevo";
             this.radLabel22.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -1138,7 +1141,7 @@
             // FondoNuevo
             // 
             this.FondoNuevo.BackColor = System.Drawing.Color.LightGreen;
-            this.FondoNuevo.Location = new System.Drawing.Point(718, 463);
+            this.FondoNuevo.Location = new System.Drawing.Point(687, 463);
             this.FondoNuevo.Mask = "f";
             this.FondoNuevo.MaskType = Telerik.WinControls.UI.MaskType.Numeric;
             this.FondoNuevo.Name = "FondoNuevo";
@@ -1153,7 +1156,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1073, 565);
+            this.ClientSize = new System.Drawing.Size(1011, 565);
             this.Controls.Add(this.radGroupBox9);
             this.Controls.Add(this.radGroupBox8);
             this.Controls.Add(this.radGroupBox7);
