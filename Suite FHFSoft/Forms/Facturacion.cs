@@ -223,7 +223,7 @@ namespace Suite_FHFSoft
             SubTotal.Value = 0;
             ItbisPorciento = 0;
             vArticuloID = 0;
-
+            descuento.Value = 0;
 
         }
 
@@ -370,11 +370,10 @@ namespace Suite_FHFSoft
                 vRow["UnidadMedida"] = Unidad.Text;
                 vRow["Cantidad"] = Cantidad.Value;
                 vRow["ItbisID"] = dtArticulos.Rows[0]["ItbisID"].ToString();
-                vRow["Importe"] = importes - (importes * Convert.ToDecimal(Desc.Value));
-                vRow["Descuento"] = importes * Convert.ToDecimal(Desc.Value);
+                vRow["Importe"] = importes - (Convert.ToDecimal(descuento.Value));
+                vRow["Descuento"] = Convert.ToDecimal(descuento.Value);
                 vRow["ITBISAMOUNT"] = Itbisamount;
-               
-
+           
                 Contador++;
                 dtFactura.Rows.Add(vRow);
             }
@@ -389,11 +388,7 @@ namespace Suite_FHFSoft
 
                 vRowActual["Cantidad"] = Convert.ToInt32( vRowActual["Cantidad"].ToString()) + Convert.ToInt32( Cantidad.Value);
                 decimal importes = (Convert.ToDecimal(Precio.Text) * Convert.ToDecimal(vRowActual["Cantidad"].ToString()));
-                vRowActual["Importe"] = importes - (importes * Convert.ToDecimal(Desc.Value));
-
-
-
-
+                vRowActual["Importe"] = importes - (importes * Convert.ToDecimal(descuento.Value));
             }
 
             Calcular();
@@ -510,7 +505,7 @@ namespace Suite_FHFSoft
 
         private void Cantidad_ValueChanged(object sender, EventArgs e)
         {
-            SubTotal.Value = Convert.ToDecimal(Precio.Value) * Convert.ToDecimal(Cantidad.Value);
+            SubTotal.Value = (Convert.ToDecimal(Precio.Value) * Convert.ToDecimal(Cantidad.Value))- Convert.ToDecimal(descuento.Value) ;
         }
 
         private void bCancelar_Click(object sender, EventArgs e)
@@ -535,6 +530,16 @@ namespace Suite_FHFSoft
         private void bCotizacion_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Cantidad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void descuento_ValueChanged(object sender, EventArgs e)
+        {
+            SubTotal.Value = (Convert.ToDecimal(Precio.Value) * Convert.ToDecimal(Cantidad.Value)) - Convert.ToDecimal(descuento.Value);
         }
     }
 }

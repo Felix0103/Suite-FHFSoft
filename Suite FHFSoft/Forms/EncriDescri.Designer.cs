@@ -114,6 +114,7 @@
             this.MaximizeBox = false;
             this.Name = "EncriDescri";
             this.Text = "Encriptado";
+            this.Load += new System.EventHandler(this.EncriDescri_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ValorAscii)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).EndInit();

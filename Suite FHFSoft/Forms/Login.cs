@@ -92,19 +92,30 @@ namespace Suite_FHFSoft
 
         private void Login_Shown(object sender, EventArgs e)
         {
-            DateTime Licencia = C.Cdate(Seguridad.DesEncriptar(C.SQL("ini_L").Rows[0][0].ToString()));
-            if (Licencia < DateTime.Today)
+            try
             {
-                MessageBox.Show("Su Licencia esta Vencida, Favor contactar a su Representante de Suite FHFSoft.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                DateTime Licencia = C.Cdate(Seguridad.DesEncriptar(C.SQL("ini_L").Rows[0][0].ToString()));
+                if (Licencia < DateTime.Today)
+                {
+                    MessageBox.Show("Su Licencia esta Vencida, Favor contactar a su Representante de Suite FHFSoft.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Username.ReadOnly = true;
+                    Password.ReadOnly = true;
+                }
+                else if ((Licencia - DateTime.Today).TotalDays < 31)
+                {
+                    var dias = (Licencia - DateTime.Today).TotalDays;
+                    MessageBox.Show("Solo le quedan " + dias.ToString() + " Dias de vigencia de su Licencia, Favor contactar a un Representante de Suite FHFSoft.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Contractese al 809-601-3427 o 809-377-3427 para soporte");
                 Username.ReadOnly = true;
                 Password.ReadOnly = true;
             }
-            else if ((Licencia - DateTime.Today).TotalDays < 31)
-            {
-                var dias = (Licencia - DateTime.Today).TotalDays;
-                MessageBox.Show("Solo le quedan " + dias.ToString() + " Dias de vigencia de su Licencia, Favor contactar a un Representante de Suite FHFSoft.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }
+          
         }
     }
 }

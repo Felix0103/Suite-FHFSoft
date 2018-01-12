@@ -295,5 +295,17 @@ namespace Suite_FHFSoft
         {
             
         }
+
+        private void bImprimirArticulos_Click(object sender, EventArgs e)
+        {
+            Reports frm = new Reports();
+            frm.MdiParent = MainMenu.ActiveForm;
+            frm.vReportName = "ListaArticulos.rpt";
+            frm.vImprimir = 0;
+            frm.vSQLString = "[ARTICULOS_R] ";
+            frm.vTitleReports = "Lista de Articulos";
+            frm.SetTitle();
+            frm.Show();
+        }
     }
 }

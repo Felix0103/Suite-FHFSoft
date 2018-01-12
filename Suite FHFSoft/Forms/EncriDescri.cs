@@ -26,5 +26,10 @@ namespace Suite_FHFSoft
         {
             Encrip.Text = Seguridad.Encriptar(ValorAscii.Text);
         }
+
+        private void EncriDescri_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
