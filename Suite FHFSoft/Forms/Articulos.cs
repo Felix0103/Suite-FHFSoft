@@ -15,6 +15,7 @@ namespace Suite_FHFSoft
         int vArticulos = 0;
         int vOpt = 0;
         DataTable dtArticulo = new DataTable();
+        DataTable dtArticulodetalle = new DataTable();
         public Articulos()
         {
             InitializeComponent();
@@ -53,6 +54,8 @@ namespace Suite_FHFSoft
 
                 setNewArticulo();
                 vArticulos = C.Cint(vRow["ArticuloId"].ToString());
+                dtArticulodetalle = C.SQL("Articulos_L " + vArticulos + ",NULL,1");
+                grdArticulos.DataSource = dtArticulodetalle;
                 Codigo.Text = vRow["Codigo"].ToString();
                 lblStatus.Text = "Editable";
                 Descripcion.Text = vRow["Descripcion"].ToString();
@@ -141,7 +144,9 @@ namespace Suite_FHFSoft
             MarcaID.Text = "";
             Estatus.Checked = true;
             Notas.Text = "";
-
+            dtArticulodetalle = C.SQL("Articulos_L " + 0 + ",NULL,1");
+            grdArticulos.DataSource = dtArticulodetalle;
+            clearAuxiliar();
             setEditable();
 
 
@@ -211,27 +216,34 @@ namespace Suite_FHFSoft
                     return;
                 }
 
-                dtArticulo = C.SQL("Articulos_M " + vOpt + C.QII + vArticulos + C.QIS + Descripcion.Text + C.QSS + Codigo.Text + C.QSS + CodigodeBarras.Text + C.QSI + 
+                string vsql="";
+
+                vsql = "Set nocount on  Declare @ID int  SET @ID = " + vArticulos + Environment.NewLine;
+
+                vsql += " Exec Articulos_M " + vOpt + C.QII + vArticulos + C.QIS + Descripcion.Text + C.QSS + Codigo.Text + C.QSS + CodigodeBarras.Text + C.QSI +
                 (CategoriaID.SelectedValue == null ? "NULL" : CategoriaID.SelectedValue) + C.QII + (SubCategoriaID.SelectedValue == null ? "NULL" : SubCategoriaID.SelectedValue) +
                 C.QII + Stock.Value + C.QII + (ITBISID.SelectedValue == null ? "NULL" : ITBISID.SelectedValue) + C.QII + (UnidadMedidaID.SelectedValue == null ? "NULL" : UnidadMedidaID.SelectedValue) +
-                C.QII + (MarcaID.SelectedValue == null ? "NULL" : MarcaID.SelectedValue) + C.QIS + Notas.Text + C.QSI +C.vUserID + C.QII + (Estatus.Checked == true ? 1 : 0));
+                C.QII + (MarcaID.SelectedValue == null ? "NULL" : MarcaID.SelectedValue) + C.QIS + Notas.Text + C.QSI + C.vUserID + C.QII + (Estatus.Checked == true ? 1 : 0) + C.QII + 1 + ",NULL, @ID OUTPUT" + Environment.NewLine;
 
 
-
-                if (dtArticulo.Rows[0][0].ToString() == "0")
+                foreach (DataRow vRow in dtArticulodetalle.Rows)
                 {
+                    vsql += " Exec Articulos_M " + vRow["Edit"] + C.QII + "@ID" + C.QIS + vRow["Descripcion"] + C.QSS + vRow["Codigo"] + C.QSS + vRow["CodigoBarras"] + C.QSI +
+                   (CategoriaID.SelectedValue == null ? "NULL" : CategoriaID.SelectedValue) + C.QII + (SubCategoriaID.SelectedValue == null ? "NULL" : SubCategoriaID.SelectedValue) +
+                   C.QII + Stock.Value + C.QII + (ITBISID.SelectedValue == null ? "NULL" : ITBISID.SelectedValue) + C.QII + vRow["UnidadMedidaID"] +
+                   C.QII + (MarcaID.SelectedValue == null ? "NULL" : MarcaID.SelectedValue) + C.QIS + Notas.Text + C.QSI + C.vUserID + C.QII + vRow["Estatus"] + C.QII + 2 + ",@ID, @ID OUTPUT" + Environment.NewLine;
+                }
+
+
+                C.SQL(vsql);
+
+        
                     int v = vOpt;
                     bNuevo_Click(null, null);
-                    MessageBox.Show("Articulo " + (v == 0 ? "Guardado" : "Actualizado") + " Exitosamente", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    GRD.DataSource = dtArticulo;
-                }
-                else
-                {
-
-                    MessageBox.Show(dtArticulo.Rows[0][0].ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Articulo " + (vOpt == 0 ? "Guardado" : "Actualizado") + " Exitosamente", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dtArticulo = C.SQL("Articulos_L ");
                     GRD.DataSource = dtArticulo;
-                }
+          
 
 
                 return;
@@ -306,6 +318,48 @@ namespace Suite_FHFSoft
             frm.vTitleReports = "Lista de Articulos";
             frm.SetTitle();
             frm.Show();
+        }
+
+        private void btagregar_Click(object sender, EventArgs e)
+        {
+            DataRow vRow = dtArticulodetalle.NewRow();
+            vRow["Edit"] = 0;
+            vRow["Descripcion"] = DescripcionD.Text;
+            vRow["Codigo"] = CodigoD.Text;
+            vRow["CodigoBarras"] = CodigoBarrasD.Text;
+            vRow["UnidadMedidaID"] = UnidadMedidaD.SelectedValue;
+            vRow["UnidadMedida"] = UnidadMedidaD.Text;
+            vRow["Estatus"] = (EstatusD.Checked == true ? 1 : 0);
+            dtArticulodetalle.Rows.Add(vRow);
+            clearAuxiliar();
+        }
+        private void clearAuxiliar()
+        {
+            DescripcionD.Text = "";
+            CodigoD.Text = "";
+            CodigoBarrasD.Text = "";
+            UnidadMedidaD.Text = "";
+            NotasD.Text = "";
+            EstatusD.Checked = true;
+        }
+
+        private void UnidadMedidaID_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            UnidadMedidaD.DisplayMember = "Descripcion";
+            UnidadMedidaD.ValueMember = "UnidadMedidaAUID";
+            UnidadMedidaD.DataSource =  C.SQL("UNIDADESMEDIDASAU_L " + (UnidadMedidaID.SelectedValue == null ? "NULL" : UnidadMedidaID.SelectedValue.ToString()));
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PrecioVentas form = new PrecioVentas();
+            form.vForm = this.Name;
+            form.vArticuloID = Convert.ToInt32(grdArticulos.CurrentRow.Cells[0].Value);
+            form.ShowDialog();
+            dtArticulodetalle = C.SQL("Articulos_L " + vArticulos + ",NULL,1");
+            grdArticulos.DataSource = dtArticulodetalle;
+
         }
     }
 }
