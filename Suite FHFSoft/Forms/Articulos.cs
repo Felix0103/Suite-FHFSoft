@@ -60,16 +60,18 @@ namespace Suite_FHFSoft
                 lblStatus.Text = "Editable";
                 Descripcion.Text = vRow["Descripcion"].ToString();
                 CodigodeBarras.Text = vRow["CodigoBarras"].ToString();
+                CodigodeBarras.Enabled = (vRow["CodigoBarras"].ToString().Length>0?false:true);
                 CategoriaID.SelectedValue = C.Cint(vRow["CategoriaID"].ToString());
                 SubCategoriaID.SelectedValue = C.Cint(vRow["SubcategoriaID"].ToString());
                 Fecha.Value = C.Cdate(vRow["FechaCreacion"].ToString());
                 Stock.Value= C.Cint(vRow["StockMinimo"].ToString());
+                stockM.Value = C.Cint(vRow["StockMaximo"].ToString());
                 ITBISID.SelectedValue = C.Cint(vRow["ITBISID"].ToString());
                 UnidadMedidaID.SelectedValue = C.Cint(vRow["UnidadMedidaID"].ToString());
                 MarcaID.SelectedValue = C.Cint(vRow["MarcaID"].ToString());
                 Estatus.Checked = (vRow["Estatus"].ToString() == "1" ? true : false);
                 Notas.Text = vRow["Notas"].ToString();
-
+                clearAuxiliar();
                 setNoEditable();
                 bEditar.Enabled = true;
                 bGuardar.Enabled = false;
@@ -88,18 +90,27 @@ namespace Suite_FHFSoft
 
         private void setEditable()
         {
-            Codigo.ReadOnly = false;
+            Codigo.ReadOnly = true;
             Descripcion.ReadOnly = false;
             CodigodeBarras.ReadOnly = false;
             CategoriaID.ReadOnly = false;
             SubCategoriaID.ReadOnly = false;
 
             Stock.ReadOnly = false;
+            stockM.ReadOnly = false;
             ITBISID.ReadOnly = false;
             UnidadMedidaID.ReadOnly = false;
+            UnidadMedidaID.Enabled = (dtArticulodetalle.Rows.Count > 0 ? false : true);
             MarcaID.ReadOnly = false;
             Estatus.ReadOnly = false;
             Notas.ReadOnly = false;
+
+            DescripcionD.ReadOnly = false;
+            CodigoD.ReadOnly = false;
+            CodigoBarrasD.ReadOnly = false;
+            UnidadMedidaD.ReadOnly = false;
+            NotasD.ReadOnly = false;
+            btagregar.Enabled = true;
 
             bNuevo.Enabled = true;
             bEditar.Enabled = false;
@@ -116,11 +127,19 @@ namespace Suite_FHFSoft
             SubCategoriaID.ReadOnly = true;
 
             Stock.ReadOnly = true;
+            stockM.ReadOnly = true;
             ITBISID.ReadOnly = true;
             UnidadMedidaID.ReadOnly = true;
             MarcaID.ReadOnly = true;
             Estatus.ReadOnly = true;
             Notas.ReadOnly = true;
+
+            DescripcionD.ReadOnly = true;
+            CodigoD.ReadOnly = true;
+            CodigoBarrasD.ReadOnly = true;
+            UnidadMedidaD.ReadOnly = true;
+            NotasD.ReadOnly = true;
+            btagregar.Enabled = false;
 
             bNuevo.Enabled = true;
             bEditar.Enabled = true;
@@ -148,7 +167,8 @@ namespace Suite_FHFSoft
             grdArticulos.DataSource = dtArticulodetalle;
             clearAuxiliar();
             setEditable();
-
+            UnidadMedidaID.Enabled = true;
+            CodigodeBarras.Enabled = true;
 
 
         }
@@ -223,7 +243,7 @@ namespace Suite_FHFSoft
                 vsql += " Exec Articulos_M " + vOpt + C.QII + vArticulos + C.QIS + Descripcion.Text + C.QSS + Codigo.Text + C.QSS + CodigodeBarras.Text + C.QSI +
                 (CategoriaID.SelectedValue == null ? "NULL" : CategoriaID.SelectedValue) + C.QII + (SubCategoriaID.SelectedValue == null ? "NULL" : SubCategoriaID.SelectedValue) +
                 C.QII + Stock.Value + C.QII + (ITBISID.SelectedValue == null ? "NULL" : ITBISID.SelectedValue) + C.QII + (UnidadMedidaID.SelectedValue == null ? "NULL" : UnidadMedidaID.SelectedValue) +
-                C.QII + (MarcaID.SelectedValue == null ? "NULL" : MarcaID.SelectedValue) + C.QIS + Notas.Text + C.QSI + C.vUserID + C.QII + (Estatus.Checked == true ? 1 : 0) + C.QII + 1 + ",NULL, @ID OUTPUT" + Environment.NewLine;
+                C.QII + (MarcaID.SelectedValue == null ? "NULL" : MarcaID.SelectedValue) + C.QIS + Notas.Text + C.QSI + C.vUserID + C.QII + (Estatus.Checked == true ? 1 : 0) + C.QII + 1 + ",NULL,"+stockM.Value+", @ID OUTPUT" + Environment.NewLine;
 
 
                 foreach (DataRow vRow in dtArticulodetalle.Rows)
@@ -231,7 +251,7 @@ namespace Suite_FHFSoft
                     vsql += " Exec Articulos_M " + vRow["Edit"] + C.QII + "@ID" + C.QIS + vRow["Descripcion"] + C.QSS + vRow["Codigo"] + C.QSS + vRow["CodigoBarras"] + C.QSI +
                    (CategoriaID.SelectedValue == null ? "NULL" : CategoriaID.SelectedValue) + C.QII + (SubCategoriaID.SelectedValue == null ? "NULL" : SubCategoriaID.SelectedValue) +
                    C.QII + Stock.Value + C.QII + (ITBISID.SelectedValue == null ? "NULL" : ITBISID.SelectedValue) + C.QII + vRow["UnidadMedidaID"] +
-                   C.QII + (MarcaID.SelectedValue == null ? "NULL" : MarcaID.SelectedValue) + C.QIS + Notas.Text + C.QSI + C.vUserID + C.QII + vRow["Estatus"] + C.QII + 2 + ",@ID, @ID OUTPUT" + Environment.NewLine;
+                   C.QII + (MarcaID.SelectedValue == null ? "NULL" : MarcaID.SelectedValue) + C.QIS + Notas.Text + C.QSI + C.vUserID + C.QII + vRow["Estatus"] + C.QII + 2 + ",@ID,"+stockM.Value +", @ID OUTPUT" + Environment.NewLine;
                 }
 
 
@@ -322,6 +342,28 @@ namespace Suite_FHFSoft
 
         private void btagregar_Click(object sender, EventArgs e)
         {
+
+            if (DescripcionD.Text.Length == 0)
+            {
+                MessageBox.Show("Debes Digitar un Nombre del Articulo Auxiliar");
+                DescripcionD.Focus();
+                return;
+            }
+            if (CodigoD.Text.Length == 0)
+            {
+                MessageBox.Show("Debes Digitar un Codigo para el Articulo Auxiliar");
+                CodigoD.Focus();
+                return;
+            }
+            if (UnidadMedidaD.Text.Length == 0 || UnidadMedidaD.SelectedValue==null)
+            {
+                MessageBox.Show("Debes Seleccionar  una unidad de medida para el Articulo Auxiliar");
+                UnidadMedidaD.Focus();
+                return;
+            }
+
+
+
             DataRow vRow = dtArticulodetalle.NewRow();
             vRow["Edit"] = 0;
             vRow["Descripcion"] = DescripcionD.Text;
@@ -340,6 +382,7 @@ namespace Suite_FHFSoft
             CodigoBarrasD.Text = "";
             UnidadMedidaD.Text = "";
             NotasD.Text = "";
+            UnidadMedidaD.SelectedValue = null;
             EstatusD.Checked = true;
         }
 
@@ -360,6 +403,64 @@ namespace Suite_FHFSoft
             dtArticulodetalle = C.SQL("Articulos_L " + vArticulos + ",NULL,1");
             grdArticulos.DataSource = dtArticulodetalle;
 
+        }
+
+        private void CodigoD_Leave(object sender, EventArgs e)
+        {
+            if (CodigoD.Text == "") { return; }
+            if (C.SQL("Codigoveri 1," + CodigoD.Text).Rows[0]["R"].ToString()!="0" )
+            {
+                MessageBox.Show("Este codigo existe para otro articulo favor de ingresar un codigo difrente");
+                CodigoD.Focus();
+                CodigoD.Text = "";
+            }
+        }
+
+        private void CodigoBarrasD_Leave(object sender, EventArgs e)
+        {
+            if (CodigoBarrasD.Text == "") { return; }
+            if (C.SQL("Codigoveri 2," + CodigoBarrasD.Text).Rows[0]["R"].ToString() != "0")
+            {
+                MessageBox.Show("Este codigo de barras existe para otro articulo favor de ingresar un codigo diferente");
+                CodigoBarrasD.Focus();
+                CodigoBarrasD.Text = "";
+            }
+        }
+
+        private void Codigo_Leave(object sender, EventArgs e)
+        {
+            if (Codigo.Text == "") { return; }
+            if (C.SQL("Codigoveri 1," + Codigo.Text).Rows[0]["R"].ToString() != "0" && vOpt==0)
+            {
+                MessageBox.Show("Este codigo de barras existe para otro articulo favor de ingresar un codigo diferente");
+                Codigo.Focus();
+                Codigo.Text = "";
+                return;
+            }
+
+        }
+
+        private void CodigodeBarras_Leave(object sender, EventArgs e)
+        {
+            if (CodigodeBarras.Text == "") { return; }
+            if (C.SQL("Codigoveri 2," + CodigodeBarras.Text).Rows[0]["R"].ToString() != "0" && vOpt == 0)
+            {
+                MessageBox.Show("Este codigo de barras de barras existe para otro articulo favor de ingresar un codigo diferente");
+                CodigodeBarras.Focus();
+                CodigodeBarras.Text = "";
+            }
+        }
+
+        private void busqueda_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = new DataView(dtArticulo);
+            dv.RowFilter = "Descripcion like '%" + busqueda.Text + "%'";
+            GRD.DataSource = dv;
+        }
+
+        private void bLimpiar_Click(object sender, EventArgs e)
+        {
+            busqueda.Text = "";
         }
     }
 }

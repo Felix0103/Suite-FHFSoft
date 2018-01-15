@@ -20,7 +20,7 @@ namespace Suite_FHFSoft
 
         private void BuscarArticulo_Load(object sender, EventArgs e)
         {
-            GRD.DataSource = C.SQL("Articulos_L");
+            GRD.DataSource = C.SQL("Articulos_L NULL,NULL,2");
         }
 
         private void GRD_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)

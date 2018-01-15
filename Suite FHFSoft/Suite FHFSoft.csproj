@@ -245,6 +245,12 @@
     <Compile Include="Forms\FinalCompra.Designer.cs">
       <DependentUpon>FinalCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\IngresoMercancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IngresoMercancia.Designer.cs">
+      <DependentUpon>IngresoMercancia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FinalCompra.resx">
       <DependentUpon>FinalCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IngresoMercancia.resx">
+      <DependentUpon>IngresoMercancia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>

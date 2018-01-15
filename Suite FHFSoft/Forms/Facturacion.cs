@@ -144,7 +144,7 @@ namespace Suite_FHFSoft
 
         private void BuscarArticulos(int vArticulos)
         {
-            dtArticulos = C.SQL("Articulos_L " + vArticulos);
+            dtArticulos = C.SQL("Articulos_L " + vArticulos + ",NULL,2");
 
             if (dtArticulos.Rows.Count == 0)
             {
@@ -167,7 +167,7 @@ namespace Suite_FHFSoft
         }
         private void BuscarArticulosCodigo(string vArticulos)
         {
-            dtArticulos = C.SQL("Articulos_L Null,'" + vArticulos + C.QS);
+            dtArticulos = C.SQL("Articulos_L Null,'" + vArticulos + "',2");
 
             if (dtArticulos.Rows.Count == 0)
             {
