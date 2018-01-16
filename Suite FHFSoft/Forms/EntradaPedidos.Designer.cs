@@ -71,6 +71,8 @@
             this.radLabel28 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel24 = new Telerik.WinControls.UI.RadLabel();
             this.Lote = new Telerik.WinControls.UI.RadTextBox();
+            this.bAddArticulo = new Telerik.WinControls.UI.RadButton();
+            this.bBuscarArticulo = new Telerik.WinControls.UI.RadButton();
             this.FechaExpiracion = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
             this.CodigoA = new Telerik.WinControls.UI.RadTextBox();
@@ -97,6 +99,7 @@
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.GRD = new Telerik.WinControls.UI.RadGridView();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.bBuscarProveedor = new Telerik.WinControls.UI.RadButton();
             this.radLabel23 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel19 = new Telerik.WinControls.UI.RadLabel();
             this.FormadePagoID = new Telerik.WinControls.UI.RadCheckedDropDownList();
@@ -115,9 +118,6 @@
             this.bEdit = new Telerik.WinControls.UI.RadButton();
             this.bProcesar = new Telerik.WinControls.UI.RadButton();
             this.bGuardar = new Telerik.WinControls.UI.RadButton();
-            this.bAddArticulo = new Telerik.WinControls.UI.RadButton();
-            this.bBuscarArticulo = new Telerik.WinControls.UI.RadButton();
-            this.bBuscarProveedor = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.Cedula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Direccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
@@ -149,6 +149,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Lote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bAddArticulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bBuscarArticulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FechaExpiracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoA)).BeginInit();
@@ -176,6 +178,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GRD.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bBuscarProveedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FormadePagoID)).BeginInit();
@@ -196,9 +199,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bProcesar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bGuardar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bAddArticulo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bBuscarArticulo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bBuscarProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // Cedula
@@ -541,6 +541,42 @@
             this.Lote.TabIndex = 20;
             this.Lote.TextChanged += new System.EventHandler(this.Lote_TextChanged);
             this.Lote.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Lote_KeyDown);
+            // 
+            // bAddArticulo
+            // 
+            this.bAddArticulo.BackColor = System.Drawing.Color.Transparent;
+            this.bAddArticulo.Image = global::Suite_FHFSoft.Properties.Resources._1481974794_shopcartadd_32x32;
+            this.bAddArticulo.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bAddArticulo.Location = new System.Drawing.Point(922, 23);
+            this.bAddArticulo.Name = "bAddArticulo";
+            this.bAddArticulo.Size = new System.Drawing.Size(37, 38);
+            this.bAddArticulo.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.bAddArticulo, "Agregar");
+            this.bAddArticulo.Click += new System.EventHandler(this.bAddArticulo_Click);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.bAddArticulo.GetChildAt(0))).Image = global::Suite_FHFSoft.Properties.Resources._1481974794_shopcartadd_32x32;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.bAddArticulo.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.bAddArticulo.GetChildAt(0))).Text = "";
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.bAddArticulo.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.None;
+            // 
+            // bBuscarArticulo
+            // 
+            this.bBuscarArticulo.BackColor = System.Drawing.Color.Transparent;
+            this.bBuscarArticulo.Image = global::Suite_FHFSoft.Properties.Resources._1481444391_search;
+            this.bBuscarArticulo.Location = new System.Drawing.Point(83, 31);
+            this.bBuscarArticulo.Name = "bBuscarArticulo";
+            this.bBuscarArticulo.Size = new System.Drawing.Size(35, 36);
+            this.bBuscarArticulo.TabIndex = 5;
+            this.bBuscarArticulo.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.bBuscarArticulo.Click += new System.EventHandler(this.bBuscarArticulo_Click);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarArticulo.GetChildAt(0))).Image = global::Suite_FHFSoft.Properties.Resources._1481444391_search;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarArticulo.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarArticulo.GetChildAt(0))).Text = "";
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.bBuscarArticulo.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.None;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarArticulo.GetChildAt(0).GetChildAt(2))).LeftColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarArticulo.GetChildAt(0).GetChildAt(2))).TopColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarArticulo.GetChildAt(0).GetChildAt(2))).RightColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarArticulo.GetChildAt(0).GetChildAt(2))).BottomColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarArticulo.GetChildAt(0).GetChildAt(2))).ForeColor = System.Drawing.Color.Transparent;
             // 
             // FechaExpiracion
             // 
@@ -917,6 +953,29 @@
             this.radGroupBox1.TabIndex = 46;
             this.radGroupBox1.Text = "Proveedor";
             // 
+            // bBuscarProveedor
+            // 
+            this.bBuscarProveedor.BackColor = System.Drawing.Color.Transparent;
+            this.bBuscarProveedor.Image = global::Suite_FHFSoft.Properties.Resources._1481444391_search;
+            this.bBuscarProveedor.Location = new System.Drawing.Point(190, 11);
+            this.bBuscarProveedor.Name = "bBuscarProveedor";
+            this.bBuscarProveedor.Size = new System.Drawing.Size(38, 33);
+            this.bBuscarProveedor.TabIndex = 1;
+            this.bBuscarProveedor.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.bBuscarProveedor.Click += new System.EventHandler(this.bBuscarProveedor_Click);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarProveedor.GetChildAt(0))).Image = global::Suite_FHFSoft.Properties.Resources._1481444391_search;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarProveedor.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarProveedor.GetChildAt(0))).Text = "";
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.None;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).LeftColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).TopColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).RightColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).BottomColor = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).ForeColor2 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).ForeColor3 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).ForeColor4 = System.Drawing.Color.Transparent;
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).ForeColor = System.Drawing.Color.Transparent;
+            // 
             // radLabel23
             // 
             this.radLabel23.AutoSize = false;
@@ -1144,65 +1203,6 @@
             ((Telerik.WinControls.Primitives.ImagePrimitive)(this.bGuardar.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ScaleSize = new System.Drawing.Size(24, 24);
             ((Telerik.WinControls.Primitives.ImagePrimitive)(this.bGuardar.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
             // 
-            // bAddArticulo
-            // 
-            this.bAddArticulo.BackColor = System.Drawing.Color.Transparent;
-            this.bAddArticulo.Image = global::Suite_FHFSoft.Properties.Resources._1481974794_shopcartadd_32x32;
-            this.bAddArticulo.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bAddArticulo.Location = new System.Drawing.Point(922, 23);
-            this.bAddArticulo.Name = "bAddArticulo";
-            this.bAddArticulo.Size = new System.Drawing.Size(37, 38);
-            this.bAddArticulo.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.bAddArticulo, "Agregar");
-            this.bAddArticulo.Click += new System.EventHandler(this.bAddArticulo_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.bAddArticulo.GetChildAt(0))).Image = global::Suite_FHFSoft.Properties.Resources._1481974794_shopcartadd_32x32;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.bAddArticulo.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.bAddArticulo.GetChildAt(0))).Text = "";
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.bAddArticulo.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.None;
-            // 
-            // bBuscarArticulo
-            // 
-            this.bBuscarArticulo.BackColor = System.Drawing.Color.Transparent;
-            this.bBuscarArticulo.Image = global::Suite_FHFSoft.Properties.Resources._1481444391_search;
-            this.bBuscarArticulo.Location = new System.Drawing.Point(83, 31);
-            this.bBuscarArticulo.Name = "bBuscarArticulo";
-            this.bBuscarArticulo.Size = new System.Drawing.Size(35, 36);
-            this.bBuscarArticulo.TabIndex = 5;
-            this.bBuscarArticulo.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.bBuscarArticulo.Click += new System.EventHandler(this.bBuscarArticulo_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarArticulo.GetChildAt(0))).Image = global::Suite_FHFSoft.Properties.Resources._1481444391_search;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarArticulo.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarArticulo.GetChildAt(0))).Text = "";
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.bBuscarArticulo.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.None;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarArticulo.GetChildAt(0).GetChildAt(2))).LeftColor = System.Drawing.Color.Transparent;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarArticulo.GetChildAt(0).GetChildAt(2))).TopColor = System.Drawing.Color.Transparent;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarArticulo.GetChildAt(0).GetChildAt(2))).RightColor = System.Drawing.Color.Transparent;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarArticulo.GetChildAt(0).GetChildAt(2))).BottomColor = System.Drawing.Color.Transparent;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarArticulo.GetChildAt(0).GetChildAt(2))).ForeColor = System.Drawing.Color.Transparent;
-            // 
-            // bBuscarProveedor
-            // 
-            this.bBuscarProveedor.BackColor = System.Drawing.Color.Transparent;
-            this.bBuscarProveedor.Image = global::Suite_FHFSoft.Properties.Resources._1481444391_search;
-            this.bBuscarProveedor.Location = new System.Drawing.Point(190, 11);
-            this.bBuscarProveedor.Name = "bBuscarProveedor";
-            this.bBuscarProveedor.Size = new System.Drawing.Size(38, 33);
-            this.bBuscarProveedor.TabIndex = 1;
-            this.bBuscarProveedor.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.bBuscarProveedor.Click += new System.EventHandler(this.bBuscarProveedor_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarProveedor.GetChildAt(0))).Image = global::Suite_FHFSoft.Properties.Resources._1481444391_search;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarProveedor.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.bBuscarProveedor.GetChildAt(0))).Text = "";
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.None;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).LeftColor = System.Drawing.Color.Transparent;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).TopColor = System.Drawing.Color.Transparent;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).RightColor = System.Drawing.Color.Transparent;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).BottomColor = System.Drawing.Color.Transparent;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).ForeColor2 = System.Drawing.Color.Transparent;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).ForeColor3 = System.Drawing.Color.Transparent;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).ForeColor4 = System.Drawing.Color.Transparent;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.bBuscarProveedor.GetChildAt(0).GetChildAt(2))).ForeColor = System.Drawing.Color.Transparent;
-            // 
             // EntradaPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1277,6 +1277,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Lote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bAddArticulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bBuscarArticulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FechaExpiracion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CodigoA)).EndInit();
@@ -1305,6 +1307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bBuscarProveedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FormadePagoID)).EndInit();
@@ -1326,9 +1329,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bProcesar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bGuardar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bAddArticulo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bBuscarArticulo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bBuscarProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
