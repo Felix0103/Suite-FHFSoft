@@ -39,6 +39,11 @@ namespace Suite_FHFSoft
                         ((EntradaPedidos)Application.OpenForms[i]).vProveedorID = int.Parse(GRD.CurrentRow.Cells[0].Value.ToString());
                         this.Close();
                     }
+                    else if (vForm == "IngresoMercancia")
+                    {
+                        ((IngresoMercancia)Application.OpenForms[i]).vProveedorID = int.Parse(GRD.CurrentRow.Cells[0].Value.ToString());
+                        this.Close();
+                    }
                 }
             }
         }

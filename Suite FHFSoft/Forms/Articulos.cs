@@ -243,7 +243,7 @@ namespace Suite_FHFSoft
                 vsql += " Exec Articulos_M " + vOpt + C.QII + vArticulos + C.QIS + Descripcion.Text + C.QSS + Codigo.Text + C.QSS + CodigodeBarras.Text + C.QSI +
                 (CategoriaID.SelectedValue == null ? "NULL" : CategoriaID.SelectedValue) + C.QII + (SubCategoriaID.SelectedValue == null ? "NULL" : SubCategoriaID.SelectedValue) +
                 C.QII + Stock.Value + C.QII + (ITBISID.SelectedValue == null ? "NULL" : ITBISID.SelectedValue) + C.QII + (UnidadMedidaID.SelectedValue == null ? "NULL" : UnidadMedidaID.SelectedValue) +
-                C.QII + (MarcaID.SelectedValue == null ? "NULL" : MarcaID.SelectedValue) + C.QIS + Notas.Text + C.QSI + C.vUserID + C.QII + (Estatus.Checked == true ? 1 : 0) + C.QII + 1 + ",NULL,"+stockM.Value+", @ID OUTPUT" + Environment.NewLine;
+                C.QII + (MarcaID.SelectedValue == null ? "NULL" : MarcaID.SelectedValue) + C.QIS + Notas.Text + C.QSI + C.vUserID + C.QII + (Estatus.Checked == true ? 1 : 0) + C.QII + 1 + ",NULL,"+stockM.Value + C.QII + (FechaExpiracion.Checked == true ? 1 : 0) + ", @ID OUTPUT" + Environment.NewLine;
 
 
                 foreach (DataRow vRow in dtArticulodetalle.Rows)
@@ -251,7 +251,7 @@ namespace Suite_FHFSoft
                     vsql += " Exec Articulos_M " + vRow["Edit"] + C.QII + "@ID" + C.QIS + vRow["Descripcion"] + C.QSS + vRow["Codigo"] + C.QSS + vRow["CodigoBarras"] + C.QSI +
                    (CategoriaID.SelectedValue == null ? "NULL" : CategoriaID.SelectedValue) + C.QII + (SubCategoriaID.SelectedValue == null ? "NULL" : SubCategoriaID.SelectedValue) +
                    C.QII + Stock.Value + C.QII + (ITBISID.SelectedValue == null ? "NULL" : ITBISID.SelectedValue) + C.QII + vRow["UnidadMedidaID"] +
-                   C.QII + (MarcaID.SelectedValue == null ? "NULL" : MarcaID.SelectedValue) + C.QIS + Notas.Text + C.QSI + C.vUserID + C.QII + vRow["Estatus"] + C.QII + 2 + ",@ID,"+stockM.Value +", @ID OUTPUT" + Environment.NewLine;
+                   C.QII + (MarcaID.SelectedValue == null ? "NULL" : MarcaID.SelectedValue) + C.QIS + Notas.Text + C.QSI + C.vUserID + C.QII + vRow["Estatus"] + C.QII + 2 + ",@ID,"+stockM.Value + C.QII + (FechaExpiracion.Checked == true ? 1 : 0) + ", @ID OUTPUT" + Environment.NewLine;
                 }
 
 
