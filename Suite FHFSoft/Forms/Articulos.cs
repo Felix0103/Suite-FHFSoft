@@ -70,6 +70,7 @@ namespace Suite_FHFSoft
                 UnidadMedidaID.SelectedValue = C.Cint(vRow["UnidadMedidaID"].ToString());
                 MarcaID.SelectedValue = C.Cint(vRow["MarcaID"].ToString());
                 Estatus.Checked = (vRow["Estatus"].ToString() == "1" ? true : false);
+                FechaExpiracion.Checked = (vRow["Expiracion"].ToString() == "1" ? true : false);
                 Notas.Text = vRow["Notas"].ToString();
                 clearAuxiliar();
                 setNoEditable();
@@ -104,6 +105,7 @@ namespace Suite_FHFSoft
             MarcaID.ReadOnly = false;
             Estatus.ReadOnly = false;
             Notas.ReadOnly = false;
+            FechaExpiracion.ReadOnly = false;
 
             DescripcionD.ReadOnly = false;
             CodigoD.ReadOnly = false;
@@ -133,6 +135,7 @@ namespace Suite_FHFSoft
             MarcaID.ReadOnly = true;
             Estatus.ReadOnly = true;
             Notas.ReadOnly = true;
+            FechaExpiracion.ReadOnly = true;
 
             DescripcionD.ReadOnly = true;
             CodigoD.ReadOnly = true;
@@ -163,6 +166,7 @@ namespace Suite_FHFSoft
             MarcaID.Text = "";
             Estatus.Checked = true;
             Notas.Text = "";
+            FechaExpiracion.Checked = false;
             dtArticulodetalle = C.SQL("Articulos_L " + 0 + ",NULL,1");
             grdArticulos.DataSource = dtArticulodetalle;
             clearAuxiliar();

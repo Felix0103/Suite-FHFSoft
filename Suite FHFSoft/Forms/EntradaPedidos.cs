@@ -790,6 +790,8 @@ namespace Suite_FHFSoft
 
 
             }
+
+
         }
 
         private void EntradaPedidos_KeyDown(object sender, KeyEventArgs e)
