@@ -111,7 +111,7 @@ namespace Suite_FHFSoft
             catch (Exception)
             {
 
-                MessageBox.Show("Contractese al 809-601-3427 o 809-377-3427 para soporte");
+                MessageBox.Show("Favor Comunicarse al 809-601-3427 o 809-377-3427 para soporte");
                 Username.ReadOnly = true;
                 Password.ReadOnly = true;
             }
