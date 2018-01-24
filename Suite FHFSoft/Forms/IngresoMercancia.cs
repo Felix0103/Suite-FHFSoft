@@ -646,6 +646,15 @@ namespace Suite_FHFSoft
                 return false;
             }
 
+
+            foreach (DataRow vRow in dtIngreso.Rows)
+            {
+                if(vRow["Expiracion"].ToString()=="1" && vRow["FECHAEXPIRACION"].ToString() == "" )
+                {
+                    MessageBox.Show("Para dar entrada al Articulo " + vRow["Descripcion"].ToString()+ ", debes ingresar la fecha de Expiracion o vencimiento", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return false;
+                }
+            }
             return true;
             if (TipodeComprobanteID.SelectedValue == null || TipodeComprobanteID.Text.Length == 0)
             {
