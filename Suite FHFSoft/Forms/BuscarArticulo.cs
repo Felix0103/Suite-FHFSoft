@@ -20,7 +20,7 @@ namespace Suite_FHFSoft
 
         private void BuscarArticulo_Load(object sender, EventArgs e)
         {
-            GRD.DataSource = C.SQL("Articulos_L NULL,NULL,2");
+            GRD.DataSource = C.SQL("Articulos_L NULL,NULL," + (vForm == "Facturacion"?"2":"NULL"));
         }
 
         private void GRD_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
@@ -37,6 +37,11 @@ namespace Suite_FHFSoft
                     else if(vForm == "Facturacion")
                     {
                         ((Facturacion)Application.OpenForms[i]).vArticuloID = int.Parse(GRD.CurrentRow.Cells[0].Value.ToString());
+                        this.Close();
+                    }
+                    else if(vForm== "IngresoMercancia")
+                    {
+                        ((IngresoMercancia)Application.OpenForms[i]).vArticulo= int.Parse(GRD.CurrentRow.Cells[0].Value.ToString());
                         this.Close();
                     }
                 }

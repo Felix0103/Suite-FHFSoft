@@ -67,9 +67,7 @@ namespace Suite_FHFSoft
         {
             lblStatus.Text = "Creacion";
             Limpiar();
-            bGuardar.Enabled = true;
-            bEdit.Enabled = false;
-            bProcesar.Enabled = false;
+            bProcesar.Enabled = true;
             bNotas.Enabled = true;
             TipodeEntradaID.SelectedValue = null;
             vOrdenID = 0;
@@ -91,6 +89,7 @@ namespace Suite_FHFSoft
             OrdenNumber.Text = "";
             AlmacenID.Text = "";
             OrdenNumber.Text = "";
+            vProveedorID = 0;
 
 
             AlmacenID.SelectedValue = (dtSurcursal.Rows.Count == 1 ? Convert.ToInt64(dtSurcursal.Rows[0]["SucursalID"].ToString()) : 0);
@@ -255,6 +254,7 @@ namespace Suite_FHFSoft
         private void FillOrden(DataRow vRow)
         {
             BuscarProveedores(Convert.ToInt32(vRow["ProveedorId"].ToString()));
+            vProveedorID = Convert.ToInt32(vRow["ProveedorId"].ToString());
             OrdenNumber.Text = vRow["OrdenCompraID"].ToString();
             TipodeComprobanteID.SelectedValue = (Convert.ToInt32((vRow["TipoComprobanteID"].ToString()==""?null: vRow["TipoComprobanteID"].ToString())));
             NoComprobantes.Text = vRow["NoComprobante"].ToString();
@@ -463,12 +463,13 @@ namespace Suite_FHFSoft
                 DataRow vRow = dtIngreso.Rows.Find(vORDENCOMPRASDETALLEID);
                 if (vRow != null)
                 {
-
+                    decimal importes = (Convert.ToDecimal(Costo.Text) * Convert.ToDecimal(Cantidad.Text));
                     vRow["EDIT"] = 1;
                     vRow["Lote"] = Lote.Text;
-                    vRow["FechaExpiracion"] = (FechaExpiracion.Value.Date);
+                    vRow["FechaExpiracion"] = (FechaExpiracion.Value.Date.Year<2010?"1/1/3000": FechaExpiracion.Value.Date.ToString());
                     vRow["Costo"] = Costo.Value;
                     vRow["Cantidad"] = Cantidad.Value;
+                    vRow["Importe"] = importes;
                 }
 
             }
@@ -527,6 +528,144 @@ namespace Suite_FHFSoft
         private void GRD_RowsChanged(object sender, Telerik.WinControls.UI.GridViewCollectionChangedEventArgs e)
         {
 
+        }
+
+        private void bBuscarArticulo_Click(object sender, EventArgs e)
+        {
+            buscarArticulo();
+        }
+
+        private void CodigoA_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                buscarArticulo();
+            }
+        }
+
+        private void buscarArticulo()
+        {
+            vArticulo = 0;
+ 
+            if (CodigoA.Text.Length == 0)
+            {
+                BuscarArticulo C = new BuscarArticulo();
+                C.vForm = this.Name;
+                C.ShowDialog();
+                if (vArticulo == 0) { return; }
+                BuscarArticulos(vArticulo);
+
+            }
+            else
+            {
+
+                BuscarArticulosCodigo(CodigoA.Text);
+            }
+        }
+        private void BuscarArticulosCodigo(string vArticulos)
+        {
+            DataTable Articulos = C.SQL("Articulos_L Null,'" + vArticulos + C.QS);
+
+            if (Articulos.Rows.Count == 0)
+            {
+                MessageBox.Show("NO EXISTE NINGUN ARTICULO CON ESTE CODIGO, BUSQUELO EN LA LISTA", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                BuscarArticulo Form = new BuscarArticulo();
+                Form.vForm = this.Name;
+                Form.ShowDialog();
+
+                if (vArticulo > 0) { Articulos = C.SQL("Articulos_L " + vArticulo); if (Articulos.Rows.Count > 0) { FillArticulo(Articulos.Rows[0]); } } else { return; }
+            }
+            else
+            {
+                FillArticulo(Articulos.Rows[0]);
+
+            }
+
+
+
+
+        }
+
+        private void bProcesar_Click(object sender, EventArgs e)
+        {
+            if (!ValidarTodo()) { return; }
+
+            if (GRD.RowCount == 0)
+            {
+                MessageBox.Show("No se Puede Guardar una Orden de Compras vacia, agrege articulos a la lista e intente de nuevo",
+                  Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            string Formaspago = "";
+
+
+            for (int i = 0; i <= FormadePagoID.Items.Count - 1; i++)
+            {
+                if (FormadePagoID.Items[i].Checked)
+                {
+                    Formaspago += (Formaspago.Length > 0 ? "," : "") + FormadePagoID.Items[i].Value.ToString();
+                }
+
+            }
+
+
+            string sqlString = "";
+
+            sqlString = "Set nocount on; ";
+            sqlString += "Declare @OrdenID int;  set @ordenid = null"  ;
+
+            
+            
+                foreach (DataRow vRow in dtIngreso.Rows)
+                {
+                    sqlString += " Exec IngresoMercancas_M " + 0 + C.QII + vOrdenID + C.QII + vProveedorID + C.QIS + Fecha.Value.ToString().Replace("a.m.", "AM").Replace("p.m.", "PM") + C.QSI +
+                    (TipodeComprobanteID.SelectedValue == null ? "Null" : TipodeComprobanteID.SelectedValue) + C.QIS + NoComprobantes.Text + C.QSS + Formaspago + C.QSI +
+                    C.vUserID + C.QII + vRow["ORDENCOMPRASDETALLEID"].ToString() + C.QII + vRow["ArticuloID"].ToString() + C.QII + vRow["Costo"].ToString() + C.QIS +
+                    vRow["Lote"].ToString() + C.QSI + (C.Cdate(vRow["FechaExpiracion"].ToString()).Year == 1 ? "NULL" : "'" + vRow["FechaExpiracion"].ToString().Replace("a.m.", "AM").Replace("p.m.", "PM") + "'") + C.QII + vRow["Cantidad"].ToString() + C.QII +
+                    AlmacenID.SelectedValue.ToString() + ", @OrdenID output ";
+                }
+                dtIngreso = C.SQL(sqlString + " exec ('ORDENCOMPRAS_L ' + @OrdenID)");
+
+            MessageBox.Show("Todos los articulos fueron Ingesados con Exito");
+            bNuevo_Click(null, null);
+
+        }
+        private bool ValidarTodo()
+        {
+            if (vProveedorID == 0 || Nombre.Text.Length == 0)
+            {
+                MessageBox.Show("No puede Procesar una Orden de Compras sin definir un Proveedor", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                CodigoProveedor.Focus();
+                return false;
+            }
+
+            if (AlmacenID.SelectedValue == null || AlmacenID.Text.Length == 0)
+            {
+                MessageBox.Show("No puede Procesar una Orden de Compras sin definir un Almacen de Destino", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                AlmacenID.Focus();
+                return false;
+            }
+
+            return true;
+            if (TipodeComprobanteID.SelectedValue == null || TipodeComprobanteID.Text.Length == 0)
+            {
+                MessageBox.Show("No puede Procesar una Orden de Compras si un tipo de Comprobante ", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TipodeComprobanteID.Focus();
+                return false;
+            }
+            int ii = 0;
+            for (int i = 0; i < FormadePagoID.Items.Count; i++)
+            {
+                if (FormadePagoID.Items[i].Checked) { ii = 1; break; }
+            }
+            if (ii == 0)
+            {
+                MessageBox.Show("No puede Procesar una Orden de Compras si una Forma de Pago ", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TipodeComprobanteID.Focus();
+                return false;
+            }
+
+            return true;
         }
     }
 }

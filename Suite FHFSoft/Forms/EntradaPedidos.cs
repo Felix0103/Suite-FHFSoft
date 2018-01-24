@@ -885,5 +885,13 @@ namespace Suite_FHFSoft
             System.Diagnostics.Process calc = new System.Diagnostics.Process { StartInfo = { FileName = @"calc.exe" } };
             calc.Start();
         }
+
+        private void bBuscarArticulo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                buscarArticulo();
+            }
+        }
     }
 }
