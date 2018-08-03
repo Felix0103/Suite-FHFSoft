@@ -202,11 +202,6 @@ namespace Suite_FHFSoft
 
             foreach (DataRow vRow in Datos.Rows)
             {
-
-           
-
-
-
                 if (vRow["ItemOrder2"].ToString()=="0")
                 {
                     item1++;
